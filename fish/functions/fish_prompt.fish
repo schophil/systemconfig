@@ -5,7 +5,7 @@ function fish_prompt
     and echo (set_color red)"#"	
 
     block -g
-    set gitinfo (git status -s -b -uno ^ /dev/null)
+    set gitinfo (git status -s -b -uno ^ /dev/null | head -n 1)
 
     # Main
     echo -n (set_color cyan)(prompt_pwd) (set_color red)'❯'(set_color yellow)'❯'
