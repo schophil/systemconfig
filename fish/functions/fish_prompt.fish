@@ -1,10 +1,5 @@
 function fish_prompt
-	test $SSH_TTY
-    and printf (set_color red)$USER(set_color brwhite)'@'(set_color yellow)(prompt_hostname)' '
-    test $USER = 'root'
-    and echo (set_color red)"#"	
-
-    block -g
+    # Collect git information of the current directory
     set gitinfo (git status -s -b -uno ^ /dev/null | head -n 1)
 
     # Main
