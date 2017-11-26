@@ -1,8 +1,8 @@
 #!/bin/sh
 
 mkdir -p ~/config/fish
-ln -s ~/config/fish/config.fish ./fish/config.fish
-ln -s ~/config/fish/functions ./fish/functions
+ln -s -f ~/config/fish/config.fish ./fish/config.fish
+ln -s -f ~/config/fish/functions ./fish/functions
 
 base=`pwd`
 
