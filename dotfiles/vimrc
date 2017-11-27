@@ -20,8 +20,14 @@ set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
 set nu			" show line numbers in gutter
+set relativenumber	" show relative numberinf
 syntax on		" activate syntax highlighting
 set hlsearch		" highlight search results
+
+" highlighting the cursor line
+set cursorline
+hi cursorline cterm=none
+hi cursorlinenr ctermfg=red
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
