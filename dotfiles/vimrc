@@ -29,6 +29,15 @@ set cursorline
 hi cursorline cterm=none
 hi cursorlinenr ctermfg=red
 
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
+
+" Remap keys to switch buffers faster
+nnoremap <C-S> :bprevious<CR>
+nnoremap <C-D> :bnext<CR>
+
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
 
