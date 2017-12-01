@@ -5,7 +5,7 @@ set nocompatible
 " activate pathogen plugin loader
 execute pathogen#infect()
 
-colorscheme pablo
+colorscheme slate
 
 "set statusline+=%{fugitive#statusline()}
 set laststatus=2
@@ -24,10 +24,21 @@ set relativenumber	" show relative numberinf
 syntax on		" activate syntax highlighting
 set hlsearch		" highlight search results
 
+" syntastic settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 " highlighting the cursor line
-set cursorline
-hi cursorline cterm=none
-hi cursorlinenr ctermfg=red
+"set cursorline
+"hi cursorline cterm=none
+"hi cursorlinenr ctermfg=red
+"hi cursorim guifg=#192224 guibg=#536991 guisp=#536991 gui=NONE ctermfg=235 ctermbg=60 cterm=NONE
 
 " Airling settings
 " Enable the list of buffers

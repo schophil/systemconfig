@@ -1,5 +1,5 @@
 set -x JAVA_HOME "temp"
-set NPM_CONFIG_PREFIX /Users/philippe/.npm-global
+set -x PATH ~/.npm-global/bin $PATH
 
 function setpath
   set -x PATH $JAVA_HOME/bin ~/tools/apache-ant/bin /opt/local/bin /opt/local/sbin $PATH
