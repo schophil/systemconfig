@@ -51,9 +51,13 @@ let g:ctrlp_max_files=20000
 let g:ctrlp_custom_ignore='.git$|\tmp$'
 let g:ctrlp_root_markers = ['ivy.xml']
 
+" Key mappings
+let mapleader = ","
 " Remap keys to switch buffers faster
 nnoremap <C-S> :bprevious<CR>
 nnoremap <C-D> :bnext<CR>
+" Toggle NERDTree
+nnoremap <Leader>t :NERDTree<CR> 
 
 
 "let g:ctrlp_working_path_mode = 'ra'
