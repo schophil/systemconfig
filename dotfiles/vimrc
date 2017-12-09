@@ -5,7 +5,8 @@ set nocompatible
 " activate pathogen plugin loader
 execute pathogen#infect()
 
-colorscheme slate
+set t_Co=256
+colorscheme pablo
 
 "set statusline+=%{fugitive#statusline()}
 set laststatus=2
