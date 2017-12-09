@@ -1112,6 +1112,41 @@
       "genre": 3,
       "location": "R5",
       "id": 1512812224
+    },
+    {
+      "title": "AFSLAG OSDORP",
+      "artist": "OSDORP POSSE",
+      "genre": 4,
+      "location": "H1",
+      "id": 1512813287
+    },
+    {
+      "title": "BRILJANT, HARD EN GESLEPEN",
+      "artist": "OSDORP POSSE",
+      "genre": 4,
+      "location": "H1",
+      "id": 1512813339
+    },
+    {
+      "title": "HARDKORNOGRAPHY",
+      "artist": "WHITE WOLF",
+      "genre": 4,
+      "location": "H1",
+      "id": 1512813406
+    },
+    {
+      "title": "VLOEISTOF",
+      "artist": "OPGEZWOLLE",
+      "genre": 4,
+      "location": "H1",
+      "id": 1512813445
+    },
+    {
+      "title": "HONDSDOLHEID",
+      "artist": "WHITE WOLF",
+      "genre": 4,
+      "location": "H1",
+      "id": 1512813548
     }
   ],
   "artists": []
