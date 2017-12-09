@@ -1056,6 +1056,62 @@
       "genre": 3,
       "location": "R5",
       "id": 1512300242
+    },
+    {
+      "title": "SILENCE IS EASY",
+      "artist": "STARSAILOR",
+      "genre": 3,
+      "location": "R5",
+      "id": 1512811495
+    },
+    {
+      "title": "LIFE",
+      "artist": "THE CARDIGANS",
+      "genre": 3,
+      "location": "R5",
+      "id": 1512811564
+    },
+    {
+      "title": "BEST KEPT SECRETS - THE BEST OF LAMB 1996-2004",
+      "artist": "LAMB",
+      "genre": 3,
+      "location": "R5",
+      "id": 1512811689
+    },
+    {
+      "title": "BLACK HOLES & REVELATIONS",
+      "artist": "MUSE",
+      "genre": 3,
+      "location": "R5",
+      "id": 1512811781
+    },
+    {
+      "title": "MEZZANINE",
+      "artist": "MASSIVE ATTACK",
+      "genre": 3,
+      "location": "R5",
+      "id": 1512811852
+    },
+    {
+      "title": "THE SAILOR NOT THE SEA",
+      "artist": "OZARK HENRY",
+      "genre": 3,
+      "location": "R5",
+      "id": 1512811927
+    },
+    {
+      "title": "M FOR MEANS AND L FOR LOVE",
+      "artist": "MINTZKOV",
+      "genre": 3,
+      "location": "R5",
+      "id": 1512812175
+    },
+    {
+      "title": "GISH",
+      "artist": "THE SMASHING PUMPKINS",
+      "genre": 3,
+      "location": "R5",
+      "id": 1512812224
     }
   ],
   "artists": []
