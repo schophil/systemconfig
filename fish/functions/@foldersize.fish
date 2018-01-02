@@ -1,3 +1,3 @@
 function @foldersize
-  du -ch $argv
+  du -chs $argv
 end
