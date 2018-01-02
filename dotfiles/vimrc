@@ -6,7 +6,12 @@ set nocompatible
 execute pathogen#infect()
 
 set t_Co=256
-colorscheme pablo
+if $TERM ==# "xterm-256color"
+	set termguicolors
+end
+"let g:libertine_Midnight = 1
+let g:libertine_Sunset = 1
+colorscheme libertine
 
 "set statusline+=%{fugitive#statusline()}
 set laststatus=2
@@ -58,7 +63,7 @@ let mapleader = ","
 nnoremap <C-S> :bprevious<CR>
 nnoremap <C-D> :bnext<CR>
 " Toggle NERDTree
-nnoremap <Leader>t :NERDTree<CR> 
+nnoremap <Leader>t :NERDTreeToggle<CR> 
 
 
 "let g:ctrlp_working_path_mode = 'ra'
