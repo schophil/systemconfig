@@ -7,7 +7,6 @@
 
 strict-ssl=false
 prefix=/Users/philippe/.npm-global
-//registry.npmjs.org/:_authToken=a6e68e49-bfae-4e8c-a8f8-3425a328a4a4
 
 ;;;;
 ; all options with default values
