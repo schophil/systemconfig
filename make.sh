@@ -1,10 +1,11 @@
 #!/bin/sh
 
-mkdir -p ~/config/fish
-ln -s -f ~/config/fish/config.fish ./fish/config.fish
-ln -s -f ~/config/fish/functions ./fish/functions
-
 base=`pwd`
+
+mkdir -p ~/.config/fish
+ln -s -f $base/fish/config.fish ~/.config/fish/config.fish 
+ln -s -f $base/fish/functions ~/.config/fish/functions 
+
 
 for file in dotfiles/*
 do
