@@ -65,6 +65,7 @@ nnoremap <C-D> :bnext<CR>
 " Toggle NERDTree
 nnoremap <Leader>t :NERDTreeToggle<CR> 
 
+au BufReadPost *.conf set syntax=conf
 
 "let g:ctrlp_working_path_mode = 'ra'
 
