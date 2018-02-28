@@ -65,6 +65,7 @@ nnoremap <C-D> :bnext<CR>
 " Toggle NERDTree
 nnoremap <Leader>t :NERDTreeToggle<CR> 
 nnoremap <Leader>s :SyntasticToggleMode<CR>
+vnoremap <Leader>k :w !pbcopy<CR><CR>
 
 au BufReadPost *.conf set syntax=conf
 
