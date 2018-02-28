@@ -1,3 +1,3 @@
 function @edit
-  open -a atom $argv
+  open -a Visual\ Studio\ Code $argv
 end
