@@ -6,7 +6,7 @@ function setpath
 end
 
 function @java8
-  set -x JAVA_HOME /Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home
+  set -x JAVA_HOME /Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home
   set -x PATH $JAVA_HOME/bin ~/tools/apache-ant/bin /opt/local/bin /opt/local/sbin $PATH
 end
 
