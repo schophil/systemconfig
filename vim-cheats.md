@@ -5,8 +5,11 @@
 _From normal mode_
 
 **0** Move to the beginning of a line.
+
 **$** Move to the end of a line.
+
 **gg** Move to the top of the file.
+
 **G** Move to the end of the file.
 
 ## Editing
