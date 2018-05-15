@@ -55,7 +55,7 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 
 " Ctrl-p settings
 let g:ctrlp_max_files=20000
-let g:ctrlp_custom_ignore='.git$|\tmp$|node_modules$|target$|dist$'
+let g:ctrlp_custom_ignore='.*(\.git\|\.hg\|\.svn\|target\|node_modules)$'
 let g:ctrlp_root_markers = ['ivy.xml']
 
 " Key mappings
