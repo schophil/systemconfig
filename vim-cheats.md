@@ -12,13 +12,34 @@ _From normal mode_
 
 **G** Move to the end of the file.
 
+## Navigation
+
+_From normal mode_
+
+**m[letter]** Mark the current spot as _letter_.
+
+**`[letter]** Go to the spot marked _letter_.
+
 ## Editing
 
 _From normal mode_
 
+**cw** Change from the cursor until the end of the word.
+
+**caw** Change the word under the cursor and trailing spaces.
+
+**c$** Change from the cursor to the end of the line.
+
 **a** Add text after the character under the cursor.
+
+**A** Add text at the end of the current line.
+
+**o** Start editing a new line _under_ the current one.
+
+**O** Start editing a new line _above_ the current one.
 
 ## Search & replace
 
 **&#42;** Search the word currently under the cursor.
 
+**:noh** Stop highlighting the current search results.
