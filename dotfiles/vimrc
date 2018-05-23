@@ -1,3 +1,6 @@
+" VIM configuration
+" Author: Philippe Schottey
+
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
@@ -5,72 +8,103 @@ set nocompatible
 " activate pathogen plugin loader
 execute pathogen#infect()
 
-set t_Co=256
-if $TERM ==# "xterm-256color"
-	set termguicolors
-end
-"let g:libertine_Midnight = 1
-"let g:libertine_Sunset = 1
-"colorscheme libertine
+" set preferred colors
 colorscheme monokai
 
-"set statusline+=%{fugitive#statusline()}
-set laststatus=2
-
+" General settings
+" 
 " allow backspacing over everything in insert mode
-set backspace=indent,eol,start
+set backspace=indent,eol,start 
+" keep a backup file (restore to previous version)
+set backup		
+" keep an undo file (undo changes after closing)
+set undofile		
+" keep 50 lines of command line history
+set history=50		
+" show the cursor position all the time
+set ruler		
+" display incomplete commands
+set showcmd		
+" do incremental searching
+set incsearch		
+" show line numbers in gutter
+set nu			
+" show relative numberinf
+set relativenumber	
+" activate syntax highlighting
+syntax on		
+" highlight search results
+set hlsearch		
+" automatically indent
+set smartindent		
 
-set backup		" keep a backup file (restore to previous version)
-set undofile		" keep an undo file (undo changes after closing)
-set history=50		" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
-set nu			" show line numbers in gutter
-set relativenumber	" show relative numberinf
-syntax on		" activate syntax highlighting
-set hlsearch		" highlight search results
-
-" syntastic settings
+" Plugin syntastic settings
+"
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+" Plugin vim-airlin settings
+"
+" Color theme for the airline bar
 let g:airline_theme='cool'
-
-" highlighting the cursor line
-"set cursorline
-"hi cursorline cterm=none
-"hi cursorlinenr ctermfg=red
-"hi cursorim guifg=#192224 guibg=#536991 guisp=#536991 gui=NONE ctermfg=235 ctermbg=60 cterm=NONE
-
-" Airling settings
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
 
-" Ctrl-p settings
+" Plugin ctrl-p settings
+"
 let g:ctrlp_max_files=20000
 let g:ctrlp_custom_ignore='.*(\.git\|\.hg\|\.svn\|target\|node_modules)$'
 let g:ctrlp_root_markers = ['ivy.xml']
 
 " Key mappings
+"
+" Remap the leader to ,
 let mapleader = ","
-" Remap keys to switch buffers faster
+" Remap keys to switch buffers faster:
+" Go to previous buffer
 nnoremap <C-S> :bprevious<CR>
+" Go to next buffer
 nnoremap <C-D> :bnext<CR>
 " Toggle NERDTree
 nnoremap <Leader>t :NERDTreeToggle<CR> 
+" Toggle syntastic validation/output
 nnoremap <Leader>s :SyntasticToggleMode<CR>
+" Copy to the macOS registry
 vnoremap <Leader>k :w !pbcopy<CR><CR>
 
 au BufReadPost *.conf set syntax=conf
 
-"let g:ctrlp_working_path_mode = 'ra'
+" Java tools
+" Adds a class annotatic
+function! JavaAnnotateClass(annotation)
+  execute "normal mmgg/class\rO@" . a:annotation . "\<Esc>`m"
+endfunction
+" Adds a property annotation
+function! JavaAnnotateProperty(annotation)
+  execute "normal mmO@" . a:annotation . "\<Esc>`m"
+endfunction
+" Adds the @Column annotation to the current attribute.
+function! JavaEntityColumn() 
+  :call JavaAnnotateProperty('Column')
+endfunction
+" Adds the @Id annotation to the current attribute.
+function! JavaEntityId() 
+  :call JavaAnnotateProperty('Id')
+endfunction
+" Adds the @Entity annotation to the current class.
+function! JavaEntityClass() 
+  :call JavaAnnotateClass('Entity')
+endfunction
+" Keymappigs for the Java tools
+nnoremap <Leader>jpc :call JavaEntityColumn()<cr>
+nnoremap <Leader>jpi :call JavaEntityId()<cr>
+nnoremap <Leader>jpe :call JavaEntityClass()<cr>
+nnoremap <Leader>jld :call JavaAnnotateClass('Data')<cr>
 
