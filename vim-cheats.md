@@ -10,7 +10,17 @@ _From normal mode_
 
 **gg** Move to the top of the file.
 
+**g** Move to the top of the file.
+
 **G** Move to the end of the file.
+
+**L** Move to the last line of the screen.
+
+**M** Move to the middle line of the screen.
+
+**zz** Puts the current line in the middle of the screen.
+
+**zt** Puts the current line on the top of the screen.
 
 ## Navigation
 
