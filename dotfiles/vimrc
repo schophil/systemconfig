@@ -1,6 +1,8 @@
 " VIM configuration
 " Author: Philippe Schottey
 
+set t_Co=256
+
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
@@ -52,17 +54,26 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" Only check synatax on write. This was mostly done to allow switching buffers
+" faster when developping in Java. 
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 1
+" Settings for java
+let g:syntastic_java_checkers=['javac']
+" Use a file named syntastic_javac_config to determine the classpath to use
+let g:syntastic_java_javac_config_file_enabled = 1
 
-" Plugin vim-airlin settings
+" Plugin vim-airline settings
 "
 " Color theme for the airline bar
-let g:airline_theme='cool'
+let g:airline_theme = 'cool'
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
+"let g:airline_left_sep = '>'
+"let g:airline_right_sep = '<'
+"let g:airline_powerline_fonts = 1
 
 " Plugin ctrl-p settings
 "
@@ -89,13 +100,16 @@ vnoremap <Leader>k :w !pbcopy<CR><CR>
 au BufReadPost *.conf set syntax=conf
 
 " Java tools
+function! JavaImport(spec)
+  execute "normal mmgg/import \rOimport " . a:spec . ";\<Esc>`m"
+endfunction
 " Adds a class annotatic
 function! JavaAnnotateClass(annotation)
   execute "normal mmgg/class\rO@" . a:annotation . "\<Esc>`m"
 endfunction
 " Adds a property annotation
 function! JavaAnnotateProperty(annotation)
-  execute "normal mmO@" . a:annotation . "\<Esc>`m"
+  execute "normal O@" . a:annotation . "\<Esc>j"
 endfunction
 " Adds the @Column annotation to the current attribute.
 function! JavaEntityColumn() 
@@ -104,6 +118,7 @@ endfunction
 " Adds the @Id annotation to the current attribute.
 function! JavaEntityId() 
   call JavaAnnotateProperty('Id')
+  call JavaAnnotateProperty('GeneratedValue')
 endfunction
 " Adds the @Entity annotation to the current class.
 function! JavaEntityClass() 
