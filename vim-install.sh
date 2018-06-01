@@ -17,6 +17,7 @@ git clone https://github.com/tpope/vim-fugitive.git ~/.vim/bundle/vim-fugitive
 git clone https://github.com/vim-airline/vim-airline-themes ~/.vim/bundle/vim-airline-themes
 git clone https://github.com/dag/vim-fish.git ~/.vim/bundle/vim-fish
 git clone https://github.com/editorconfig/editorconfig-vim.git ~/.vim/bundle/editorconfig-vim
+git clone https://github.com/kshenoy/vim-signature.git ~/.vim/bundle/vim-signature
 
 # Installing the color theme
 echo Installing color theme...
