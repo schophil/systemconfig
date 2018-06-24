@@ -32,9 +32,9 @@ set showcmd
 set incsearch		
 " show line numbers in gutter
 set nu			
-" show relative numberinf
+" show relative line numbers
 set relativenumber	
-" activate syntax highlighting
+" activate syntax highlighting - TODO: Isn't this handled by the colorscheme?
 syntax on		
 " highlight search results
 set hlsearch		
