@@ -95,6 +95,9 @@ nnoremap <C-c> :bnext<CR>
 nnoremap <Leader>t :NERDTreeToggle<CR> 
 " Toggle syntastic validation/output
 nnoremap <Leader>s :SyntasticToggleMode<CR>
+" Mappings to resize panes 
+nnoremap <Leader>ss :vertical resize -4<CR>
+nnoremap <Leader>ww :vertical resize +4<CR>
 " Copy to the macOS registry
 vnoremap <Leader>k :w !pbcopy<CR><CR>
 
