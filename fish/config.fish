@@ -21,8 +21,8 @@ function @java8
   set -x PATH $JAVA_HOME/bin $PATH
 end
 
-function @java9
-  set -x JAVA_HOME /Library/Java/JavaVirtualMachines/jdk-9.jdk/Contents/Home
+function @java10
+  set -x JAVA_HOME /Library/Java/JavaVirtualMachines/jdk-10.0.1.jdk/Contents/Home
   set -x PATH $JAVA_HOME/bin $PATH
 end
 
