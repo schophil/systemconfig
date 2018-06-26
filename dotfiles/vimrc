@@ -101,6 +101,14 @@ nnoremap <Leader>ww :vertical resize +4<CR>
 " Copy to the macOS registry
 vnoremap <Leader>k :w !pbcopy<CR><CR>
 
+" Snipmate plugin
+"
+let g:snipMate = {}
+" Force parse version to 1
+let g:snipMate.snippet_version = 1
+
+" File types
+"
 au BufReadPost *.conf set syntax=conf
 
 " Java tools
