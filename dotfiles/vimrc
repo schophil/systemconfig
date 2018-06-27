@@ -79,8 +79,8 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 " Plugin ctrl-p settings
 "
 let g:ctrlp_max_files=20000
-let g:ctrlp_custom_ignore='.*(\.git\|\.hg\|\.svn\|\~\|target\|node_modules)$'
-let g:ctrlp_root_markers = ['ivy.xml']
+let g:ctrlp_custom_ignore='.*(\.git\|\.hg\|\.svn\|\~\|target\|node_modules\|build\|\.class\|bin)$'
+let g:ctrlp_root_markers = ['ivy.xml', 'build.gradle']
 
 " Key mappings
 "
@@ -100,6 +100,8 @@ nnoremap <Leader>ss :vertical resize -4<CR>
 nnoremap <Leader>ww :vertical resize +4<CR>
 " Copy to the macOS registry
 vnoremap <Leader>k :w !pbcopy<CR><CR>
+" Remap following links in help (TODO: Is this only for help?)
+nnoremap <Leader>f <C-]>
 
 " Snipmate plugin
 "
