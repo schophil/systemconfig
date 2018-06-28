@@ -11,5 +11,5 @@ for plugin in (cat ./vim-plugins.txt)
   else
     eval "git clone $plugin"
   end
-  echo done!
 end
+echo done!
