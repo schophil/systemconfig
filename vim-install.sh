@@ -18,6 +18,7 @@ git clone https://github.com/vim-airline/vim-airline-themes ~/.vim/bundle/vim-ai
 git clone https://github.com/dag/vim-fish.git ~/.vim/bundle/vim-fish
 git clone https://github.com/editorconfig/editorconfig-vim.git ~/.vim/bundle/editorconfig-vim
 git clone https://github.com/kshenoy/vim-signature.git ~/.vim/bundle/vim-signature
+git clone https://github.com/tomasiser/vim-code-dark.git ~/vim/bundle/vim-code-dark
 
 # Installing the color theme
 echo Installing color theme...
