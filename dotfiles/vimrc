@@ -1,17 +1,15 @@
 " File: vimrc
 " Author: Philippe Schottey
 "
-
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
-
-set t_Co=256
 
 " activate pathogen plugin loader
 execute pathogen#infect()
 
 " set preferred colors
+set t_Co=256
 set termguicolors
 "colorscheme monokai
 colorscheme codedark
