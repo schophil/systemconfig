@@ -12,3 +12,4 @@ https://github.com/tomtom/tlib_vim.git ~/.vim/bundle/tlib_vim
 https://github.com/MarcWeber/vim-addon-mw-utils.git ~/.vim/bundle/vim-addon-mw-utils
 https://github.com/garbas/vim-snipmate.git ~/.vim/bundle/vim-snipmate
 https://github.com/tomasiser/vim-code-dark.git ~/.vim/bundle/vim-code-dark
+https://github.com/archSeer/colibri.vim.git ~/.vim/bundle/colibri

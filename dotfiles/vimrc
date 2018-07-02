@@ -11,8 +11,10 @@ execute pathogen#infect()
 " set preferred colors
 set t_Co=256
 set termguicolors
+set background=dark
+colorscheme colibri
 "colorscheme monokai
-colorscheme codedark
+"colorscheme codedark
 
 " General settings
 " 
@@ -67,8 +69,8 @@ let g:syntastic_java_javac_config_file_enabled = 1
 " Plugin vim-airline settings
 "
 " Color theme for the airline bar
-"let g:airline_theme = 'cool'
-let g:airline_theme = 'codedark'
+let g:airline_theme = 'dark'
+"let g:airline_theme = 'codedark'
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
