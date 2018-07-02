@@ -101,8 +101,6 @@ nnoremap <Leader>ss :vertical resize -4<CR>
 nnoremap <Leader>ww :vertical resize +4<CR>
 " Copy to the macOS registry
 vnoremap <Leader>k :w !pbcopy<CR><CR>
-" Remap following links in help (TODO: Is this only for help?)
-nnoremap <Leader>f <C-]>
 
 " Snipmate plugin
 "
@@ -112,7 +110,7 @@ let g:snipMate.snippet_version = 1
 
 " File types
 "
-au BufReadPost *.conf set syntax=conf
+autocmd BufReadPost *.conf set syntax=conf
 
 " Java tools
 function! JavaImport(spec)
