@@ -13,3 +13,4 @@ https://github.com/garbas/vim-snipmate.git ~/.vim/bundle/vim-snipmate
 https://github.com/archSeer/colibri.vim.git ~/.vim/bundle/colibri
 https://github.com/tpope/vim-surround.git ~/.vim/bundle/vim-surround
 https://github.com/tpope/vim-commentary.git ~/.vim/bundle/vim-commentary
+https://github.com/kana/vim-textobj-user.git ~/.vim/bundle/vim-textobj-user
