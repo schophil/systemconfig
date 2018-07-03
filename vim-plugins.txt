@@ -13,3 +13,4 @@ https://github.com/MarcWeber/vim-addon-mw-utils.git ~/.vim/bundle/vim-addon-mw-u
 https://github.com/garbas/vim-snipmate.git ~/.vim/bundle/vim-snipmate
 https://github.com/tomasiser/vim-code-dark.git ~/.vim/bundle/vim-code-dark
 https://github.com/archSeer/colibri.vim.git ~/.vim/bundle/colibri
+https://github.com/tpope/vim-surround.git ~/.vim/bundle/vim-surround
