@@ -10,7 +10,8 @@ https://github.com/kshenoy/vim-signature.git ~/.vim/bundle/vim-signature
 https://github.com/tomtom/tlib_vim.git ~/.vim/bundle/tlib_vim
 https://github.com/MarcWeber/vim-addon-mw-utils.git ~/.vim/bundle/vim-addon-mw-utils
 https://github.com/garbas/vim-snipmate.git ~/.vim/bundle/vim-snipmate
-https://github.com/archSeer/colibri.vim.git ~/.vim/bundle/colibri
 https://github.com/tpope/vim-surround.git ~/.vim/bundle/vim-surround
 https://github.com/tpope/vim-commentary.git ~/.vim/bundle/vim-commentary
 https://github.com/kana/vim-textobj-user.git ~/.vim/bundle/vim-textobj-user
+https://github.com/dracula/vim.git ~/.vim/bundle/dracula-theme
+https://github.com/liuchengxu/space-vim-dark.git ~/.vim/bundle/space-vim-dark

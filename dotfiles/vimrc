@@ -12,9 +12,8 @@ execute pathogen#infect()
 set t_Co=256
 set termguicolors
 set background=dark
-colorscheme colibri
-"colorscheme monokai
-"colorscheme codedark
+" colorscheme dracula
+colorscheme space-vim-dark
 
 " General settings
 " 
@@ -69,8 +68,7 @@ let g:syntastic_java_javac_config_file_enabled = 1
 " Plugin vim-airline settings
 "
 " Color theme for the airline bar
-let g:airline_theme = 'soda'
-"let g:airline_theme = 'codedark'
+let g:airline_theme = 'term'
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
@@ -146,4 +144,3 @@ nnoremap <Leader>jpe :call JavaEntityClass()<cr>
 nnoremap <Leader>jld :call JavaAnnotateClass('Data')<cr>
 nnoremap <Leader>jss :call JavaAnnotateClass('Service')<cr>
 nnoremap <Leader>jsw :call JavaAnnotateProperty('Autowired')<cr>
-
