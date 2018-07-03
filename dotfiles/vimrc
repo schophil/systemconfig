@@ -69,7 +69,7 @@ let g:syntastic_java_javac_config_file_enabled = 1
 " Plugin vim-airline settings
 "
 " Color theme for the airline bar
-let g:airline_theme = 'dark'
+let g:airline_theme = 'soda'
 "let g:airline_theme = 'codedark'
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
