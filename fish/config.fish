@@ -2,6 +2,10 @@ set -x LANG "en_US.UTF-8"
 set -x LC_ALL "en_US.UTF-8"
 set -x JAVA_HOME "temp"
 
+alias ssh /usr/bin/ssh
+alias scp /usr/bin/scp
+alias ssh-add /usr/bin/ssh-add
+
 if test -d ~/.npm-global/bin
 	set -x PATH ~/.npm-global/bin $PATH
 end
