@@ -10,8 +10,6 @@ _From normal mode_
 
 **gg** Move to the top of the file.
 
-**g** Move to the top of the file.
-
 **G** Move to the end of the file.
 
 **L** Move to the last line of the screen.
@@ -29,6 +27,8 @@ _From normal mode_
 **m[letter]** Mark the current spot as _letter_.
 
 **`[letter]** Go to the spot marked _letter_.
+
+**C-$** Jump to tag/definition.
 
 ## Editing
 
