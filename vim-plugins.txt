@@ -15,3 +15,4 @@ https://github.com/tpope/vim-commentary.git ~/.vim/bundle/vim-commentary
 https://github.com/kana/vim-textobj-user.git ~/.vim/bundle/vim-textobj-user
 https://github.com/dracula/vim.git ~/.vim/bundle/dracula-theme
 https://github.com/liuchengxu/space-vim-dark.git ~/.vim/bundle/space-vim-dark
+https://github.com/mustache/vim-mustache-handlebars.git ~/.vim/bundle/mustache
