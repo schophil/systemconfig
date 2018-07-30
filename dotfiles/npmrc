@@ -7,6 +7,7 @@
 
 strict-ssl=false
 prefix=/Users/philippe/.npm-global
+editor=vim
 
 ;;;;
 ; all options with default values
