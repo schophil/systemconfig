@@ -10,10 +10,16 @@ execute pathogen#infect()
 
 " set preferred colors
 set t_Co=256
-set termguicolors
-set background=dark
+" set termguicolors
+" set background=dark
 " colorscheme dracula
-colorscheme space-vim-dark
+" colorscheme space-vim-dark
+colorscheme pablo
+syntax on		
+set cursorline
+hi CursorLineNr cterm=none ctermbg=235 ctermfg=red
+hi CursorLine cterm=none ctermbg=235
+hi LineNr cterm=none ctermfg=grey
 
 " General settings
 " 
@@ -35,8 +41,6 @@ set incsearch
 set nu			
 " show relative line numbers
 set relativenumber	
-" activate syntax highlighting - TODO: Isn't this handled by the colorscheme?
-syntax on		
 " highlight search results
 set hlsearch		
 
