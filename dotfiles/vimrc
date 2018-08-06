@@ -19,7 +19,7 @@ syntax on
 set cursorline
 hi CursorLineNr cterm=none ctermbg=235 ctermfg=lightgreen
 hi CursorLine cterm=none ctermbg=235
-hi LineNr cterm=none ctermfg=grey
+hi LineNr cterm=none ctermfg=grey ctermbg=238
 
 " General settings
 " 
