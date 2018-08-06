@@ -107,6 +107,8 @@ nnoremap <Leader>ss :vertical resize -4<CR>
 nnoremap <Leader>ww :vertical resize +4<CR>
 " Copy to the macOS registry
 vnoremap <Leader>k :w !pbcopy<CR><CR>
+" Delete line where cursor is
+inoremap <C-k> <Esc>lc$
 
 " Snipmate plugin
 "
