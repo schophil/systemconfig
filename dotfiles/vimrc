@@ -17,7 +17,7 @@ set t_Co=256
 colorscheme pablo
 syntax on		
 set cursorline
-hi CursorLineNr cterm=none ctermbg=235 ctermfg=red
+hi CursorLineNr cterm=none ctermbg=235 ctermfg=lightgreen
 hi CursorLine cterm=none ctermbg=235
 hi LineNr cterm=none ctermfg=grey
 
