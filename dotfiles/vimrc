@@ -20,6 +20,7 @@ set cursorline
 hi CursorLineNr cterm=none ctermbg=235 ctermfg=lightgreen
 hi CursorLine cterm=none ctermbg=235
 hi LineNr cterm=none ctermfg=grey ctermbg=238
+hi PmenuSel ctermfg=white 
 
 " General settings
 " 
@@ -86,6 +87,7 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 let g:ctrlp_max_files=20000
 let g:ctrlp_custom_ignore='.*(\.git\|\.hg\|\.svn\|\~\|target\|node_modules\|build\|\.class\|bin)$'
 let g:ctrlp_root_markers = ['ivy.xml', 'build.gradle']
+let g:ctrlp_show_hidden = 1
 
 " Key mappings
 "
