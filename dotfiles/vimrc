@@ -100,10 +100,8 @@ let mapleader = ","
 " Remap keys to switch buffers faster:
 " Go to previous buffer
 nnoremap <C-s> :bprevious<CR>
-nnoremap æ :bprevious<CR>
 " Go to next buffer
 nnoremap <C-c> :bnext<CR>
-nnoremap Â :bnext<CR>
 " Toggle NERDTree
 nnoremap <Leader>t :NERDTreeToggle<CR> 
 " Toggle syntastic validation/output
@@ -113,7 +111,7 @@ nnoremap <Leader>ss :vertical resize -4<CR>
 nnoremap <Leader>ww :vertical resize +4<CR>
 " Copy to the macOS registry
 vnoremap <Leader>k :w !pbcopy<CR><CR>
-" Delete line where cursor is
+" Delete line from  where cursor is
 inoremap <C-d> <Esc>lc$
 
 " Snipmate plugin
