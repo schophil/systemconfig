@@ -26,7 +26,7 @@ hi MatchParen ctermfg=black
 " General settings
 " 
 " allow backspacing over everything in insert mode
-set backspace=indent,eol,start 
+set backspace=indent,eol,start
 " keep a backup file (restore to previous version)
 set backup
 " keep an undo file (undo changes after closing)
@@ -113,6 +113,15 @@ nnoremap <Leader>ww :vertical resize +4<CR>
 vnoremap <Leader>k :w !pbcopy<CR><CR>
 " Delete line from  where cursor is
 inoremap <C-d> <Esc>lc$
+map <Down> <Nop>
+map <Up> <Nop>
+map <Left> <Nop>
+map <Right> <Nop>
+imap <Down> <Nop>
+imap <Up> <Nop>
+imap <Left> <Nop>
+imap <Right> <Nop>
+
 
 " Snipmate plugin
 "
