@@ -77,7 +77,7 @@ let g:syntastic_java_javac_config_file_enabled = 1
 " Plugin vim-airline settings
 "
 " Color theme for the airline bar
-let g:airline_theme = 'kolor'
+let g:airline_theme = 'onedark'
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
