@@ -20,8 +20,8 @@ set cursorline
 hi CursorLineNr cterm=none ctermbg=235 ctermfg=lightgreen
 hi CursorLine cterm=none ctermbg=235
 hi LineNr cterm=none ctermfg=grey ctermbg=238
-hi PmenuSel ctermfg=white 
-hi MatchParen ctermfg=black 
+hi PmenuSel ctermfg=white
+hi MatchParen ctermfg=black
 
 " General settings
 " 
@@ -123,4 +123,3 @@ let g:snipMate.snippet_version = 1
 " File types
 "
 autocmd BufReadPost *.conf set syntax=conf
-
