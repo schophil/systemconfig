@@ -33,3 +33,6 @@ function @java10
 end
 
 @java8
+
+fish_vi_key_bindings
+
