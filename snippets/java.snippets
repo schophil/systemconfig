@@ -1,15 +1,38 @@
+# Simple tools
 snippet print
 	System.out.println(${0});
 snippet for
 	for (${1};${2};${3}) {
 		${0:/* loop */}
 	}
-snippet div
-	<div>
-		<p>${1:content}</p>
-	</div>
-snippet restc
-	datatatatatatatat
-	public class ${1:Foo} {
+snippet package
+	package `substitute(substitute(expand('%:h'), '/', '.', 'g'), 'src.main.java.', '', '')`;
+# Methods
+snippet pm
+	public ${1:void} ${2:foo}(${3}) {
 		${0}
 	}
+# Annotations
+snippet over
+	@Override
+# Types
+snippet class
+	/**
+	 * @author `$USER`
+	 * @since `strftime("%Y-%m-%d")`
+	 */
+	public class ${1:`Filename()`} {
+		${0}
+	}
+snippet interface
+	/**
+	 * @author `$USER`
+	 * @since `strftime("%Y-%m-%d")`
+	 */
+	public interface ${1:`Filename()`} {
+		${0}
+	}
+# Spring tools
+snippet controller
+	@Controller
+	@RequestMapping(value = "{1:/url}")
