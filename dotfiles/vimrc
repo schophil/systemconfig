@@ -22,6 +22,10 @@ hi CursorLine cterm=none ctermbg=235
 hi LineNr cterm=none ctermfg=grey ctermbg=238
 hi PmenuSel ctermfg=white
 hi MatchParen ctermfg=black
+hi DiffAdd ctermfg=black ctermbg=111
+hi DiffDelete ctermfg=black ctermbg=161
+hi DiffChange ctermbg=121 ctermfg=black
+hi DiffText ctermbg=125 ctermfg=white
 
 " General settings
 " 
@@ -111,8 +115,9 @@ nnoremap <Leader>ss :vertical resize -4<CR>
 nnoremap <Leader>ww :vertical resize +4<CR>
 " Copy to the macOS registry
 vnoremap <Leader>k :w !pbcopy<CR><CR>
-" Delete line from  where cursor is
-inoremap <C-d> <Esc>lc$
+" Shortcut to edit the vimrc
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+" Deactivate the arrows
 map <Down> <Nop>
 map <Up> <Nop>
 map <Left> <Nop>
@@ -121,7 +126,6 @@ imap <Down> <Nop>
 imap <Up> <Nop>
 imap <Left> <Nop>
 imap <Right> <Nop>
-
 
 " Snipmate plugin
 "
@@ -132,3 +136,10 @@ let g:snipMate.snippet_version = 1
 " File types
 "
 autocmd BufReadPost *.conf set syntax=conf
+
+" Java oriented tools
+" Shortcut to edit the Java snippets
+augroup filetype_java
+	autocmd!
+	autocmd FileType java nnoremap <buffer> <leader>es :vsplit ~/.vim/snippets/java.snippets<cr>
+augroup end
