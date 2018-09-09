@@ -16,7 +16,7 @@ set t_Co=256
 " colorscheme space-vim-dark
 colorscheme space-vim-dark
 syntax on
-" set cursorline
+set cursorline
 " hi CursorLineNr cterm=none ctermbg=235 ctermfg=lightgreen
 " hi CursorLine cterm=none ctermbg=235
 " hi LineNr cterm=none ctermfg=grey ctermbg=238
