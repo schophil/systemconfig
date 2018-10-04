@@ -10,11 +10,6 @@ execute pathogen#infect()
 
 " set preferred colors
 set t_Co=256
-" set termguicolors
-" set background=dark
-" colorscheme dracula
-" colorscheme pablo
-" colorscheme space-vim-dark
 colorscheme monotonic
 syntax on
 set cursorline
@@ -22,16 +17,6 @@ hi CursorLineNr cterm=none ctermfg=yellow
 hi Constant cterm=none ctermfg=lightblue
 hi IncSearch cterm=none ctermbg=red
 hi MatchParen ctermfg=yellow
-" hi CursorLineNr cterm=none ctermbg=235 ctermfg=lightgreen
-" hi CursorLine cterm=none ctermbg=235
-" hi LineNr cterm=none ctermfg=grey ctermbg=238
-" hi PmenuSel ctermfg=white
-" hi MatchParen ctermfg=black
-" hi DiffAdd ctermfg=black ctermbg=111
-" hi DiffDelete ctermfg=black ctermbg=161
-" hi DiffChange ctermbg=121 ctermfg=black
-" hi DiffText ctermbg=125 ctermfg=white
-" hi Normal ctermbg=black ctermfg=white
 
 " General settings
 " 
