@@ -10,28 +10,13 @@ execute pathogen#infect()
 
 " set preferred colors
 set t_Co=256
-" set termguicolors
-" set background=dark
-" colorscheme dracula
-" colorscheme pablo
-" colorscheme space-vim-dark
 colorscheme monotonic
 syntax on
 set cursorline
 hi CursorLineNr cterm=none ctermfg=yellow
 hi Constant cterm=none ctermfg=lightblue
 hi IncSearch cterm=none ctermbg=red
-hi MatchParen ctermfg=yellow
-" hi CursorLineNr cterm=none ctermbg=235 ctermfg=lightgreen
-" hi CursorLine cterm=none ctermbg=235
-" hi LineNr cterm=none ctermfg=grey ctermbg=238
-" hi PmenuSel ctermfg=white
-" hi MatchParen ctermfg=black
-" hi DiffAdd ctermfg=black ctermbg=111
-" hi DiffDelete ctermfg=black ctermbg=161
-" hi DiffChange ctermbg=121 ctermfg=black
-" hi DiffText ctermbg=125 ctermfg=white
-" hi Normal ctermbg=black ctermfg=white
+hi MatchParen ctermfg=darkblue ctermfg=white
 
 " General settings
 " 
@@ -70,6 +55,7 @@ endif
 
 " Plugin syntastic settings
 "
+let g:syntastic_mode_map = { "mode": "passive", "active_filetypes": [], "passive_filetypes": ["java"] }
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -80,9 +66,10 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 1
 " Settings for java
-let g:syntastic_java_checkers=['javac']
+" let g:syntastic_java_checkers=['javac']
 " Use a file named syntastic_javac_config to determine the classpath to use
-let g:syntastic_java_javac_config_file_enabled = 1
+" let g:syntastic_java_javac_config_file_enabled = 1
+let g:syntastic_ignore_files = ['*.java']
 
 " Plugin vim-airline settings
 "
@@ -123,6 +110,8 @@ nnoremap <Leader>ww :vertical resize +4<CR>
 vnoremap <Leader>k :w !pbcopy<CR><CR>
 " Shortcut to edit the vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+" Shortcut to source the vimrc
+nnoremap <leader>sv :source $MYVIMRC<cr>
 " Deactivate the arrows
 map <Down> <Nop>
 map <Up> <Nop>
@@ -133,10 +122,20 @@ imap <Up> <Nop>
 imap <Left> <Nop>
 imap <Right> <Nop>
 
-" Snipmate plugin
+" Excercises
+nmap - ddp
+nnoremap _ dd2kp
+inoremap <c-u> <esc>viwUi
+" inoremap { {}<esc>i
+iabbrev @@ schophil@icloud.com
+iabbrev ps Philippe Schottey
+hi ColorColumn ctermbg=magenta
+call matchadd('ColorColumn', '\%81v', 100)
+
+" Snipmate plugin func {}
 "
 let g:snipMate = {}
-" Force parse version to 1
+" Force parse version to 1 
 let g:snipMate.snippet_version = 1
 
 " File types
