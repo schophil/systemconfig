@@ -16,7 +16,7 @@ set cursorline
 hi CursorLineNr cterm=none ctermfg=yellow
 hi Constant cterm=none ctermfg=lightblue
 hi IncSearch cterm=none ctermbg=red
-hi MatchParen ctermfg=darkblue ctermfg=white
+hi MatchParen ctermfg=darkblue ctermbg=white
 
 " General settings
 " 
