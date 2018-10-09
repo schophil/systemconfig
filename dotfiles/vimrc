@@ -118,6 +118,7 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 " Shortcut to source the vimrc
 nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <C-b> :CtrlPBuffer<cr>
+nnoremap <Leader>b :buffers<cr>:buffer 
 " Deactivate the arrows
 map <Down> <Nop>
 map <Up> <Nop>
