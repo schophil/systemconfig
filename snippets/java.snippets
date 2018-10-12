@@ -1,4 +1,8 @@
 # Simple tools
+snippet main
+	public static void main(String[] args) {
+		${0}
+	}
 snippet print
 	System.out.println(${0});
 snippet for
@@ -9,6 +13,8 @@ snippet package
 	package `substitute(substitute(substitute(expand('%:h'), '/', '.', 'g'), 'src.main.java.', '', ''), 'src.test.java.', '', '')`;
 snippet runtime
 	throw new RuntimeException(${1:e});
+snippet print
+	System.out.println(${0});
 # Methods
 snippet pm
 	public ${1:void} ${2:foo}(${3}) {
