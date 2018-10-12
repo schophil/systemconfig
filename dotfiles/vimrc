@@ -18,6 +18,9 @@ hi Constant cterm=none ctermfg=lightblue
 hi IncSearch cterm=none ctermbg=red
 hi MatchParen ctermfg=darkblue ctermbg=white
 hi StatusLine ctermfg=lightred
+" Since cursorline is on, background doesn't work on spell errors (not while
+" on the same line anyway)
+hi SpellBad ctermbg=none ctermfg=red cterm=underline
 
 " General settings
 " 
@@ -156,3 +159,8 @@ augroup filetype_java
 	autocmd FileType java nnoremap <buffer> <leader>es :vsplit ~/.vim/snippets/java.snippets<cr>
 	autocmd FileType java nnoremap <buffer> <leader>jf :normal! ma^ifinal `ama
 augroup end
+
+" Spelling
+"
+nnoremap [s (s
+inoremap <c-z> <esc>mm[s1z=`mmmi
