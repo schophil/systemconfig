@@ -1,9 +1,7 @@
 https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
-https://github.com/vim-airline/vim-airline ~/.vim/bundle/vim-airline
 https://github.com/kien/ctrlp.vim.git ~/.vim/bundle/ctrlp.vim
 https://github.com/vim-syntastic/syntastic.git ~/.vim/bundle/syntastic
 https://github.com/tpope/vim-fugitive.git ~/.vim/bundle/vim-fugitive
-https://github.com/vim-airline/vim-airline-themes ~/.vim/bundle/vim-airline-themes
 https://github.com/dag/vim-fish.git ~/.vim/bundle/vim-fish
 https://github.com/editorconfig/editorconfig-vim.git ~/.vim/bundle/editorconfig-vim
 https://github.com/kshenoy/vim-signature.git ~/.vim/bundle/vim-signature

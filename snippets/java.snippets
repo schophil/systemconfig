@@ -1,4 +1,8 @@
 # Simple tools
+snippet main
+	public static void main(String[] args) {
+		${0}
+	}
 snippet print
 	System.out.println(${0});
 snippet for
@@ -12,6 +16,8 @@ snippet path
 	FileSystems.getDefault().getPath(${0});
 snippet resource
 	String resource = ClassLoader.getSystemResource(${0}).getPath();
+snippet print
+	System.out.println(${0});
 # Methods
 snippet pm
 	public ${1:void} ${2:foo}(${3}) {

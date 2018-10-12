@@ -17,6 +17,10 @@ hi CursorLineNr cterm=none ctermfg=yellow
 hi Constant cterm=none ctermfg=lightblue
 hi IncSearch cterm=none ctermbg=red
 hi MatchParen ctermfg=darkblue ctermbg=white
+hi StatusLine ctermfg=lightred
+" Since cursorline is on, background doesn't work on spell errors (not while
+" on the same line anyway)
+hi SpellBad ctermbg=none ctermfg=red cterm=underline
 
 " General settings
 " 
@@ -44,6 +48,22 @@ set hlsearch
 set listchars=tab:>~,nbsp:_,trail:.
 set list
 
+" Set statusline
+set laststatus=2
+set statusline=(%n)\ %.20f\ %y\ [%{GetFileEncoding()}]\ [%{GetFileFormat()}]\ %m
+set statusline+=%=
+set statusline+=
+set statusline+=%c:%l\ (%L)
+set statusline+=\ %P
+
+function! GetFileEncoding()
+	return &fileencoding
+endfunction
+
+function! GetFileFormat()
+	return &fileformat
+endfunction
+
 if has("autocmd")
   " Enable file type detection.
   " Use the default filetype settings, so that mail gets 'tw' set to 72,
@@ -56,9 +76,9 @@ endif
 " Plugin syntastic settings
 "
 let g:syntastic_mode_map = { "mode": "passive", "active_filetypes": [], "passive_filetypes": ["java"] }
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 " Only check synatax on write. This was mostly done to allow switching buffers
@@ -70,18 +90,6 @@ let g:syntastic_check_on_wq = 1
 " Use a file named syntastic_javac_config to determine the classpath to use
 " let g:syntastic_java_javac_config_file_enabled = 1
 let g:syntastic_ignore_files = ['*.java']
-
-" Plugin vim-airline settings
-"
-" Color theme for the airline bar
-let g:airline_theme = 'onedark'
-" Enable the list of buffers
-let g:airline#extensions#tabline#enabled = 1
-" Show just the filename
-let g:airline#extensions#tabline#fnamemod = ':t'
-"let g:airline_left_sep = '>'
-"let g:airline_right_sep = '<'
-"let g:airline_powerline_fonts = 1
 
 " Plugin ctrl-p settings
 "
@@ -112,6 +120,8 @@ vnoremap <Leader>k :w !pbcopy<CR><CR>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 " Shortcut to source the vimrc
 nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <C-b> :CtrlPBuffer<cr>
+nnoremap <Leader>b :buffers<cr>:buffer 
 " Deactivate the arrows
 map <Down> <Nop>
 map <Up> <Nop>
@@ -123,9 +133,9 @@ imap <Left> <Nop>
 imap <Right> <Nop>
 
 " Excercises
-nmap - ddp
-nnoremap _ dd2kp
-inoremap <c-u> <esc>viwUi
+" nmap - ddp
+" nnoremap _ dd2kp
+" inoremap <c-u> <esc>viwUi
 " inoremap { {}<esc>i
 iabbrev @@ schophil@icloud.com
 iabbrev ps Philippe Schottey
@@ -149,3 +159,8 @@ augroup filetype_java
 	autocmd FileType java nnoremap <buffer> <leader>es :vsplit ~/.vim/snippets/java.snippets<cr>
 	autocmd FileType java nnoremap <buffer> <leader>jf :normal! ma^ifinal `ama
 augroup end
+
+" Spelling
+"
+nnoremap [s (s
+inoremap <c-z> <esc>mm[s1z=`mmmi
