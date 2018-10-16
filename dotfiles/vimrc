@@ -5,10 +5,10 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-" activate pathogen plugin loader
+" Activate pathogen plugin loader
 execute pathogen#infect()
 
-" set preferred colors
+" Set preferred colors
 set t_Co=256
 colorscheme monotonic
 syntax on
@@ -22,8 +22,18 @@ hi StatusLine ctermfg=lightred
 " on the same line anyway)
 hi SpellBad ctermbg=none ctermfg=red cterm=underline
 
-" General settings
-" 
+" Searching
+set ignorecase
+set smartcase
+" highlight search results
+set hlsearch
+" do incremental searching
+set incsearch
+
+" Show line numbers in gutter
+set nu
+set relativenumber
+
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 " keep a backup file (restore to previous version)
@@ -32,23 +42,14 @@ set backup
 set undofile
 " keep 50 lines of command line history
 set history=50
-" show the cursor position all the time
-set ruler
 " display incomplete commands
 set showcmd
-" do incremental searching
-set incsearch
-" show line numbers in gutter
-set nu
-" show relative line numbers
-set relativenumber
-" highlight search results
-set hlsearch
 
+" Show white space characters
 set listchars=tab:>~,nbsp:_,trail:.
 set list
 
-" Set statusline
+" Set the statusline
 set laststatus=2
 set statusline=(%n)\ %.20f\ %y\ [%{GetFileEncoding()}]\ [%{GetFileFormat()}]\ %m
 set statusline+=%=
@@ -63,6 +64,10 @@ endfunction
 function! GetFileFormat()
 	return &fileformat
 endfunction
+
+" Highlight charecters that go over de 80th column
+hi ColorColumn ctermbg=magenta
+call matchadd('ColorColumn', '\%81v', 100)
 
 if has("autocmd")
   " Enable file type detection.
@@ -115,12 +120,16 @@ nnoremap <Leader>s :SyntasticToggleMode<CR>
 nnoremap <Leader>ss :vertical resize -4<CR>
 nnoremap <Leader>ww :vertical resize +4<CR>
 " Copy to the macOS registry
+" TODO: Doesn't work very well - find another solution
 vnoremap <Leader>k :w !pbcopy<CR><CR>
 " Shortcut to edit the vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 " Shortcut to source the vimrc
 nnoremap <leader>sv :source $MYVIMRC<cr>
+" Shorcut to search in buffers with Ctrlp
 nnoremap <C-b> :CtrlPBuffer<cr>
+" Shortcut to switch to a buffer. This will show the list of buffers and start
+" the :buffer command. You only need to type a buffer nummer and press <cr>.
 nnoremap <Leader>b :buffers<cr>:buffer 
 " Deactivate the arrows
 map <Down> <Nop>
@@ -131,16 +140,12 @@ imap <Down> <Nop>
 imap <Up> <Nop>
 imap <Left> <Nop>
 imap <Right> <Nop>
+" Remove highlighted search results
+nnoremap <BS> :noh<cr>
 
-" Excercises
-" nmap - ddp
-" nnoremap _ dd2kp
-" inoremap <c-u> <esc>viwUi
-" inoremap { {}<esc>i
+" Abbreviations
 iabbrev @@ schophil@icloud.com
 iabbrev ps Philippe Schottey
-hi ColorColumn ctermbg=magenta
-call matchadd('ColorColumn', '\%81v', 100)
 
 " Snipmate plugin func {}
 "
@@ -156,11 +161,12 @@ autocmd BufReadPost *.conf set syntax=conf
 " Shortcut to edit the Java snippets
 augroup filetype_java
 	autocmd!
+	" Shortcut to edit the snippets
 	autocmd FileType java nnoremap <buffer> <leader>es :vsplit ~/.vim/snippets/java.snippets<cr>
 	autocmd FileType java nnoremap <buffer> <leader>jf :normal! ma^ifinal `ama
 augroup end
 
 " Spelling
 "
+set spell
 nnoremap [s (s
-inoremap <c-z> <esc>mm[s1z=`mmmi
