@@ -17,8 +17,8 @@ hi CursorLineNr cterm=none ctermfg=yellow
 hi Constant cterm=none ctermfg=lightblue
 hi IncSearch cterm=none ctermbg=red
 hi MatchParen ctermfg=darkblue ctermbg=white
-hi StatusLine ctermfg=lightred
-" Since cursorline is on, background doesn't work on spell errors (not while
+hi StatusLine ctermfg=lightgreen
+" Since cursor line is on, background doesn't work on spell errors (not while
 " on the same line anyway)
 hi SpellBad ctermbg=none ctermfg=red cterm=underline
 
@@ -65,7 +65,7 @@ function! GetFileFormat()
 	return &fileformat
 endfunction
 
-" Highlight charecters that go over de 80th column
+" Highlight characters that go over de 80th column
 hi ColorColumn ctermbg=magenta
 call matchadd('ColorColumn', '\%81v', 100)
 
@@ -87,7 +87,7 @@ let g:syntastic_mode_map = { "mode": "passive", "active_filetypes": [], "passive
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 " Only check synatax on write. This was mostly done to allow switching buffers
-" faster when developping in Java. 
+" faster when developing in Java. 
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 1
 " Settings for java
@@ -126,10 +126,10 @@ vnoremap <Leader>k :w !pbcopy<CR><CR>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 " Shortcut to source the vimrc
 nnoremap <leader>sv :source $MYVIMRC<cr>
-" Shorcut to search in buffers with Ctrlp
+" Shortcut to search in buffers with Ctrlp
 nnoremap <C-b> :CtrlPBuffer<cr>
 " Shortcut to switch to a buffer. This will show the list of buffers and start
-" the :buffer command. You only need to type a buffer nummer and press <cr>.
+" the :buffer command. You only need to type a buffer number and press <cr>.
 nnoremap <Leader>b :buffers<cr>:buffer 
 " Deactivate the arrows
 map <Down> <Nop>
