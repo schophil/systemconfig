@@ -142,6 +142,8 @@ imap <Left> <Nop>
 imap <Right> <Nop>
 " Remove highlighted search results
 nnoremap <BS> :noh<cr>
+" Reformat file
+nnoremap <leader>f :normal! ggVG=<cr>
 
 " Abbreviations
 iabbrev @@ schophil@icloud.com
