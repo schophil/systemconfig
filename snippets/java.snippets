@@ -6,13 +6,16 @@ snippet main
 snippet print
 	System.out.println(${0});
 snippet for
-	for (${1};${2};${3}) {
-		${0:/* loop */}
+	for (${0}) {
 	}
 snippet package
 	package `substitute(substitute(substitute(expand('%:h'), '/', '.', 'g'), 'src.main.java.', '', ''), 'src.test.java.', '', '')`;
 snippet runtime
 	throw new RuntimeException(${1:e});
+snippet path
+	FileSystems.getDefault().getPath(${0});
+snippet resource
+	String resource = ClassLoader.getSystemResource(${0}).getPath();
 snippet print
 	System.out.println(${0});
 # Methods
@@ -53,3 +56,9 @@ snippet enum
 snippet controller
 	@Controller
 	@RequestMapping(value = "{1:/url}")
+# Testing tools
+snippet test
+	@Test
+	public void ${1}Test() {
+		${0}
+	}
