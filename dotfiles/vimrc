@@ -20,7 +20,7 @@ hi MatchParen ctermfg=darkblue ctermbg=white
 hi StatusLine ctermfg=lightgreen
 " Since cursor line is on, background doesn't work on spell errors (not while
 " on the same line anyway)
-hi SpellBad ctermbg=none ctermfg=red cterm=underline
+hi SpellBad ctermbg=none ctermfg=lightred cterm=underline
 
 " Searching
 set ignorecase
@@ -120,8 +120,8 @@ nnoremap <Leader>s :SyntasticToggleMode<CR>
 nnoremap <Leader>ss :vertical resize -4<CR>
 nnoremap <Leader>ww :vertical resize +4<CR>
 " Copy to the macOS registry
-" TODO: Doesn't work very well - find another solution
-vnoremap <Leader>k :w !pbcopy<CR><CR>
+vnoremap <Leader>k "*y
+nnoremap <Leader>p "*p
 " Shortcut to edit the vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 " Shortcut to source the vimrc
@@ -170,5 +170,6 @@ augroup end
 
 " Spelling
 "
-set spell
-nnoremap [s (s
+" set spell
+nnoremap (s [s
+nnoremap )s ]s
