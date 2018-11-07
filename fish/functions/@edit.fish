@@ -1,3 +1,3 @@
 function @edit
-  open -a Visual\ Studio\ Code $argv
+  open -a BBedit $argv
 end
