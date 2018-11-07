@@ -5,3 +5,5 @@
 *.swp
 emerging-Block-IPs.txt
 
+# macOS stuff
+.DS_Store
