@@ -1,0 +1,45 @@
+/**
+ * CSS file to be used with markdown-pdf.
+ */
+body {
+	font-size: 9pt;
+	margin: 0px;
+	padding: 0px;
+	text-align: justify;
+	counter-reset: c1;
+}
+
+body h1:before{
+	content: counter(c1)". ";
+	counter-increment: c1;
+}
+
+body h1{
+	counter-reset: c2;
+}
+
+body h2:before{
+	content: counter(c1)"."counter(c2)". ";
+	counter-increment: c2;
+}
+
+body h2{
+	counter-reset:c3;
+}
+
+body h3:before{
+	content: counter(c1)"."counter(c2)"."counter(c3)". ";
+	counter-increment: c3;
+}
+
+h1 {
+	font-size: 14pt;
+}
+
+h2 {
+	font-size: 11pt;
+}
+
+strong {
+	text-decoration: underline;
+}
