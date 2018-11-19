@@ -2,37 +2,44 @@ set -x LANG "en_US.UTF-8"
 set -x LC_ALL "en_US.UTF-8"
 set -x JAVA_HOME "temp"
 
-alias ssh /usr/bin/ssh
-alias scp /usr/bin/scp
-alias ssh-add /usr/bin/ssh-add
+# alias ssh /usr/bin/ssh
+# alias scp /usr/bin/scp
+# alias ssh-add /usr/bin/ssh-add
 
-if test -d ~/.npm-global/bin
-	set -x PATH ~/.npm-global/bin $PATH
-end
+set -x PATH_ORG $PATH
 
-if test -d /opt/local/bin
-	set -x PATH /opt/local/bin $PATH
-end
+set -x  EXTTRA_PATHS ~/.npm-global/bin /opt/local/bin /opt/local/sbin ~/tools/apache-ant/bin "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" ~/tools/minishift
 
-if test -d /opt/local/sbin
-	set -x PATH /opt/local/sbin $PATH
-end
-
-if test -d ~/tools/apache-ant/bin
-	set -x PATH /~/tools/apache-ant/bin $PATH
+function compose_path
+  # reset path
+  set -x PATH $PATH_ORG
+  # add the extras
+  for extra in $EXTTRA_PATHS
+    if test -d $extra
+      set -x PATH $extra $PATH
+    end
+  end
 end
 
 function @java8
+  compose_path
   set -x JAVA_HOME /Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home
   set -x PATH $JAVA_HOME/bin $PATH
 end
 
 function @java10
+  compose_path
   set -x JAVA_HOME /Library/Java/JavaVirtualMachines/jdk-10.0.1.jdk/Contents/Home
   set -x PATH $JAVA_HOME/bin $PATH
 end
 
-@java8
+function @java11
+  compose_path
+  set -x JAVA_HOME /Library/Java/JavaVirtualMachines/jdk-11.0.1.jdk/Contents/Home
+  set -x PATH $JAVA_HOME/bin $PATH
+end
+
+@java11
 
 fish_vi_key_bindings
 
