@@ -3,13 +3,13 @@ set -x LC_ALL "en_US.UTF-8"
 set -x JAVA_HOME "temp"
 
 # Set some things for using docker through minishift
-set -gx DOCKER_TLS_VERIFY "1";
-set -gx DOCKER_HOST "tcp://192.168.99.100:2376";
-set -gx DOCKER_CERT_PATH "/Users/philippe/.minishift/certs";
+# set -gx DOCKER_TLS_VERIFY "1";
+# set -gx DOCKER_HOST "tcp://192.168.99.100:2376";
+# set -gx DOCKER_CERT_PATH "/Users/philippe/.minishift/certs";
 
 set -x PATH_ORG $PATH
 
-set -x  EXTTRA_PATHS ~/.npm-global/bin /opt/local/bin /opt/local/sbin ~/tools/apache-ant/bin "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" ~/tools/minishift /Users/philippe/.minishift/cache/oc/v3.11.0/darwin
+set -x  EXTTRA_PATHS ~/.npm-global/bin /opt/local/bin /opt/local/sbin ~/tools/apache-ant/bin "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 function compose_path
   # reset path
@@ -40,7 +40,7 @@ function @java11
   set -x PATH $JAVA_HOME/bin $PATH
 end
 
-@java11
+# @java11
 
 fish_vi_key_bindings
-
+compose_path
