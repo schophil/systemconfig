@@ -80,16 +80,19 @@ endif
 
 " Plugin syntastic settings
 "
-let g:syntastic_mode_map = { "mode": "passive", "active_filetypes": [], "passive_filetypes": ["java"] }
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
+let g:syntastic_mode_map = { "mode": "passive", "active_filetypes": ["javascript"], "passive_filetypes": ["java"] }
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 " Only check synatax on write. This was mostly done to allow switching buffers
 " faster when developing in Java. 
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 1
+" Settings for javascript
+let g:syntastic_javascript_checkers = ['eslint']
+" let g:syntastic_javascript_eslint_exec = 'npx eslint'
 " Settings for java
 " let g:syntastic_java_checkers=['javac']
 " Use a file named syntastic_javac_config to determine the classpath to use
@@ -100,7 +103,7 @@ let g:syntastic_ignore_files = ['*.java']
 "
 let g:ctrlp_max_files=20000
 " let g:ctrlp_custom_ignore='.*(\.git\|\.hg\|\.svn\|\~\|target\|node_modules\|build\|\.class\|bin)$'
-let g:ctrlp_custom_ignore='\v[\/]((\.(git|hg|svn))|(target|node_modules|build|bin))$'
+let g:ctrlp_custom_ignore='\v[\/]((\.(git|hg|svn))|(target|node_modules|build|bin)|(.*\~))$'
 let g:ctrlp_root_markers = ['ivy.xml', 'build.gradle']
 let g:ctrlp_show_hidden = 1
 
