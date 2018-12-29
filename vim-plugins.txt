@@ -14,3 +14,4 @@ https://github.com/kana/vim-textobj-user.git ~/.vim/bundle/vim-textobj-user
 https://github.com/mustache/vim-mustache-handlebars.git ~/.vim/bundle/mustache
 https://github.com/pangloss/vim-javascript.git ~/.vim/bundle/vim-javascript
 https://github.com/treycucco/vim-monotonic.git ~/.vim/bundle/vim-monotonic
+https://github.com/dracula/vim.git ~/.vim/bundle/dracula-theme
