@@ -94,10 +94,9 @@ let g:syntastic_check_on_wq = 1
 let g:syntastic_javascript_checkers = ['eslint']
 " let g:syntastic_javascript_eslint_exec = 'npx eslint'
 " Settings for java
-" let g:syntastic_java_checkers=['javac']
+let g:syntastic_java_checkers=['javac']
 " Use a file named syntastic_javac_config to determine the classpath to use
-" let g:syntastic_java_javac_config_file_enabled = 1
-let g:syntastic_ignore_files = ['*.java']
+let g:syntastic_java_javac_config_file_enabled = 1
 
 " Plugin ctrl-p settings
 "
@@ -170,6 +169,13 @@ augroup filetype_java
 	" Shortcut to edit the snippets
 	autocmd FileType java nnoremap <buffer> <leader>es :vsplit ~/.vim/snippets/java.snippets<cr>
 	autocmd FileType java nnoremap <buffer> <leader>jf :normal! ma^ifinal `ama
+augroup end
+
+" Javascript tools
+" Shortcut to edit the Javascript snippets
+augroup filetype_javascript
+	autocmd!
+	autocmd FileType javascript nnoremap <buffer> <leader>es :vsplit ~/.vim/snippets/javascript.snippets<cr>
 augroup end
 
 " Spelling
