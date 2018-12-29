@@ -9,7 +9,7 @@ set -x JAVA_HOME "temp"
 
 set -x PATH_ORG $PATH
 
-set -x  EXTTRA_PATHS ~/.npm-global/bin /opt/local/bin /opt/local/sbin ~/tools/apache-ant/bin "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+set -x  EXTTRA_PATHS ~/.npm-global/bin /opt/local/bin /opt/local/sbin ~/tools/apache-ant/bin "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" ~/tools/micronaut/bin
 
 function compose_path
   # reset path
@@ -40,7 +40,13 @@ function @java11
   set -x PATH $JAVA_HOME/bin $PATH
 end
 
-# @java11
+function @openjdk11
+  compose_path
+  set -x JAVA_HOME /Library/Java/JavaVirtualMachines/openjdk11/Contents/Home
+  set -x PATH $JAVA_HOME/bin $PATH
+end
+
+@openjdk11
 
 fish_vi_key_bindings
 compose_path
