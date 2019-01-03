@@ -22,21 +22,21 @@ function compose_path
   end
 end
 
-function @java8
+function @openjdk8
   compose_path
-  set -x JAVA_HOME /Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home
+  set -x JAVA_HOME /Library/Java/JavaVirtualMachines/openjdk8/Contents/Home
   set -x PATH $JAVA_HOME/bin $PATH
 end
 
-function @java10
+function @oraclejdk8
   compose_path
-  set -x JAVA_HOME /Library/Java/JavaVirtualMachines/jdk-10.0.1.jdk/Contents/Home
+  set -x JAVA_HOME /Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home
   set -x PATH $JAVA_HOME/bin $PATH
 end
 
-function @java11
+function @openjdk10
   compose_path
-  set -x JAVA_HOME /Library/Java/JavaVirtualMachines/jdk-11.0.1.jdk/Contents/Home
+  set -x JAVA_HOME /Library/Java/JavaVirtualMachines/openjdk10/Contents/Home
   set -x PATH $JAVA_HOME/bin $PATH
 end
 
@@ -46,7 +46,7 @@ function @openjdk11
   set -x PATH $JAVA_HOME/bin $PATH
 end
 
-@openjdk11
+@oraclejdk8
 
 fish_vi_key_bindings
 compose_path
