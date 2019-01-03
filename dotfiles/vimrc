@@ -110,11 +110,6 @@ let g:ctrlp_show_hidden = 1
 "
 " Remap the leader to ,
 let mapleader = ","
-" Remap keys to switch buffers faster:
-" Go to previous buffer
-nnoremap <C-s> :bprevious<CR>
-" Go to next buffer
-nnoremap <C-c> :bnext<CR>
 " Toggle NERDTree
 nnoremap <Leader>t :NERDTreeToggle<CR> 
 " Toggle syntastic validation/output
