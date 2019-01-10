@@ -1,9 +1,6 @@
 function fish_prompt
   # Collect git information of the current directory
-  set -g gitinfo ""
-  if test -d .git
-    set -g gitinfo (git status -s -b -uno ^ /dev/null | head -n 1)
-  end
+  set -g gitinfo (git status -s -b -uno ^ /dev/null | head -n 1)
   # First set a profile name if present
   if test -n "$sub"
     echo -n (set_color grey)"$sub ❯"
