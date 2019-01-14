@@ -51,14 +51,35 @@ snippet enum
 	public enum ${1:`Filename()`} {
 		${0}
 	}
-
-# Spring tools
-snippet controller
-	@Controller
-	@RequestMapping(value = "{1:/url}")
 # Testing tools
 snippet test
 	@Test
 	public void ${1}Test() {
 		${0}
+	}
+# JPA
+snippet entity
+	import java.util.UUID;
+	import javax.persistence.Entity;
+	import javax.persistence.Id;
+	import javax.persistence.GeneratedValue;
+	import javax.validation.constraints.NotNull;
+
+	import lombok.Data;
+
+	/**
+	 * @author `$USER`
+	 * @since `strftime("%Y-%m-%d")`
+	 */
+	@Data
+	@Entity
+	public class ${1:`Filename()`} {
+
+	    @Id
+	    @GeneratedValue
+	    private UUID id;
+	    @NotNull
+	    private String key;
+	    @NotNull
+	    private String value;
 	}
