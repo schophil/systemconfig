@@ -10,17 +10,18 @@ execute pathogen#infect()
 
 " Set preferred colors
 set t_Co=256
-colorscheme monotonic
+" colorscheme monotonic
+colorscheme dracula
 syntax on
 set cursorline
-hi CursorLineNr cterm=none ctermfg=yellow
-hi Constant cterm=none ctermfg=lightblue
-hi IncSearch cterm=none ctermbg=red
-hi MatchParen ctermfg=darkblue ctermbg=white
-hi StatusLine ctermfg=lightgreen
+" hi CursorLineNr cterm=none ctermfg=yellow
+" hi Constant cterm=none ctermfg=lightblue
+" hi IncSearch cterm=none ctermbg=red
+" hi MatchParen ctermfg=darkblue ctermbg=white
 " Since cursor line is on, background doesn't work on spell errors (not while
 " on the same line anyway)
-hi SpellBad ctermbg=none ctermfg=lightred cterm=underline
+" hi SpellBad ctermbg=none ctermfg=lightred cterm=underline
+hi StatusLine ctermfg=lightgreen
 
 " Searching
 set ignorecase
