@@ -15,3 +15,5 @@ https://github.com/mustache/vim-mustache-handlebars.git ~/.vim/bundle/mustache
 https://github.com/pangloss/vim-javascript.git ~/.vim/bundle/vim-javascript
 https://github.com/treycucco/vim-monotonic.git ~/.vim/bundle/vim-monotonic
 https://github.com/dracula/vim.git ~/.vim/bundle/dracula-theme
+https://github.com/fcpg/vim-farout ~/.vim/bundle/vim-farout
+https://github.com/majutsushi/tagbar ~/.vim/bundle/tagbar
