@@ -59,6 +59,8 @@ snippet test
 	}
 # JPA
 snippet entity
+	package `substitute(substitute(substitute(expand('%:h'), '/', '.', 'g'), 'src.main.java.', '', ''), 'src.test.java.', '', '')`;
+
 	import java.util.UUID;
 	import javax.persistence.Entity;
 	import javax.persistence.Id;
