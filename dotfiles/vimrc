@@ -10,14 +10,18 @@ execute pathogen#infect()
 
 " Set preferred colors
 set t_Co=256
-colorscheme monotonic
-" colorscheme dracula
+
 syntax on
 set cursorline
-hi CursorLineNr cterm=none ctermfg=yellow
-hi Constant cterm=none ctermfg=lightblue
-hi IncSearch cterm=none ctermbg=red
-hi MatchParen ctermfg=darkblue ctermbg=white
+
+colorscheme dracula
+
+" colorscheme monotonic
+" hi CursorLineNr cterm=none ctermfg=yellow
+" hi Constant cterm=none ctermfg=lightblue
+" hi IncSearch cterm=none ctermbg=red
+" hi MatchParen ctermfg=darkblue ctermbg=white
+
 " Since cursor line is on, background doesn't work on spell errors (not while
 " on the same line anyway)
 hi SpellBad ctermbg=none ctermfg=lightred cterm=underline
@@ -106,7 +110,7 @@ let g:syntastic_java_javac_config_file_enabled = 1
 "
 let g:ctrlp_max_files=20000
 " let g:ctrlp_custom_ignore='.*(\.git\|\.hg\|\.svn\|\~\|target\|node_modules\|build\|\.class\|bin)$'
-let g:ctrlp_custom_ignore='\v[\/]((\.(git|hg|svn))|(target|node_modules|build|bin)|(.*\~))$'
+let g:ctrlp_custom_ignore='\v[\/]((\.(git|hg|svn))|(target|node_modules|build|bin|vendor)|(.*\~))$'
 let g:ctrlp_root_markers = ['ivy.xml', 'build.gradle']
 let g:ctrlp_show_hidden = 1
 
