@@ -18,6 +18,16 @@ snippet resource
 	String resource = ClassLoader.getSystemResource(${0}).getPath();
 snippet print
 	System.out.println(${0});
+snippet if
+	if (${1}) {
+		${0}
+	}
+snippet ifelse
+	if (${1}) {
+		${2}
+	} else {
+		${0}
+	}
 # Methods
 snippet pm
 	public ${1:void} ${2:foo}(${3}) {
