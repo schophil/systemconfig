@@ -179,6 +179,13 @@ augroup filetype_javascript
 	autocmd FileType javascript nnoremap <buffer> <leader>es :vsplit ~/.vim/snippets/javascript.snippets<cr>
 augroup end
 
+" Markdown oriented tools
+augroup filetype_markdown
+	autocmd!
+	" Shortcut to surround inner word with _
+	autocmd FileType markdown nnoremap <buffer> _ :normal ysiw_<cr>
+augroup end
+
 " Spelling
 "
 " set spell
