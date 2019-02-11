@@ -20,4 +20,14 @@ snippet indent_style
 	indent_style = ${1:space}
 snippet indent_size
 	indent_size = ${1:2}
+snippet editorconfig_java
+	root = true
 
+	[*]
+	end_of_line = lf
+	insert_final_newline = true
+
+	[*.{xml,java,gradle}]
+	charset = utf-8
+	indent_style = space
+	indent_size = 4

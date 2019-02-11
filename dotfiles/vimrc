@@ -112,7 +112,7 @@ let g:syntastic_java_javac_config_file_enabled = 1
 let g:ctrlp_max_files=20000
 " let g:ctrlp_custom_ignore='.*(\.git\|\.hg\|\.svn\|\~\|target\|node_modules\|build\|\.class\|bin)$'
 let g:ctrlp_custom_ignore='\v[\/]((\.(git|hg|svn))|(target|node_modules|build|bin|vendor)|(.*\~))$'
-let g:ctrlp_root_markers = ['ivy.xml', 'build.gradle']
+let g:ctrlp_root_markers = ['ivy.xml', 'build.gradle', 'composer.json']
 let g:ctrlp_show_hidden = 1
 
 " Plugin Tagbar
@@ -193,6 +193,13 @@ augroup filetype_markdown
 	autocmd!
 	" Shortcut to surround inner word with _
 	autocmd FileType markdown nnoremap <buffer> _ :normal ysiw_<cr>
+augroup end
+
+" Editorconfig tools
+" Shortcut to edit the snippets
+augroup filetype_dosini
+	autocmd!
+	autocmd FileType dosini nnoremap <buffer> <leader>es :vsplit ~/.vim/snippets/dosini.snippets<cr>
 augroup end
 
 " Spelling
