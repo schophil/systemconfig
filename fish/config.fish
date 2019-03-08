@@ -22,28 +22,27 @@ function compose_path
   end
 end
 
+set -x JAVA_8_PATHS /usr/lib/jvm/java-8-openjdk-amd64 /Library/Java/JavaVirtualMachines/openjdk8/Contents/Home
+set -x JAVA_11_PATHS /Library/Java/JavaVirtualMachines/openjdk11/Contents/Home /usr/lib/jvm/java-11-openjdk-amd64
+
 function @openjdk8
   compose_path
-  set -x JAVA_HOME /Library/Java/JavaVirtualMachines/openjdk8/Contents/Home
-  set -x PATH $JAVA_HOME/bin $PATH
-end
-
-function @oraclejdk8
-  compose_path
-  set -x JAVA_HOME /Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home
-  set -x PATH $JAVA_HOME/bin $PATH
-end
-
-function @openjdk10
-  compose_path
-  set -x JAVA_HOME /Library/Java/JavaVirtualMachines/openjdk10/Contents/Home
-  set -x PATH $JAVA_HOME/bin $PATH
+  for javap in $JAVA_8_PATHS
+    if test -d $javap
+      set -x JAVA_HOME $javap
+      set -x PATH $JAVA_HOME/bin $PATH
+    end
+  end
 end
 
 function @openjdk11
   compose_path
-  set -x JAVA_HOME /Library/Java/JavaVirtualMachines/openjdk11/Contents/Home
-  set -x PATH $JAVA_HOME/bin $PATH
+  for javap in $JAVA_11_PATHS
+    if test -d $javap
+      set -x JAVA_HOME $javap
+      set -x PATH $JAVA_HOME/bin $PATH
+    end
+  end
 end
 
 # @oraclejdk8
