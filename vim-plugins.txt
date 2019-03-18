@@ -17,3 +17,4 @@ https://github.com/treycucco/vim-monotonic.git ~/.vim/bundle/vim-monotonic
 https://github.com/dracula/vim.git ~/.vim/bundle/dracula-theme
 https://github.com/fcpg/vim-farout ~/.vim/bundle/vim-farout
 https://github.com/majutsushi/tagbar ~/.vim/bundle/tagbar
+https://github.com/leafgarland/typescript-vim.git ~/.vim/bundle/typescript-vim
