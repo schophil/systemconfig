@@ -8,26 +8,39 @@ set nocompatible
 " Activate pathogen plugin loader
 execute pathogen#infect()
 
-" Set preferred colors
+" ====================
+" COLORSCHEME
+" ====================
 set t_Co=256
-
 syntax on
 set cursorline
-
-" colorscheme dracula
-" hi TagbarSignature ctermfg=gray
 
 colorscheme monotonic
 hi CursorLineNr cterm=none ctermfg=yellow
 hi Constant cterm=none ctermfg=lightblue
 hi IncSearch cterm=none ctermbg=red
 hi MatchParen ctermfg=darkblue ctermbg=white
-
 " Since cursor line is on, background doesn't work on spell errors (not while
 " on the same line anyway)
 hi SpellBad ctermbg=none ctermfg=lightred cterm=underline
 hi StatusLine ctermfg=lightgreen
 
+" Markdown colors
+hi markdownHeadingDelimiter ctermfg=blue cterm=bold
+hi markdownH1 ctermfg=lightblue cterm=bold
+hi markdownH2 ctermfg=lightblue cterm=bold
+hi markdownH3 ctermfg=lightblue cterm=bold
+hi markdownH4 ctermfg=lightblue cterm=bold
+hi markdownH5 ctermfg=lightblue cterm=bold
+hi markdownH6 ctermfg=lightblue cterm=bold
+
+" Highlight characters that go over de 80th column
+hi ColorColumn ctermbg=magenta ctermfg=black
+call matchadd('ColorColumn', '\%81v', 100)
+
+" ====================
+" SETTINGS
+" ====================
 " Searching
 set ignorecase
 set smartcase
@@ -35,11 +48,9 @@ set smartcase
 set hlsearch
 " do incremental searching
 set incsearch
-
 " Show line numbers in gutter
 set nu
 set relativenumber
-
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 " keep a backup file (restore to previous version)
@@ -50,12 +61,13 @@ set undofile
 set history=50
 " display incomplete commands
 set showcmd
-
 " Show white space characters
 set listchars=tab:>~,nbsp:_,trail:.
 set list
 
-" Set the statusline
+" ====================
+" STATUSLINE
+" ====================
 set laststatus=2
 set statusline=(%n)\ %.20f\ %y\ [%{GetFileEncoding()}]\ [%{GetFileFormat()}]\ %m
 set statusline+=%=
@@ -71,21 +83,9 @@ function! GetFileFormat()
 	return &fileformat
 endfunction
 
-" Highlight characters that go over de 80th column
-hi ColorColumn ctermbg=magenta ctermfg=black
-call matchadd('ColorColumn', '\%81v', 100)
-
-if has("autocmd")
-  " Enable file type detection.
-  " Use the default filetype settings, so that mail gets 'tw' set to 72,
-  " 'cindent' is on in C files, etc.
-  " Also load indent files, to automatically do language-dependent indenting.
-  filetype plugin indent on
-  " ...
-endif
-
-" Plugin syntastic settings
-"
+" ====================
+" PLUGIN SYNTASTIC
+" ====================
 let g:syntastic_mode_map = { "mode": "passive", "active_filetypes": ["javascript", "php"], "passive_filetypes": ["java"] }
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -107,20 +107,37 @@ let g:syntastic_java_checkers=['javac']
 " Use a file named syntastic_javac_config to determine the classpath to use
 let g:syntastic_java_javac_config_file_enabled = 1
 
-" Plugin ctrl-p settings
-"
+" ====================
+" PLUGIN CTRLP
+" ====================
 let g:ctrlp_max_files=20000
 " let g:ctrlp_custom_ignore='.*(\.git\|\.hg\|\.svn\|\~\|target\|node_modules\|build\|\.class\|bin)$'
 let g:ctrlp_custom_ignore='\v[\/]((\.(git|hg|svn))|(target|node_modules|build|bin|vendor)|(.*\~))$'
 let g:ctrlp_root_markers = ['ivy.xml', 'build.gradle', 'composer.json']
 let g:ctrlp_show_hidden = 1
 
-" Plugin Tagbar
-"
+" ====================
+" PLUGIN TAGBAR
+" ====================
 let g:tagbar_width = 60
 
-" Key mappings
-"
+" ====================
+" PLUGIN SNIPMATE
+" ====================
+let g:snipMate = {}
+" Force parse version to 1 
+let g:snipMate.snippet_version = 1
+
+" ====================
+" ABBREVIATIONS
+" ====================
+iabbrev @@ schophil@icloud.com
+iabbrev ps Philippe Schottey
+
+
+" ====================
+" KEY MAPPINGS
+" ====================
 " Remap the leader to ,
 let mapleader = ","
 " Toggle NERDTree
@@ -157,19 +174,22 @@ nnoremap <BS> :noh<cr>
 nnoremap <leader>f :normal! ggVG=<cr>
 " Toggle "outline" tagbar
 nnoremap <leader>o :TagbarOpenAutoClose<cr>
+" Spelling
+nnoremap (s [s
+nnoremap )s ]s
 
-" Abbreviations
-iabbrev @@ schophil@icloud.com
-iabbrev ps Philippe Schottey
+" ====================
+" FILE TYPES
+" ====================
+if has("autocmd")
+  " Enable file type detection.
+  " Use the default filetype settings, so that mail gets 'tw' set to 72,
+  " 'cindent' is on in C files, etc.
+  " Also load indent files, to automatically do language-dependent indenting.
+  filetype plugin indent on
+  " ...
+endif
 
-" Snipmate plugin func {}
-"
-let g:snipMate = {}
-" Force parse version to 1 
-let g:snipMate.snippet_version = 1
-
-" File types
-"
 autocmd BufReadPost *.conf set syntax=conf
 
 " Java oriented tools
@@ -202,8 +222,3 @@ augroup filetype_dosini
 	autocmd FileType dosini nnoremap <buffer> <leader>es :vsplit ~/.vim/snippets/dosini.snippets<cr>
 augroup end
 
-" Spelling
-"
-" set spell
-nnoremap (s [s
-nnoremap )s ]s
