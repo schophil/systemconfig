@@ -1,4 +1,4 @@
-#!/opt/local/bin/fish
+#!/usr/bin/env fish
 # File: vim-install.fish
 # Author: Philippe Schottey
 

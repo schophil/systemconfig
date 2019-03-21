@@ -1,4 +1,4 @@
-#!/opt/local/bin/fish
+#!/usr/bin/env fish
 # File: vim-update-plugins.fish
 # Author: Philippe Schottey
 
