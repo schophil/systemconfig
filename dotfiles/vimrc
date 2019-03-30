@@ -33,6 +33,7 @@ hi markdownH3 ctermfg=lightblue cterm=bold
 hi markdownH4 ctermfg=lightblue cterm=bold
 hi markdownH5 ctermfg=lightblue cterm=bold
 hi markdownH6 ctermfg=lightblue cterm=bold
+hi markdownCode ctermfg=brown
 
 " Highlight characters that go over de 80th column
 hi ColorColumn ctermbg=magenta ctermfg=black
