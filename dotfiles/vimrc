@@ -215,6 +215,12 @@ augroup filetype_markdown
 	autocmd FileType markdown nnoremap <buffer> _ :normal ysiw_<cr>
 augroup end
 
+" PHP oriented tools
+augroup filetype_php
+	autocmd!
+	autocmd FileType php nnoremap <buffer> <leader>es :vsplit ~/.vim/snippets/php.snippets<cr>
+augroup end
+"
 " Editorconfig tools
 " Shortcut to edit the snippets
 augroup filetype_dosini
