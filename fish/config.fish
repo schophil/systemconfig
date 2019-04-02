@@ -9,7 +9,7 @@ set -x JAVA_HOME "temp"
 
 set -x PATH_ORG $PATH
 
-set -x  EXTTRA_PATHS ~/.npm-global/bin /opt/local/bin /opt/local/sbin ~/tools/apache-ant/bin "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" ~/tools/micronaut/bin ~/bin
+set -x  EXTTRA_PATHS ~/.npm-global/bin /opt/local/bin /opt/local/sbin ~/tools/apache-ant/bin "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" ~/tools/micronaut/bin ~/tools/node/bin ~/bin
 
 function compose_path
   # reset path
