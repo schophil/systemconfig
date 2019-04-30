@@ -87,7 +87,7 @@ endfunction
 " ====================
 " PLUGIN SYNTASTIC
 " ====================
-let g:syntastic_mode_map = { "mode": "passive", "active_filetypes": ["javascript", "php"], "passive_filetypes": ["java"] }
+let g:syntastic_mode_map = { "mode": "passive", "active_filetypes": ["javascript"], "passive_filetypes": ["java", "php"] }
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -103,6 +103,7 @@ let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_php_checkers = ['php', 'phpstan']
 let g:syntastic_php_phpcs_exec = 'phpcs.phar'
 let g:syntastic_php_phpstan_exec = './vendor/./bin/phpstan'
+let g:syntastic_php_phpstan_args = '--level 2'
 " Settings for java
 let g:syntastic_java_checkers=['javac']
 " Use a file named syntastic_javac_config to determine the classpath to use
@@ -113,8 +114,8 @@ let g:syntastic_java_javac_config_file_enabled = 1
 " ====================
 let g:ctrlp_max_files=20000
 " let g:ctrlp_custom_ignore='.*(\.git\|\.hg\|\.svn\|\~\|target\|node_modules\|build\|\.class\|bin)$'
-let g:ctrlp_custom_ignore='\v[\/]((\.(git|hg|svn))|(target|node_modules|build|bin|vendor)|(.*\~))$'
-let g:ctrlp_root_markers = ['ivy.xml', 'build.gradle', 'composer.json']
+let g:ctrlp_custom_ignore='\v[\/]((\.(git|hg|svn))|(target|dist|node_modules|build|bin|vendor)|(.*\~))$'
+let g:ctrlp_root_markers = ['ivy.xml', 'build.gradle', 'composer.json', 'package.json']
 let g:ctrlp_show_hidden = 1
 
 " ====================
