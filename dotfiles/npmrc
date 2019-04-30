@@ -6,7 +6,7 @@
 ;;;;
 
 strict-ssl=false
-prefix=/Users/schophil/.npm-global
+prefix=~/.npm-global
 editor=vim
 
 ;;;;
