@@ -1,4 +1,30 @@
 snippet construct
 	public function __construct()
 	{
+		${0}
+	}
+snippet function
+	public function ${1}(${2})
+	{
+		${0}
+	}
+snippet static
+	public static function ${1}(${2})
+	{
+		${0}
+	}
+snippet class
+	class `Filename()`
+	{
+		${0}
+	}
+snippet foreach
+	foreach (${1} as \$key => \$value) {
+		${0}
+	}
+snippet exception
+	throw new \Exception('${0}');
+snippet if
+	if (${1}) {
+		${0}
 	}
