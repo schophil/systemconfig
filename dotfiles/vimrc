@@ -15,25 +15,28 @@ set t_Co=256
 syntax on
 set cursorline
 
-colorscheme monotonic
-hi CursorLineNr cterm=none ctermfg=yellow
-hi Constant cterm=none ctermfg=lightblue
-hi IncSearch cterm=none ctermbg=red
-hi MatchParen ctermfg=darkblue ctermbg=white
-" Since cursor line is on, background doesn't work on spell errors (not while
-" on the same line anyway)
-hi SpellBad ctermbg=none ctermfg=lightred cterm=underline
+colorscheme dracula
 hi StatusLine ctermfg=lightgreen
 
-" Markdown colors
-hi markdownHeadingDelimiter ctermfg=blue cterm=bold
-hi markdownH1 ctermfg=lightblue cterm=bold
-hi markdownH2 ctermfg=lightblue cterm=bold
-hi markdownH3 ctermfg=lightblue cterm=bold
-hi markdownH4 ctermfg=lightblue cterm=bold
-hi markdownH5 ctermfg=lightblue cterm=bold
-hi markdownH6 ctermfg=lightblue cterm=bold
-hi markdownCode ctermfg=brown
+" colorscheme monotonic
+" hi CursorLineNr cterm=none ctermfg=yellow
+" hi Constant cterm=none ctermfg=lightblue
+" hi IncSearch cterm=none ctermbg=red
+" hi MatchParen ctermfg=darkblue ctermbg=white
+" " Since cursor line is on, background doesn't work on spell errors (not while
+" " on the same line anyway)
+" hi SpellBad ctermbg=none ctermfg=lightred cterm=underline
+" hi StatusLine ctermfg=lightgreen
+
+" " Markdown colors
+" hi markdownHeadingDelimiter ctermfg=blue cterm=bold
+" hi markdownH1 ctermfg=lightblue cterm=bold
+" hi markdownH2 ctermfg=lightblue cterm=bold
+" hi markdownH3 ctermfg=lightblue cterm=bold
+" hi markdownH4 ctermfg=lightblue cterm=bold
+" hi markdownH5 ctermfg=lightblue cterm=bold
+" hi markdownH6 ctermfg=lightblue cterm=bold
+" hi markdownCode ctermfg=brown
 
 " Highlight characters that go over de 80th column
 hi ColorColumn ctermbg=black ctermfg=white
