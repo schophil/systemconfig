@@ -15,8 +15,9 @@ set t_Co=256
 syntax on
 set cursorline
 
-colorscheme dracula
-hi StatusLine ctermfg=lightgreen
+" colorscheme dracula
+colorscheme onedark
+" hi StatusLine ctermfg=lightgreen
 
 " colorscheme monotonic
 " hi CursorLineNr cterm=none ctermfg=yellow
@@ -192,6 +193,7 @@ if has("autocmd")
   " 'cindent' is on in C files, etc.
   " Also load indent files, to automatically do language-dependent indenting.
   filetype plugin indent on
+  set omnifunc=syntaxcomplete#Complete
   " ...
 endif
 
