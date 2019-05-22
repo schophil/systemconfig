@@ -2,7 +2,17 @@ snippet element
 	<xsd:element name="${1}">
 		${0}
 	</xsd:element>
+snippet inlineelement
+	<xsd:element name="${1}" type="${2:xsd:string}" />
 snippet doc
 	<xsd:annotation>
 		<xsd:documentation>${0}</xsd:documentation>
 	</xsd:annotation>
+snippet complexType
+	<xsd:complexType name="${1}">
+		${0}
+	</xsd:complexType>
+snippet sequence
+	<xsd:sequence>
+		${0}
+	</xsd:sequence>
