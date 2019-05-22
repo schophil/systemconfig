@@ -183,6 +183,8 @@ nnoremap <leader>o :TagbarOpenAutoClose<cr>
 " Spelling
 nnoremap (s [s
 nnoremap )s ]s
+" Edit snippets for current file type
+nnoremap <leader>es :execute ":vsplit ~/.vim/snippets/" . &ft . ".snippets"<cr>
 
 " ====================
 " FILE TYPES
@@ -203,8 +205,6 @@ autocmd BufReadPost *.conf set syntax=conf
 " Shortcut to edit the Java snippets
 augroup filetype_java
 	autocmd!
-	" Shortcut to edit the snippets
-	autocmd FileType java nnoremap <buffer> <leader>es :vsplit ~/.vim/snippets/java.snippets<cr>
 	autocmd FileType java nnoremap <buffer> <leader>jf :normal! ma^ifinal `ama
 augroup end
 
@@ -212,7 +212,6 @@ augroup end
 " Shortcut to edit the Javascript snippets
 augroup filetype_javascript
 	autocmd!
-	autocmd FileType javascript nnoremap <buffer> <leader>es :vsplit ~/.vim/snippets/javascript.snippets<cr>
 augroup end
 
 " Markdown oriented tools
@@ -225,13 +224,10 @@ augroup end
 " PHP oriented tools
 augroup filetype_php
 	autocmd!
-	autocmd FileType php nnoremap <buffer> <leader>es :vsplit ~/.vim/snippets/php.snippets<cr>
 augroup end
-"
+
 " Editorconfig tools
-" Shortcut to edit the snippets
 augroup filetype_dosini
 	autocmd!
-	autocmd FileType dosini nnoremap <buffer> <leader>es :vsplit ~/.vim/snippets/dosini.snippets<cr>
 augroup end
 
