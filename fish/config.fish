@@ -24,12 +24,13 @@ end
 
 set -x JAVA_8_PATHS /usr/lib/jvm/java-8-openjdk-amd64 /Library/Java/JavaVirtualMachines/openjdk8/Contents/Home
 set -x JAVA_11_PATHS /Library/Java/JavaVirtualMachines/openjdk11/Contents/Home /usr/lib/jvm/java-11-openjdk-amd64
+set -x JAVA_12_PATHS /Library/Java/JavaVirtualMachines/openjdk12/Contents/Home /usr/lib/jvm/java-12-openjdk-amd64
 
 function @openjdk8
   compose_path
   for javap in $JAVA_8_PATHS
     if test -d $javap
-      set -x JAVA_HOME $javap
+      set -g -x JAVA_HOME $javap
       set -x PATH $JAVA_HOME/bin $PATH
     end
   end
@@ -39,14 +40,24 @@ function @openjdk11
   compose_path
   for javap in $JAVA_11_PATHS
     if test -d $javap
-      set -x JAVA_HOME $javap
+      set -g -x JAVA_HOME $javap
       set -x PATH $JAVA_HOME/bin $PATH
     end
   end
 end
 
-# @oraclejdk8
-@openjdk11
+function @openjdk12
+  compose_path
+  for javap in $JAVA_12_PATHS
+    if test -d $javap
+      set -g -x JAVA_HOME $javap
+      set -x PATH $JAVA_HOME/bin $PATH
+    end
+  end
+end
+
+# @oraclejdk8j
+@openjdk12
 
 fish_vi_key_bindings
 compose_path
