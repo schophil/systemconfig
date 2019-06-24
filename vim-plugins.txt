@@ -19,3 +19,4 @@ https://github.com/fcpg/vim-farout ~/.vim/bundle/vim-farout
 https://github.com/majutsushi/tagbar ~/.vim/bundle/tagbar
 https://github.com/leafgarland/typescript-vim.git ~/.vim/bundle/typescript-vim
 https://github.com/joshdick/onedark.vim.git ~/.vim/bundle/ondedark.vim
+https://github.com/morhetz/gruvbox.git ~/.vim/bundle/gruvbox
