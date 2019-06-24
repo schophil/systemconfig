@@ -24,7 +24,7 @@ end
 
 set -x JAVA_8_PATHS /usr/lib/jvm/java-8-openjdk-amd64 /Library/Java/JavaVirtualMachines/openjdk8/Contents/Home
 set -x JAVA_11_PATHS /Library/Java/JavaVirtualMachines/openjdk11/Contents/Home /usr/lib/jvm/java-11-openjdk-amd64
-set -x JAVA_12_PATHS /Library/Java/JavaVirtualMachines/openjdk12/Contents/Home /usr/lib/jvm/java-12-openjdk-amd64
+set -x JAVA_12_PATHS /Library/Java/JavaVirtualMachines/openjdk12/Contents/Home /usr/lib/jvm/java-12-openjdk-amd64 ~/tools/jdk12
 
 function @openjdk8
   compose_path
