@@ -20,3 +20,4 @@ https://github.com/majutsushi/tagbar ~/.vim/bundle/tagbar
 https://github.com/leafgarland/typescript-vim.git ~/.vim/bundle/typescript-vim
 https://github.com/joshdick/onedark.vim.git ~/.vim/bundle/ondedark.vim
 https://github.com/morhetz/gruvbox.git ~/.vim/bundle/gruvbox
+https://github.com/jiangmiao/auto-pairs.git ~/.vim/bundle/auto-pairs
