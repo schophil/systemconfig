@@ -17,7 +17,8 @@ set cursorline
 
 set background=dark
 " colorscheme dracula
-colorscheme onedark
+colorscheme farout
+" colorscheme onedark
 " colorscheme gruvbox
 " colorscheme magicka
 " hi StatusLine ctermfg=lightgreen
