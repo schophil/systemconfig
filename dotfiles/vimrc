@@ -19,29 +19,29 @@ set background=dark
 " colorscheme dracula
 " colorscheme farout
 " colorscheme onedark
-colorscheme gruvbox
+" colorscheme gruvbox
 " colorscheme magicka
 " hi StatusLine ctermfg=lightgreen
 
-" colorscheme monotonic
-" hi CursorLineNr cterm=none ctermfg=yellow
-" hi Constant cterm=none ctermfg=lightblue
-" hi IncSearch cterm=none ctermbg=red
-" hi MatchParen ctermfg=darkblue ctermbg=white
+colorscheme monotonic
+hi CursorLineNr cterm=none ctermfg=yellow
+hi Constant cterm=none ctermfg=lightblue
+hi IncSearch cterm=none ctermbg=red
+hi MatchParen ctermfg=darkblue ctermbg=white
 " " Since cursor line is on, background doesn't work on spell errors (not while
 " " on the same line anyway)
-" hi SpellBad ctermbg=none ctermfg=lightred cterm=underline
-" hi StatusLine ctermfg=lightgreen
+hi SpellBad ctermbg=none ctermfg=lightred cterm=underline
+hi StatusLine ctermfg=yellow
 
 " " Markdown colors
-" hi markdownHeadingDelimiter ctermfg=blue cterm=bold
-" hi markdownH1 ctermfg=lightblue cterm=bold
-" hi markdownH2 ctermfg=lightblue cterm=bold
-" hi markdownH3 ctermfg=lightblue cterm=bold
-" hi markdownH4 ctermfg=lightblue cterm=bold
-" hi markdownH5 ctermfg=lightblue cterm=bold
-" hi markdownH6 ctermfg=lightblue cterm=bold
-" hi markdownCode ctermfg=brown
+hi markdownHeadingDelimiter ctermfg=blue cterm=bold
+hi markdownH1 ctermfg=lightblue cterm=bold
+hi markdownH2 ctermfg=lightblue cterm=bold
+hi markdownH3 ctermfg=lightblue cterm=bold
+hi markdownH4 ctermfg=lightblue cterm=bold
+hi markdownH5 ctermfg=lightblue cterm=bold
+hi markdownH6 ctermfg=lightblue cterm=bold
+hi markdownCode ctermfg=brown
 
 " Highlight characters that go over de 80th column
 hi ColorColumn ctermbg=black ctermfg=white
