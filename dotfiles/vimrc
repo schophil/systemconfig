@@ -18,30 +18,30 @@ set cursorline
 set background=dark
 
 colorscheme monotonic
-    hi CursorLineNr cterm=none ctermfg=yellow
-    hi Constant cterm=none ctermfg=lightblue
-    hi IncSearch cterm=none ctermbg=red
-    hi MatchParen ctermfg=darkblue ctermbg=white
-    " Since cursor line is on, background doesn't work on spell errors (not while
-    " on the same line anyway)
-    hi SpellBad ctermbg=none ctermfg=lightred cterm=underline
-    hi StatusLine ctermfg=yellow
-    " NerdTree
-    hi NERDTreeFile cterm=none ctermfg=lightblue
-    hi NERDTreeExecFile cterm=bold ctermfg=lightblue
-    hi NERDTreeDir cterm=none
-    hi Directory cterm=none
-    hi NERDTreeOpenable cterm=none
-    hi NERDTreeClosable cterm=none
-    " Markdown colors
-    hi markdownHeadingDelimiter ctermfg=blue cterm=bold
-    hi markdownH1 ctermfg=lightblue cterm=bold
-    hi markdownH2 ctermfg=lightblue cterm=bold
-    hi markdownH3 ctermfg=lightblue cterm=bold
-    hi markdownH4 ctermfg=lightblue cterm=bold
-    hi markdownH5 ctermfg=lightblue cterm=bold
-    hi markdownH6 ctermfg=lightblue cterm=bold
-    hi markdownCode ctermfg=brown
+hi CursorLineNr cterm=none ctermfg=yellow
+hi Constant cterm=none ctermfg=lightblue
+hi IncSearch cterm=none ctermbg=red
+hi MatchParen ctermfg=darkblue ctermbg=white
+" Since cursor line is on, background doesn't work on spell errors (not while
+" on the same line anyway)
+hi SpellBad ctermbg=none ctermfg=lightred cterm=underline
+hi StatusLine ctermfg=yellow
+" NerdTree
+hi NERDTreeFile cterm=none ctermfg=lightblue
+hi NERDTreeExecFile cterm=bold ctermfg=lightblue
+hi NERDTreeDir cterm=none
+hi Directory cterm=none
+hi NERDTreeOpenable cterm=none
+hi NERDTreeClosable cterm=none
+" Markdown colors
+hi markdownHeadingDelimiter ctermfg=blue cterm=bold
+hi markdownH1 ctermfg=lightblue cterm=bold
+hi markdownH2 ctermfg=lightblue cterm=bold
+hi markdownH3 ctermfg=lightblue cterm=bold
+hi markdownH4 ctermfg=lightblue cterm=bold
+hi markdownH5 ctermfg=lightblue cterm=bold
+hi markdownH6 ctermfg=lightblue cterm=bold
+hi markdownCode ctermfg=brown
 
 " Highlight characters that go over de 80th column
 hi ColorColumn ctermbg=black ctermfg=white
@@ -85,11 +85,11 @@ set statusline+=%c:%l\ (%L)
 set statusline+=\ %P
 
 function! GetFileEncoding()
-	return &fileencoding
+  return &fileencoding
 endfunction
 
 function! GetFileFormat()
-	return &fileformat
+  return &fileformat
 endfunction
 
 " ====================
@@ -193,6 +193,30 @@ nnoremap <leader>es :execute ":vsplit ~/.vim/snippets/" . &ft . ".snippets"<cr>
 nnoremap <F3> <C-]>
 
 " ====================
+" Functions
+" ====================
+function! FormatJSON()
+  " Every { followed by a non white space character should be followed by a new line
+  silent %s/{\(\S\)/{\r\1/ge
+  " Lists of objects
+  silent %s/\[{/\[\r{/ge
+  silent %s/}\]/}\r\]/ge
+  silent %s/\]}/\]\r}/ge
+  silent %s/,{/,\r{/ge
+  " Every } preceeded by non-space characters should be
+  " on a new line
+  silent %s/\(\S\)}/\1\r}/ge
+  " New lines after values
+  silent %s/,"/,\r"/ge
+  " Space after each ": followed by a non-space character.
+  silent %s/":\(\S\)/": \1/ge
+  noh
+  " TODO: remove empty lines if any
+  " Use the normal formatting of vim to finish up
+  silent normal! ggVG==
+endfunction
+
+" ====================
 " FILE TYPES
 " ====================
 if has("autocmd")
@@ -210,30 +234,34 @@ autocmd BufReadPost *.conf set syntax=conf
 " Java oriented tools
 " Shortcut to edit the Java snippets
 augroup filetype_java
-	autocmd!
-	autocmd FileType java nnoremap <buffer> <leader>jf :normal! ma^ifinal `ama
+  autocmd!
+  autocmd FileType java nnoremap <buffer> <leader>jf :normal! ma^ifinal `ama
 augroup end
 
 " Javascript tools
 " Shortcut to edit the Javascript snippets
 augroup filetype_javascript
-	autocmd!
+  autocmd!
+augroup end
+augroup filetype_json
+  autocmd!
+  autocmd FileType json nnoremap <buffer> <leader>pp :call FormatJSON()<cr>
 augroup end
 
 " Markdown oriented tools
 augroup filetype_markdown
-	autocmd!
-	" Shortcut to surround inner word with _
-	autocmd FileType markdown nnoremap <buffer> _ :normal ysiw_<cr>
+  autocmd!
+  " Shortcut to surround inner word with _
+  autocmd FileType markdown nnoremap <buffer> _ :normal ysiw_<cr>
 augroup end
 
 " PHP oriented tools
 augroup filetype_php
-	autocmd!
+  autocmd!
 augroup end
 
 " Editorconfig tools
 augroup filetype_dosini
-	autocmd!
+  autocmd!
 augroup end
 
