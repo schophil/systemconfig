@@ -24,3 +24,4 @@ https://github.com/jiangmiao/auto-pairs.git ~/.vim/bundle/auto-pairs
 https://github.com/Quramy/tsuquyomi ~/.vim/bundle/tsuquyomi
 https://github.com/shawncplus/phpcomplete.vim.git ~/.vim/bundle/phpcomplete.vim
 https://github.com/yous/vim-open-color.git ~/.vim/bundle/vim-open-color
+https://github.com/godlygeek/tabular.git ~/.vim/bundle/tabular
