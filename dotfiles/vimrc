@@ -194,10 +194,20 @@ nnoremap )s ]s
 " Edit snippets for current file type
 nnoremap <leader>es :execute ":vsplit ~/.vim/snippets/" . &ft . ".snippets"<cr>
 nnoremap <F3> <C-]>
+inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+inoremap <expr> <Tab> <SID>tabAutoComplete()
 
 " ====================
 " Functions
 " ====================
+function! s:tabAutoComplete()
+  if pumvisible()
+    return "\<C-n>"
+  else 
+    return "\<C-x>\<C-o>"
+  endif
+endfunction
+
 function! s:formatJSON()
   " Every { followed by a non white space character should be followed by a new line
   silent %s/{\(\S\)/{\r\1/ge
@@ -218,8 +228,6 @@ function! s:formatJSON()
   " Use the normal formatting of vim to finish up
   silent normal! ggVG==
 endfunction
-
-inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 
 function! s:align()
   let p = '^\s*|\s.*\s|\s*$'
