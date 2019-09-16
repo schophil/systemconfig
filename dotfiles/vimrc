@@ -197,8 +197,8 @@ nnoremap )s ]s
 nnoremap <leader>es :execute ":vsplit ~/.vim/snippets/" . &ft . ".snippets"<cr>
 nnoremap <F3> <C-]>
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
-inoremap <expr> <Tab> <SID>tabAutoComplete()
-imap <C-J> <Plug>snipMateNextOrTrigger
+" inoremap <expr> <Tab> <SID>tabAutoComplete()
+imap <Tab> <Plug>snipMateNextOrTrigger
 
 " ====================
 " Functions
