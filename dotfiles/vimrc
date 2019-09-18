@@ -145,11 +145,15 @@ let g:snipMate = {}
 let g:snipMate.snippet_version = 1
 
 " ====================
+" PLUGIN NERDTREE
+" ====================
+let NERDTreeWinSize = 45
+
+" ====================
 " ABBREVIATIONS
 " ====================
 iabbrev @@ schophil@icloud.com
 iabbrev ps Philippe Schottey
-
 
 " ====================
 " KEY MAPPINGS
