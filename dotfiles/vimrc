@@ -191,7 +191,7 @@ imap <Right> <Nop>
 " Remove highlighted search results
 nnoremap <BS> :noh<cr>
 " Reformat file
-nnoremap <leader>f :normal! ggVG=<cr>
+nnoremap <leader>f :normal! maggVG=`ama<cr>
 " Toggle "outline" tagbar
 nnoremap <leader>o :TagbarOpenAutoClose<cr>
 " Spelling
@@ -203,6 +203,7 @@ nnoremap <F3> <C-]>
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 " inoremap <expr> <Tab> <SID>tabAutoComplete()
 imap <Tab> <Plug>snipMateNextOrTrigger
+nnoremap µ `
 
 " ====================
 " Functions
