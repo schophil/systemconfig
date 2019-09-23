@@ -191,7 +191,7 @@ imap <Right> <Nop>
 " Remove highlighted search results
 nnoremap <BS> :noh<cr>
 " Reformat file
-nnoremap <leader>f :normal! maggVG=`ama<cr>
+nnoremap <leader>f :normal! mzggVG=`z:delmarks z<cr>
 " Toggle "outline" tagbar
 nnoremap <leader>o :TagbarOpenAutoClose<cr>
 " Spelling
