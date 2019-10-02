@@ -43,7 +43,7 @@ set background=dark
 "     hi markdownH6 ctermfg=lightblue cterm=bold
 "     hi markdownCode ctermfg=brown
 
-colorscheme gruvbox
+colorscheme onedark
 hi SpellBad ctermbg=none ctermfg=red cterm=underline
 hi SpellCap ctermbg=none ctermfg=lightred cterm=underline
 hi SpellRare ctermbg=none ctermfg=lightred cterm=underline
@@ -191,7 +191,7 @@ imap <Right> <Nop>
 " Remove highlighted search results
 nnoremap <BS> :noh<cr>
 " Reformat file
-nnoremap <leader>f :normal! mzggVG=`z:delmarks z<cr>
+nnoremap <leader>f :execute ":normal! mzggVG=`z:delmarks z\r"<cr>
 " Toggle "outline" tagbar
 nnoremap <leader>o :TagbarOpenAutoClose<cr>
 " Spelling
