@@ -14,7 +14,7 @@ function fish_prompt
   # Main
   echo -n (set_color cyan)' '(prompt_pwd) "$sym"(set_color yellow)
   if test -n "$gitinfo"
-    set -g gitparts (string match -e -r '## ([\w\/]+){1}(?:\.\.\.\w+\/\w+\s?)?(\[.*\])?' $gitinfo)
+    set -g gitparts (string match -e -r '## ([\w\/]+){1}(?:\.\.\.[\w\/]+\s?)?(\[.*\])?' $gitinfo)
     if test "3" = (count $gitparts)
       set -g gitinfo "$gitparts[2] $gitparts[3]"
     else if test "2" = (count $gitparts)
