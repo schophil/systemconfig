@@ -3,6 +3,8 @@ function fish_prompt
   set -g sym "▶"
   # Collect git information of the current directory
   set -g gitinfo (git status -s -b -uno ^ /dev/null | head -n 1)
+  ## don't show the first 2 # characters
+  set -g gitinfo (string sub -s 4 $gitinfo)
   # First set a profile name if present
   if test -n "$sub"
     echo -n (set_color grey)"$sub $sym"
