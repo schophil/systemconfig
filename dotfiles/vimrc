@@ -204,6 +204,7 @@ inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 " inoremap <expr> <Tab> <SID>tabAutoComplete()
 imap <Tab> <Plug>snipMateNextOrTrigger
 nnoremap µ `
+nnoremap ; :execute "A;<Esc>"
 
 " ====================
 " Functions
