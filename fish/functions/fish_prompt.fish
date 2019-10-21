@@ -14,12 +14,24 @@ function fish_prompt
   # Main
   echo -n (set_color cyan)' '(prompt_pwd) "$sym"(set_color yellow)
   if test -n "$gitinfo"
-    set -g gitparts (string match -e -r '## ([\w\/\.]+){1}(?:\.\.\.[\w\/\.]+\s?)?(\[.*\])?' $gitinfo)
+    set -g gitparts (string match -e -r '## ([\w\/\.]+){1}(?:\s?)?(\[.*\])?' $gitinfo)
+    # Extract the string like [ahead 1]
     if test "3" = (count $gitparts)
-      set -g gitinfo "$gitparts[2] $gitparts[3]"
-    else if test "2" = (count $gitparts)
-      set -g gitinfo "$gitparts[2]"
-    else 
+      set -g gitchanges " $gitparts[3]"
+    end
+
+    if test (count $gitparts) = "2"; or test (count $gitparts) = "3"
+      # The branch information is either the name of one (local) branch or a local branch followed by the name of a remote branch.
+      # In the latter the local and remote branch names are separated by 2 dots
+      # Example: mybranch...orgin/remote/branch
+      set -g gitbranches (string split '...' $gitparts[2])
+      if test (count $gitbranches) = 2
+        # The tilde will indicate that the branch is tracked
+        set -g gitinfo "$gitbranches[1]~$gitchanges"
+      else
+        set -g gitinfo "$gitbranches[1]$gitchanges"
+      end
+    else
       set -e gitinfo
     end
     echo -n ' '$gitinfo" $sym "
