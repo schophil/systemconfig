@@ -203,8 +203,8 @@ nnoremap <F3> <C-]>
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 " inoremap <expr> <Tab> <SID>tabAutoComplete()
 imap <Tab> <Plug>snipMateNextOrTrigger
+noremap ; :execute ":normal! A;"<cr>
 nnoremap µ `
-nnoremap ; :execute "A;<Esc>"
 
 " ====================
 " Functions
