@@ -20,3 +20,5 @@ end
 
 fish_vi_key_bindings
 compose_path
+
+set -e PATH_ORG
