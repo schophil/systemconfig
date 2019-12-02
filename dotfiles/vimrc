@@ -43,7 +43,7 @@ set background=dark
 "     hi markdownH6 ctermfg=lightblue cterm=bold
 "     hi markdownCode ctermfg=brown
 
-colorscheme onedark
+colorscheme gruvbox
 hi SpellBad ctermbg=none ctermfg=red cterm=underline
 hi SpellCap ctermbg=none ctermfg=lightred cterm=underline
 hi SpellRare ctermbg=none ctermfg=lightred cterm=underline
