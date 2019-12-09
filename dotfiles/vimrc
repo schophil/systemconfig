@@ -78,6 +78,7 @@ set showcmd
 " Show white space characters
 set listchars=tab:>~,nbsp:_,trail:.
 set list
+set foldcolumn=2
 
 " ====================
 " STATUSLINE
