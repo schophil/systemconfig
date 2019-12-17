@@ -1,4 +1,5 @@
 " File: vimrc
+"
 " Author: Philippe Schottey
 "
 " Use Vim settings, rather than Vi settings (much better!).
@@ -153,7 +154,7 @@ let NERDTreeWinSize = 45
 " ====================
 " ABBREVIATIONS
 " ====================
-iabbrev @@ schophil@icloud.com
+iabbrev @@ phschotte@gmail.com
 iabbrev ps Philippe Schottey
 
 " ====================
@@ -206,6 +207,7 @@ inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 imap <Tab> <Plug>snipMateNextOrTrigger
 noremap ; :execute ":normal! A;"<cr>
 nnoremap µ `
+nnoremap <leader>b :hi Normal ctermbg=NONE<cr>
 
 " ====================
 " Functions
