@@ -1,7 +1,7 @@
 set -x LANG "en_US.UTF-8"
 set -x LC_ALL "en_US.UTF-8"
 
-set -x EXTTRA_PATHS ~/.npm-global/bin /opt/local/bin /opt/local/sbin "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" ~/tools/node/bin ~/bin
+set -x EXTTRA_PATHS ~/.npm-global/bin /opt/local/bin /opt/local/sbin "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" ~/tools/node/bin ~/bin ~/tools/idea/bin
 
 # set -x JAVA_HOME "temp"
 
