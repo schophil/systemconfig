@@ -45,7 +45,7 @@ set background=dark
 "     hi markdownCode ctermfg=brown
 
 set termguicolors
-colorscheme gruvbox
+" colorscheme gruvbox
 colorscheme duo-mini
 
 hi SpellBad ctermbg=none ctermfg=red cterm=underline
