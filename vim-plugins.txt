@@ -25,3 +25,5 @@ https://github.com/Quramy/tsuquyomi ~/.vim/bundle/tsuquyomi
 https://github.com/shawncplus/phpcomplete.vim.git ~/.vim/bundle/phpcomplete.vim
 https://github.com/yous/vim-open-color.git ~/.vim/bundle/vim-open-color
 https://github.com/godlygeek/tabular.git ~/.vim/bundle/tabular
+https://github.com/iojani/silenthill.vim ~/.vim/bundle/silenthill.vim
+https://github.com/seesleestak/duo-mini ~/.vim/bundle/duo-mini
