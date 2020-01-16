@@ -45,12 +45,12 @@ set background=dark
 "     hi markdownCode ctermfg=brown
 
 set termguicolors
-" colorscheme gruvbox
 colorscheme duo-mini
+  hi CursorLine guibg=#1F2227
 
-hi SpellBad ctermbg=none ctermfg=red cterm=underline
-hi SpellCap ctermbg=none ctermfg=lightred cterm=underline
-hi SpellRare ctermbg=none ctermfg=lightred cterm=underline
+" hi SpellBad ctermbg=none ctermfg=red cterm=underline
+" hi SpellCap ctermbg=none ctermfg=lightred cterm=underline
+" hi SpellRare ctermbg=none ctermfg=lightred cterm=underline
 
 " Highlight characters that go over de 80th column
 hi ColorColumn ctermbg=black ctermfg=white
