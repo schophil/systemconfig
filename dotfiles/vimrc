@@ -45,8 +45,8 @@ set background=dark
 "     hi markdownCode ctermfg=brown
 
 set termguicolors
-colorscheme duo-mini
-  hi CursorLine guibg=#1F2227
+colorscheme onedark
+  " hi CursorLine guibg=#1F2227
 
 " hi SpellBad ctermbg=none ctermfg=red cterm=underline
 " hi SpellCap ctermbg=none ctermfg=lightred cterm=underline
