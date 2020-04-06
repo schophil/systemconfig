@@ -44,8 +44,8 @@ set background=dark
 "     hi markdownH6 ctermfg=lightblue cterm=bold
 "     hi markdownCode ctermfg=brown
 
-set termguicolors
-colorscheme onedark
+" set termguicolors
+colorscheme solarized
   " hi CursorLine guibg=#1F2227
 
 " hi SpellBad ctermbg=none ctermfg=red cterm=underline

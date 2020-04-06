@@ -22,3 +22,4 @@ https://github.com/godlygeek/tabular.git ~/.vim/bundle/tabular
 https://github.com/joshdick/onedark.vim.git ~/.vim/bundle/ondedark.vim
 https://github.com/dracula/vim.git ~/.vim/bundle/dracula-theme
 https://github.com/fcpg/vim-farout ~/.vim/bundle/vim-farout
+https://github.com/altercation/vim-colors-solarized.git ~/.vim/bundle/vim-colors-solarized
