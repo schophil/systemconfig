@@ -7,3 +7,8 @@ emerging-Block-IPs.txt
 
 # macOS stuff
 .DS_Store
+
+# fisher
+/fish/functions/fisher.fish
+/fish/functions/sdk.fish
+
