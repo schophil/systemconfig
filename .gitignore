@@ -11,4 +11,5 @@ emerging-Block-IPs.txt
 # fisher
 /fish/functions/fisher.fish
 /fish/functions/sdk.fish
+/fish/functions/__*.fish
 
