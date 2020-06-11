@@ -45,7 +45,7 @@ set background=dark
 "     hi markdownCode ctermfg=brown
 
 " set termguicolors
-colorscheme solarized
+colorscheme gruvbox
   " hi CursorLine guibg=#1F2227
 
 " hi SpellBad ctermbg=none ctermfg=red cterm=underline
