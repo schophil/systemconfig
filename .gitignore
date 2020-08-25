@@ -10,4 +10,5 @@ emerging-Block-IPs.txt
 
 # fisher
 /fish/functions/*.fish
+/fish/functions/fish_prompt.fish
 !/fish/functions/@*.fish
