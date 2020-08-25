@@ -9,7 +9,5 @@ emerging-Block-IPs.txt
 .DS_Store
 
 # fisher
-/fish/functions/fisher.fish
-/fish/functions/sdk.fish
-/fish/functions/__*.fish
-
+/fish/functions/*.fish
+!/fish/functions/@*.fish
