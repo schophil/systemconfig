@@ -1,0 +1,67 @@
+" File: vimrc
+"
+" Author: Philippe Schottey
+"
+echo "Booting up vim... (^_^)"
+
+set nocompatible
+
+filetype plugin indent on
+syntax on
+
+set backspace=start,eol,indent
+set cursorline
+set relativenumber
+set incsearch
+set hlsearch
+set hidden
+set noswapfile
+set path=.,**
+set helpheight=100
+set nowrap
+noswapfile
+
+" ====================
+" LOOKS
+" ====================
+colorscheme murphy
+" with some tweaks
+hi CursorLineNr ctermfg=lightgreen cterm=none ctermbg=235
+hi CursorLine cterm=NONE ctermbg=235
+hi LineNr ctermfg=244 ctermbg=233
+hi String ctermfg=blue
+hi Type ctermfg=51
+hi MatchParen ctermfg=white ctermbg=red
+hi StatusLine ctermfg=108
+hi StatusLineNC ctermfg=102
+hi VertSplit ctermfg=108 ctermbg=108
+
+" ====================
+" TOUCH
+" ====================
+map - ddp
+map _ ddkP
+nmap <backspace> :nohl<enter>
+
+let mapleader=","
+nnoremap <leader>b :buffers<enter>:b 
+nnoremap <leader>e :execute "Explore " . getcwd()<enter>
+
+" ====================
+" STATUSLINE
+" ====================
+set laststatus=2
+set statusline=(%n)\ %.20f\ %y\ [%{GetFileEncoding()}]\ [%{GetFileFormat()}]\ %m
+set statusline+=%=
+set statusline+=
+set statusline+=%c:%l\ (%L)
+set statusline+=\ %P
+
+function! GetFileEncoding()
+  return &fileencoding
+endfunction
+
+function! GetFileFormat()
+  return &fileformat
+endfunction
+
