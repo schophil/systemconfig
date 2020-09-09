@@ -12,3 +12,5 @@ emerging-Block-IPs.txt
 /fish/functions/*.fish
 /fish/functions/fish_prompt.fish
 !/fish/functions/@*.fish
+
+/vim/.vim/.netrwhist
