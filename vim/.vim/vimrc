@@ -34,7 +34,7 @@ hi Type ctermfg=51
 hi MatchParen ctermfg=white ctermbg=red
 hi StatusLine ctermfg=108
 hi StatusLineNC ctermfg=102
-hi VertSplit ctermfg=108 ctermbg=108
+hi VertSplit ctermfg=102 ctermbg=102
 
 " ====================
 " TOUCH
