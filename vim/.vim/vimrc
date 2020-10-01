@@ -42,6 +42,8 @@ hi VertSplit ctermfg=102 ctermbg=102
 map - ddp
 map _ ddkP
 nmap <backspace> :nohl<enter>
+nnoremap (c [c
+nnoremap )c ]c
 
 let mapleader=","
 nnoremap <leader>b :buffers<enter>:b 
