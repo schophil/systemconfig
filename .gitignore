@@ -9,9 +9,9 @@ emerging-Block-IPs.txt
 .DS_Store
 
 # fisher
-/fish/functions/*.fish
-/fish/functions/fish_prompt.fish
-!/fish/functions/@*.fish
+/fish/.config/fish/functions/*.fish
+/fish/.config/fish/functions/fish_prompt.fish
+!/fish/.config/fish/functions/@*.fish
 
 /vim/.vim/.netrwhist
 /vim/.vim/.netrwhist
