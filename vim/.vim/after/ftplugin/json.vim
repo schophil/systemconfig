@@ -1,5 +1,5 @@
 set shiftwidth=2 tabstop=2 expandtab autoindent softtabstop=2 smartindent
-nnoremap <leader>pp :call formatJSON()<cr>
+nnoremap <leader>pp :call FormatJSON()<cr>
 
 function FormatJSON()
   " Every { followed by a non white space character should be followed by a new line
