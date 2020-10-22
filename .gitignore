@@ -19,3 +19,6 @@ emerging-Block-IPs.txt
 
 /vim/.vim/.netrwhist
 /vim/.vim/.netrwhist
+/vim/.vim/autoload
+/vim/.vim/bundle
+

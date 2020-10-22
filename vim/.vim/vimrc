@@ -5,6 +5,8 @@
 echo "Booting up vim... (^_^)"
 
 set nocompatible
+" Activate pathogen plugin loader
+execute pathogen#infect()
 
 filetype plugin indent on
 syntax on
@@ -24,30 +26,52 @@ noswapfile
 " ====================
 " LOOKS
 " ====================
-colorscheme murphy
-" with some tweaks
-hi CursorLineNr ctermfg=lightgreen cterm=none ctermbg=235
-hi CursorLine cterm=NONE ctermbg=235
-hi LineNr ctermfg=244 ctermbg=233
-hi String ctermfg=blue
-hi Type ctermfg=51
-hi MatchParen ctermfg=white ctermbg=red
-hi StatusLine ctermfg=108
-hi StatusLineNC ctermfg=102
-hi VertSplit ctermfg=102 ctermbg=102
+colorscheme onedark
 
 " ====================
 " TOUCH
 " ====================
-map - ddp
-map _ ddkP
-nmap <backspace> :nohl<enter>
-nnoremap (c [c
-nnoremap )c ]c
-
 let mapleader=","
-nnoremap <leader>b :buffers<enter>:b 
-nnoremap <leader>e :execute "Explore " . getcwd()<enter>
+" Toggle NERDTree
+nnoremap <Leader>t :NERDTreeToggle<CR> 
+" Toggle syntastic validation/output
+nnoremap <Leader>s :SyntasticToggleMode<CR>
+" Mappings to resize panes 
+nnoremap <Leader>ss :vertical resize -4<CR>
+nnoremap <Leader>ww :vertical resize +4<CR>
+" Copy to the macOS registry
+vnoremap <Leader>k "*y
+nnoremap <Leader>p "*p
+" Shortcut to edit the vimrc
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+" Shortcut to source the vimrc
+nnoremap <leader>sv :source $MYVIMRC<cr>
+" Shortcut to search in buffers with Ctrlp
+nnoremap <C-b> :CtrlPBuffer<cr>
+" Shortcut to switch to a buffer. This will show the list of buffers and start
+" the :buffer command. You only need to type a buffer number and press <cr>.
+nnoremap <Leader>b :buffers<cr>:buffer 
+" Deactivate the arrows
+map <Down> <Nop>
+map <Up> <Nop>
+map <Left> <Nop>
+map <Right> <Nop>
+imap <Down> <Nop>
+imap <Up> <Nop>
+imap <Left> <Nop>
+imap <Right> <Nop>
+" Remove highlighted search results
+nnoremap <BS> :noh<cr>
+" Reformat file
+nnoremap <leader>f :execute ":normal! mzggVG=`z:delmarks z\r"<cr>
+nnoremap (s [s
+nnoremap )s ]s
+nnoremap <F3> <C-]>
+inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+noremap ; :execute ":normal! A;"<cr>
+nnoremap µ `
+iabbrev @@ phschotte@gmail.com
+iabbrev ps Philippe Schottey
 
 " ====================
 " STATUSLINE
@@ -66,4 +90,19 @@ endfunction
 function! GetFileFormat()
   return &fileformat
 endfunction
+
+" ====================
+" PLUGIN NERDTREE
+" ====================
+let NERDTreeWinSize = 45
+"
+" ====================
+" PLUGIN CTRLP
+" ====================
+let g:ctrlp_max_files=20000
+" let g:ctrlp_custom_ignore='.*(\.git\|\.hg\|\.svn\|\~\|target\|node_modules\|build\|\.class\|bin)$'
+let g:ctrlp_custom_ignore='\v[\/]((\.(git|hg|svn))|(target|dist|node_modules|build|bin|vendor)|(.*\~))$'
+let g:ctrlp_root_markers = ['ivy.xml', 'build.gradle', 'composer.json', 'package.json', 'build.xml']
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_working_path_mode = ''
 
