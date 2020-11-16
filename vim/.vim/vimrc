@@ -13,8 +13,10 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'dag/vim-fish'
-Plug 'pgavlin/pulumi.vim'
 Plug 'jiangmiao/auto-pairs'
+" themes
+Plug 'pgavlin/pulumi.vim'
+Plug 'kamykn/dark-theme.vim'
 call plug#end()
 
 " 
