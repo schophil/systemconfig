@@ -31,6 +31,8 @@ set hlsearch	" highlight all matches
 set incsearch	" highlight search results as you type
 set noswapfile
 set path=.,,**
+set listchars=tab:>-
+set list
 
 "
 " FILES
