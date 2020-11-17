@@ -1,14 +1,15 @@
 syntax match plugin "\<\h\+\(\s*{\)\@="
-hi default link plugin Keyword
+hi default link plugin Special
 
 syntax match option "\<\h\+\(\s*=>\)\@="
 hi default link option Identifier
 
-syntax match string "\"[^\"]*\""
-hi default link string String
+syntax keyword toplevel input filter output if else true false in not
+hi default link toplevel Keyword
 
-syntax keyword toplevel input filter output if else
-hi default link toplevel Special
+syntax match string "\"[^\"]*\""
+syntax region string start="\"" end="\""
+hi default link string String
 
 syntax match operator "=>"
 hi default link operator Operator
