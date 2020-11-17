@@ -73,6 +73,7 @@ let g:netrw_keepdir=1
 " hi StatusLineNC ctermfg=black ctermbg=gray
 colorscheme pulumi
 call matchadd('ColorColumn', '\%81v')
+hi CursorLine ctermbg=235
 
 " 
 " STATUSLINE
