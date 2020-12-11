@@ -17,6 +17,9 @@ Plug 'jiangmiao/auto-pairs'
 " themes
 Plug 'pgavlin/pulumi.vim'
 Plug 'kamykn/dark-theme.vim'
+Plug 'jaredgorski/fogbell.vim'
+Plug 'whatyouhide/vim-gotham'
+Plug 'dracula/vim',{'as':'dracula'}
 call plug#end()
 
 " 
@@ -71,9 +74,9 @@ let g:netrw_keepdir=1
 " hi CursorLineNr ctermfg=magenta
 " hi LineNr ctermfg=gray
 " hi StatusLineNC ctermfg=black ctermbg=gray
-colorscheme pulumi
+colorscheme dracula
 call matchadd('ColorColumn', '\%81v')
-hi CursorLine ctermbg=235
+" hi CursorLine ctermbg=235
 
 " 
 " STATUSLINE
