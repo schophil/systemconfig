@@ -14,6 +14,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'dag/vim-fish'
 Plug 'jiangmiao/auto-pairs'
+Plug 'kien/ctrlp.vim'
 " themes
 Plug 'pgavlin/pulumi.vim'
 Plug 'kamykn/dark-theme.vim'
@@ -49,6 +50,7 @@ syntax enable
 let mapleader=","
 nnoremap <Leader>e :Lexplore<CR>
 nnoremap <Backspace> :nohl<CR>
+nnoremap <c-b> :CtrlPBuffer<CR>
 " Deactivate the arrows
 map <Down> <Nop>
 map <Up> <Nop>
@@ -99,7 +101,9 @@ endfunction
 "
 " ====================
 " PLUGIN CTRLP
-" ====================
+"  ====================
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_max_files=20000
 " let g:ctrlp_custom_ignore='.*(\.git\|\.hg\|\.svn\|\~\|target\|node_modules\|build\|\.class\|bin)$'
 let g:ctrlp_custom_ignore='\v[\/]((\.(git|hg|svn))|(target|dist|node_modules|build|bin|vendor)|(.*\~))$'
