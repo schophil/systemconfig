@@ -1,6 +1,9 @@
 set shiftwidth=4 tabstop=4 expandtab autoindent softtabstop=4 smartindent
 setlocal path=.,**
 
+ab this $this->
+ab bean $this->bean->
+ab pubf public function
 
 " only use
 " set include=^\\s*use\\s*\\zs.*\\ze;
