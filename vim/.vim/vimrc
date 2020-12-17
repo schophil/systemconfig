@@ -15,10 +15,9 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'dag/vim-fish'
 Plug 'jiangmiao/auto-pairs'
 Plug 'kien/ctrlp.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 " themes
-Plug 'pgavlin/pulumi.vim'
-Plug 'kamykn/dark-theme.vim'
-Plug 'jaredgorski/fogbell.vim'
 Plug 'whatyouhide/vim-gotham'
 Plug 'dracula/vim',{'as':'dracula'}
 call plug#end()
@@ -79,24 +78,6 @@ let g:netrw_keepdir=1
 colorscheme dracula
 call matchadd('ColorColumn', '\%81v')
 " hi CursorLine ctermbg=235
-
-" 
-" STATUSLINE
-"
-set laststatus=2
-set statusline=(%n)\ %.20f\ %y\ [%{GetFileEncoding()}]\ [%{GetFileFormat()}]\ %m
-set statusline+=%=
-set statusline+=
-set statusline+=%c:%l\ (%L)
-set statusline+=\ %P
-
-function! GetFileEncoding()
-  return &fileencoding
-endfunction
-
-function! GetFileFormat()
-  return &fileformat
-endfunction
 
 "
 " ====================
