@@ -70,12 +70,8 @@ let g:netrw_keepdir=1
 " 
 " LOOKS
 " 
-" hi CursorLineNr ctermfg=magenta
-" hi LineNr ctermfg=gray
-" hi StatusLineNC ctermfg=black ctermbg=gray
 colorscheme dracula
 call matchadd('ColorColumn', '\%81v')
-" hi CursorLine ctermbg=235
 
 "
 " ====================
