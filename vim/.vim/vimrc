@@ -15,6 +15,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'kien/ctrlp.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'shawncplus/phpcomplete.vim'
 " themes
 Plug 'whatyouhide/vim-gotham'
 Plug 'dracula/vim',{'as':'dracula'}

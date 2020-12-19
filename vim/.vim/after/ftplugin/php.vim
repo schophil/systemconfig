@@ -1,9 +1,16 @@
 set shiftwidth=4 tabstop=4 expandtab autoindent softtabstop=4 smartindent
 setlocal path=.,**
 
-ab this $this->
-ab bean $this->bean->
-ab pubf public function
+iab this $this-><Left><C-R>=EatChar('\s')<CR>
+iab bean $this->bean-><Left><C-R>=EatChar('\s')<CR>
+iab pubf public function<Left><C-R>=EatChar('\s')<CR>
+iab get public function get<Left><C-R>=EatChar('\s')<CR>
+iab set public function get<Left><C-R>=EatChar('\s')<CR>
+
+func EatChar(pat)
+  let c = nr2char(getchar(0))
+  return (c =~ a:pat) ? '' : c
+endfunc
 
 " only use
 " set include=^\\s*use\\s*\\zs.*\\ze;
