@@ -58,6 +58,9 @@ imap <Down> <Nop>
 imap <Up> <Nop>
 imap <Left> <Nop>
 imap <Right> <Nop>
+" Mappings to resize panes 
+nnoremap <Leader>ss :vertical resize -4<CR>
+nnoremap <Leader>ww :vertical resize +4<CR>
 
 "   
 " NETRW
