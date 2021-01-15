@@ -1,0 +1,33 @@
+snippet editorconfig_root
+	root = true
+	
+	[*]
+	end_of_line = lf
+	insert_final_newline = true
+	
+	[*.{${1:extension}}]
+	charset = ${2:utf-8}
+	indent_style = ${3:space}
+	indent_size = ${4:2}
+snippet editorconfig
+	[*.{${1:extension}}]
+	charset = ${2:utf-8}
+	indent_style = ${3:space}
+	indent_size = ${4:2}
+snippet root
+	root = ${1:true}
+snippet indent_style
+	indent_style = ${1:space}
+snippet indent_size
+	indent_size = ${1:2}
+snippet editorconfig_java
+	root = true
+
+	[*]
+	end_of_line = lf
+	insert_final_newline = true
+
+	[*.{xml,java,gradle}]
+	charset = utf-8
+	indent_style = space
+	indent_size = 4

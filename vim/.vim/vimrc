@@ -16,6 +16,10 @@ Plug 'kien/ctrlp.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'shawncplus/phpcomplete.vim'
+Plug 'dense-analysis/ale'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
 " themes
 Plug 'whatyouhide/vim-gotham'
 Plug 'dracula/vim',{'as':'dracula'}
@@ -46,7 +50,7 @@ syntax enable
 " FEEL
 "
 let mapleader=","
-nnoremap <Leader>e :Lexplore<CR>
+nnoremap <Leader>e :Explore<CR>
 nnoremap <Backspace> :nohl<CR>
 nnoremap <c-b> :CtrlPBuffer<CR>
 " Deactivate the arrows
@@ -78,9 +82,8 @@ colorscheme dracula
 call matchadd('ColorColumn', '\%81v')
 
 "
-" ====================
 " PLUGIN CTRLP
-"  ====================
+"
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_max_files=20000
@@ -89,3 +92,10 @@ let g:ctrlp_custom_ignore='\v[\/]((\.(git|hg|svn))|(target|dist|node_modules|bui
 let g:ctrlp_root_markers = ['ivy.xml', 'build.gradle', 'composer.json', 'package.json', 'build.xml']
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_working_path_mode = ''
+
+"
+" PLUGIN SNIPMATE
+"
+" let g:snipMate.snippet_version = 1
+let g:snipMate = { 'snippet_version' : 1 }
+" imap <C-J> <Plug>snipMateNextOrTrigger
