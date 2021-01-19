@@ -20,6 +20,7 @@ Plug 'dense-analysis/ale'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
+Plug 'airblade/vim-gitgutter'
 " themes
 Plug 'whatyouhide/vim-gotham'
 Plug 'dracula/vim',{'as':'dracula'}
