@@ -68,7 +68,6 @@ nnoremap <Leader>ss :vertical resize -4<CR>
 nnoremap <Leader>ww :vertical resize +4<CR>
 " To uppercase
 inoremap <c-u> <esc>gUiwea
-nnoremap <c-u> gUiwe
 
 "   
 " NETRW
