@@ -24,6 +24,7 @@ Plug 'airblade/vim-gitgutter'
 " themes
 Plug 'whatyouhide/vim-gotham'
 Plug 'dracula/vim',{'as':'dracula'}
+Plug 'embark-theme/vim', { 'as': 'embark' }
 call plug#end()
 
 " 
@@ -40,6 +41,7 @@ set noswapfile
 set path=.,,**
 set listchars=tab:>-
 set list
+set termguicolors
 
 "
 " FILES
