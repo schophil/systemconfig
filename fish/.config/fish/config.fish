@@ -45,6 +45,9 @@ function compose_path
   end
 end
 
+set -x hydro_color_git "#D19A66"
+set -x hydro_color_pwd "#56B6C2"
+
 fish_vi_key_bindings
 compose_path
 
