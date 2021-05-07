@@ -48,6 +48,10 @@ end
 set -x hydro_color_git "#D19A66"
 set -x hydro_color_pwd "#56B6C2"
 
+alias ll "exa -l"
+alias ls "exa -l"
+alias lt "exa -T"
+
 fish_vi_key_bindings
 compose_path
 
