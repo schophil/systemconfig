@@ -72,6 +72,8 @@ nnoremap <Leader>ww :vertical resize +4<CR>
 " To uppercase
 inoremap <c-u> <esc>gUiwea
 
+nnoremap <Leader>r yyp:.!bash<CR>
+
 "   
 " NETRW
 "
