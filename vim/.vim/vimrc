@@ -22,10 +22,9 @@ Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
 Plug 'airblade/vim-gitgutter'
 " themes
-Plug 'whatyouhide/vim-gotham'
 Plug 'dracula/vim',{'as':'dracula'}
-Plug 'embark-theme/vim', { 'as': 'embark' }
 Plug 'joshdick/onedark.vim'
+Plug 'ulwlu/elly.vim'
 call plug#end()
 
 " 
