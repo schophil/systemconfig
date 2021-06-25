@@ -84,7 +84,7 @@ let g:netrw_keepdir=1
 " 
 " LOOKS
 " 
-colorscheme onedark
+colorscheme elly
 call matchadd('ColorColumn', '\%81v')
 
 "
