@@ -15,6 +15,7 @@ emerging-Block-IPs.txt
 /fish/.config/fish/completions
 /fish/.config/fish/conf.d
 /fish/.config/fish/fish_variables
+/fish/.config/fish/fish_plugins
 /fish/.config/fish/fishfile
 
 /vim/.vim/.netrwhist
