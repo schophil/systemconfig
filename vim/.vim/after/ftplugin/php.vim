@@ -14,40 +14,79 @@ func EatChar(pat)
     return (c =~ a:pat) ? '' : c
 endfunc
 
+let g:php_include_cache_max_size = 100
+let g:php_include_cache = []
+
+function PhpGetClassName(fname)
+    let parts = split(a:fname, '\')
+    return parts[len(parts) - 1]
+endfunction
+
+function PhpRememberHit(fname, path)
+    let className = PhpGetClassName(a:fname)
+    let g:php_include_cache += [className, a:path]
+    if len(g:php_include_cache) >= g:php_include_cache_max_size
+        unlet g:php_include_cache[0]
+        unlet g:php_include_cache[0]
+    endif
+endfunction
+
+function PhpMatchHit(fname)
+    let className = PhpGetClassName(a:fname)
+    return index(g:php_include_cache, className) >= 0
+endfunction
+
+function PhpGetLastHit(fname)
+    let className = PhpGetClassName(a:fname)
+    let classNameIndex = index(g:php_include_cache, className)
+    return g:php_include_cache[classNameIndex + 1]
+endfunction
+
 " only use
 " set include=^\\s*use\\s*\\zs.*\\ze;
 " use and inline new classes
 set include=\\(\\(^\\s*use\\s*\\)\\\|\\(new\\s\\+\\)\\)\\zs[a-zA-Z\\\\]*\\ze
 function! PhpInclude(fname)
+    echom 'Trying ' . a:fname ' with include cache size ' . len(g:php_include_cache)
+    if PhpMatchHit(a:fname)
+        return PhpGetLastHit(a:fname)
+    endif
     let parts = split(a:fname, '\')
     " Fail fast
     if len(parts) == 0
         return 0
     endif
-    " If only one part, it is probably a file in the same namespace.
     if len(parts) == 1
-        let fileName = parts[0] . '.php'
-        " if fileName == expand("%:t")
-        "     return 0
-        " endif
-        let pathInCurrentDir = expand("%:h") . '/' . fileName
-        " echom 'Trying ' . pathInCurrentDir
-        let found = glob(pathInCurrentDir, 1)
-        if len(found)
-            return pathInCurrentDir
-        endif
-        return 0
+        " If only one part, it is probably a file in the same namespace.
+        return PhpIncludeClassName(parts[0])
     endif
+    return PhpIncludeImport(a:fname, parts)
+endfunction
+
+function PhpIncludeImport(fname, parts)
     " First try by removing the first level which is the namespace.
-    let pathWithoutNamespace = 'src/classes/' . join(parts[1:-1], '/') . '.php'
-    " echom 'Trying ' . pathWithoutNamespace
+    let pathWithoutNamespace = 'src/classes/' . join(a:parts[1:-1], '/') . '.php'
     let found = glob(pathWithoutNamespace, 1)
     if len(found)
+        call PhpRememberHit(a:fname, pathWithoutNamespace)
         return pathWithoutNamespace
     endif
     " Just return as-is.
-    return 'src/classes/' . join(parts[0:-1],'/') . '.php'
+    return 'src/classes/' . join(a:parts[0:-1],'/') . '.php'
 endfunction
+
+function PhpIncludeClassName(className)
+    let fileName = a:className . '.php'
+    let pathInCurrentDir = expand("%:h") . '/' . fileName
+    " echom 'Trying ' . pathInCurrentDir
+    let found = glob(pathInCurrentDir, 1)
+    if len(found)
+        call PhpRememberHit(a:className, pathInCurrentDir)
+        return pathInCurrentDir
+    endif
+    return 0
+endfunction
+
 setlocal includeexpr=PhpInclude(v:fname)
 
 setlocal define=^.*\\(function\\\|class\\)
