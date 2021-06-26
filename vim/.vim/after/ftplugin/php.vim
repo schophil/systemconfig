@@ -1,6 +1,8 @@
 set shiftwidth=4 tabstop=4 expandtab autoindent softtabstop=4 smartindent
 setlocal path=.,**
 
+nnoremap <Leader>t :terminal ./vendor/bin/phpunit --testdox --verbose %<CR>
+
 iab this $this-><Left><C-R>=EatChar('\s')<CR>
 iab bean $this->bean-><Left><C-R>=EatChar('\s')<CR>
 iab pubf public function<Left><C-R>=EatChar('\s')<CR>
@@ -8,8 +10,8 @@ iab get public function get<Left><C-R>=EatChar('\s')<CR>
 iab set public function get<Left><C-R>=EatChar('\s')<CR>
 
 func EatChar(pat)
-  let c = nr2char(getchar(0))
-  return (c =~ a:pat) ? '' : c
+    let c = nr2char(getchar(0))
+    return (c =~ a:pat) ? '' : c
 endfunc
 
 " only use
@@ -28,20 +30,20 @@ function! PhpInclude(fname)
         " if fileName == expand("%:t")
         "     return 0
         " endif
-	    let pathInCurrentDir = expand("%:h") . '/' . fileName
-        echom 'Trying ' . pathInCurrentDir
-	    let found = glob(pathInCurrentDir, 1)
-	    if len(found)
-		    return pathInCurrentDir
-	    endif
+        let pathInCurrentDir = expand("%:h") . '/' . fileName
+        " echom 'Trying ' . pathInCurrentDir
+        let found = glob(pathInCurrentDir, 1)
+        if len(found)
+            return pathInCurrentDir
+        endif
         return 0
     endif
     " First try by removing the first level which is the namespace.
-    let pathWithoutFirstLevel = 'src/classes/' . join(parts[1:-1], '/') . '.php'
-    echom 'Trying ' . pathWithoutFirstLevel
-    let found = glob(pathWithoutFirstLevel, 1)
+    let pathWithoutNamespace = 'src/classes/' . join(parts[1:-1], '/') . '.php'
+    " echom 'Trying ' . pathWithoutNamespace
+    let found = glob(pathWithoutNamespace, 1)
     if len(found)
-        return pathWithoutFirstLevel
+        return pathWithoutNamespace
     endif
     " Just return as-is.
     return 'src/classes/' . join(parts[0:-1],'/') . '.php'
