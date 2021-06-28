@@ -25,6 +25,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'dracula/vim',{'as':'dracula'}
 Plug 'joshdick/onedark.vim'
 Plug 'ulwlu/elly.vim'
+Plug 'jacoborus/tender.vim'
 call plug#end()
 
 " 
@@ -85,7 +86,8 @@ let g:netrw_keepdir=1
 " 
 " LOOKS
 " 
-colorscheme elly
+colorscheme tender
+let g:airline_theme = 'tender'
 call matchadd('ColorColumn', '\%81v')
 
 "
