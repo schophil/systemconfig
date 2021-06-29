@@ -70,10 +70,9 @@ imap <Right> <Nop>
 " Mappings to resize panes 
 nnoremap <Leader>ss :vertical resize -4<CR>
 nnoremap <Leader>ww :vertical resize +4<CR>
+nnoremap ; A;<Esc>
 " To uppercase
 inoremap <c-u> <esc>gUiwea
-
-nnoremap <Leader>r yyp:.!bash<CR>
 
 "   
 " NETRW
