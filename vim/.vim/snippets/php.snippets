@@ -1,5 +1,5 @@
 snippet construct
-	public function __construct()
+	public function __construct(${1})
 	{
 		${0}
 	}
@@ -28,3 +28,26 @@ snippet if
 	if (${1}) {
 		${0}
 	}
+snippet this
+	\$this->${0}
+snippet php
+	<?php
+	namespace ${0}
+snippet unit
+	use PHPUnit\\Framework\\TestCase;
+
+	class `Filename()` extends TestCase
+	{
+		public function test${1}()
+		{
+			${0}
+			self::assertTrue(true);
+		}
+	}
+snippet test
+	public function test${1}()
+	{
+		${0}
+		self::assertTrue(true);
+	}
+
