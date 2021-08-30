@@ -88,6 +88,7 @@ let g:netrw_keepdir=1
 colorscheme tender
 let g:airline_theme = 'tender'
 call matchadd('ColorColumn', '\%81v')
+:hi Search guibg=blue
 
 "
 " PLUGIN CTRLP
