@@ -1,4 +1,5 @@
 # systemconfig
 
 
-My configurations for fish, vim etc.
+My configurations for zsh, vim etc.
+
