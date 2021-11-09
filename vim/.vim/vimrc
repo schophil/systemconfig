@@ -26,6 +26,7 @@ Plug 'dracula/vim',{'as':'dracula'}
 Plug 'joshdick/onedark.vim'
 Plug 'ulwlu/elly.vim'
 Plug 'jacoborus/tender.vim'
+Plug 'sainnhe/everforest'
 call plug#end()
 
 " 
@@ -85,10 +86,9 @@ let g:netrw_keepdir=1
 " 
 " LOOKS
 " 
-colorscheme tender
-let g:airline_theme = 'tender'
+colorscheme everforest
+let g:airline_theme = 'everforest'
 call matchadd('ColorColumn', '\%81v')
-:hi Search guibg=blue
 
 "
 " PLUGIN CTRLP
