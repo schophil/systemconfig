@@ -1,6 +1,5 @@
 PATH="$PATH:~/bin"
 
-
 if [[ -d "/opt/local/bin" ]]; then
   PATH="$PATH:/opt/local/bin"
 fi
@@ -23,4 +22,6 @@ if [[ -f "$HOME/.sdkman/bin/sdkman-init.sh" ]]; then
   source "$HOME/.sdkman/bin/sdkman-init.sh"
 fi
 
-source "/opt/local/share/nvm/init-nvm.sh"
+if [[ -f "/opt/local/share/nvm/init-nvm.sh" ]]; then
+  source "/opt/local/share/nvm/init-nvm.sh"
+fi
