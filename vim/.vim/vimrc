@@ -20,10 +20,11 @@ Plug 'dense-analysis/ale'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
-"Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 " themes
 Plug 'dracula/vim',{'as':'dracula'}
 Plug 'joshdick/onedark.vim'
+Plug 'morhetz/gruvbox'
 call plug#end()
 
 " 
@@ -83,8 +84,8 @@ let g:netrw_keepdir=1
 " 
 " LOOKS
 " 
-colorscheme onedark
-let g:airline_theme = 'onedark'
+colorscheme gruvbox
+let g:airline_theme = 'gruvbox'
 call matchadd('ColorColumn', '\%81v')
 
 "
