@@ -85,6 +85,7 @@ let g:netrw_keepdir=1
 " LOOKS
 " 
 colorscheme gruvbox
+set background=dark
 let g:airline_theme = 'gruvbox'
 call matchadd('ColorColumn', '\%81v')
 
