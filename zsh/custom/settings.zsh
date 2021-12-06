@@ -11,5 +11,5 @@
 bindkey "^B" backward-word
 bindkey "^F" forward-word
 
-ZSH_THEME="strug"
+ZSH_THEME="muse"
 
