@@ -1,7 +1,7 @@
 function my_remote_status() {
   # is branch ahead?
   if $(echo "$(git log origin/$(git_current_branch)..HEAD 2> /dev/null)" | grep '^commit' &> /dev/null); then
-    echo "++"
+    echo "⇡"
   fi
 }
 
