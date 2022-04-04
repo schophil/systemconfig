@@ -11,5 +11,6 @@
 bindkey "^B" backward-word
 bindkey "^F" forward-word
 
-ZSH_THEME="museplusplus"
+# ZSH_THEME="museplusplus"
+ZSH_THEME="aussiegeekplusplus"
 
