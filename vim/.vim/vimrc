@@ -91,8 +91,8 @@ let g:netrw_keepdir=1
 " 
 " LOOKS
 " 
-colorscheme onedark
-let g:airline_theme = 'onedark'
+colorscheme dracula
+let g:airline_theme = 'dracula'
 call matchadd('ColorColumn', '\%81v')
 
 "
