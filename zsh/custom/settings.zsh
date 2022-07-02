@@ -14,3 +14,9 @@ bindkey "^F" forward-word
 # ZSH_THEME="museplusplus"
 ZSH_THEME="aussiegeekplusplus"
 
+if uname -r | grep -q 'microsoft'; then
+	if [ -z "$SSH_AGENT_PID" ]; then
+		echo 'Starting ssh agent'
+		start-ssh-agent
+	fi
+fi
