@@ -89,6 +89,7 @@ let g:netrw_keepdir=1
 colorscheme dracula
 let g:airline_theme = 'dracula'
 call matchadd('ColorColumn', '\%81v')
+hi Normal ctermbg=NONE guibg=NONE
 
 "
 " PLUGIN CTRLP
