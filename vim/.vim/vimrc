@@ -23,6 +23,10 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'freitass/todo.txt-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" snipMate
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate' 
 " themes
 Plug 'dracula/vim',{'as':'dracula'}
 Plug 'joshdick/onedark.vim'
@@ -106,4 +110,3 @@ let g:ctrlp_working_path_mode = ''
 " PLUGIN SNIPMATE
 "
 let g:snipMate = { 'snippet_version' : 1 }
-" imap <C-J> <Plug>snipMateNextOrTrigger
