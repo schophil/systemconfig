@@ -38,6 +38,7 @@ call plug#end()
 "
 set nocompatible
 set relativenumber
+set number
 set helpheight=30
 set cursorline
 set backspace=indent,eol,start
