@@ -18,6 +18,11 @@ snippet class
 	{
 		${0}
 	}
+snippet interface
+	interface `Filename()`
+	{
+		${0}
+	}
 snippet foreach
 	foreach (${1} as \$key => \$value) {
 		${0}
@@ -51,4 +56,5 @@ snippet test
 		${0}
 		self::assertTrue(true);
 	}
-
+snippet bean
+	\$this->bean->${0}
