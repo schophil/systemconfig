@@ -18,5 +18,9 @@ if uname -r | grep -q 'microsoft'; then
 	if [ -z "$SSH_AGENT_PID" ]; then
 		echo 'Starting ssh agent'
 		start-ssh-agent
+	else
+		echo 'SSH agent already running on ' $SSH_AGENT_PID
 	fi
 fi
+
+export M2_HOME=/home/schophil/.sdkman/candidates/maven/current
