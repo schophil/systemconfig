@@ -12,7 +12,8 @@ bindkey "^B" backward-word
 bindkey "^F" forward-word
 
 # ZSH_THEME="museplusplus"
-ZSH_THEME="aussiegeekplusplus"
+# ZSH_THEME="aussiegeekplusplus"
+ZSH_THEME="agnoster"
 
 if uname -r | grep -q 'microsoft'; then
 	if [ -z "$SSH_AGENT_PID" ]; then
