@@ -3,11 +3,11 @@ setlocal path=.,**
 
 nnoremap <Leader>t :terminal ./vendor/bin/phpunit --testdox --verbose %<CR>
 
-iab this $this-><Left><C-R>=EatChar('\s')<CR>
-iab bean $this->bean-><Left><C-R>=EatChar('\s')<CR>
-iab pubf public function<Left><C-R>=EatChar('\s')<CR>
-iab get public function get<Left><C-R>=EatChar('\s')<CR>
-iab set public function get<Left><C-R>=EatChar('\s')<CR>
+" iab this $this-><Left><C-R>=EatChar('\s')<CR>
+" iab bean $this->bean-><Left><C-R>=EatChar('\s')<CR>
+" iab pubf public function<Left><C-R>=EatChar('\s')<CR>
+" iab get public function get<Left><C-R>=EatChar('\s')<CR>
+" iab set public function get<Left><C-R>=EatChar('\s')<CR>
 
 func EatChar(pat)
     let c = nr2char(getchar(0))
