@@ -1,4 +1,4 @@
-PATH="~/bin:$PATH"
+PATH="$HOME/bin:$PATH"
 
 if [[ -d "/opt/local/bin" ]]; then
   PATH="/opt/local/bin:$PATH"
