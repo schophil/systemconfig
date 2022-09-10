@@ -22,4 +22,4 @@ fi
 
 export M2_HOME=/home/schophil/.sdkman/candidates/maven/current
 
-eval "$(oh-my-posh init zsh --config '/opt/local/share/oh-my-posh/themes/stelbent-compact.minimal.omp.json')"
+eval "$(oh-my-posh init zsh --config '~/.poshthemes/stelbent-compact.minimal.omp.json')"
