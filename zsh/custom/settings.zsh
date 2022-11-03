@@ -22,4 +22,5 @@ fi
 
 export M2_HOME=/home/schophil/.sdkman/candidates/maven/current
 
-eval "$(oh-my-posh init zsh --config '~/.poshthemes/stelbent-compact.minimal.omp.json')"
+# ZSH_THEME="aussiegeekplusplus"
+ZSH_THEME="mortalscumbag"
