@@ -23,4 +23,4 @@ fi
 export M2_HOME=/home/schophil/.sdkman/candidates/maven/current
 
 # ZSH_THEME="aussiegeekplusplus"
-ZSH_THEME="mortalscumbag"
+ZSH_THEME="awesomepanda"
