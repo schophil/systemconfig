@@ -31,6 +31,8 @@ Plug 'garbas/vim-snipmate'
 Plug 'dracula/vim',{'as':'dracula'}
 Plug 'joshdick/onedark.vim'
 Plug 'morhetz/gruvbox'
+Plug 'sainnhe/everforest'
+Plug 'tomasiser/vim-code-dark'
 call plug#end()
 
 " 
@@ -91,10 +93,10 @@ let g:netrw_keepdir=1
 " 
 " LOOKS
 " 
-colorscheme dracula
-let g:airline_theme = 'dracula'
+colorscheme codedark
+let g:airline_theme = 'codedark'
 call matchadd('ColorColumn', '\%81v')
-hi Normal ctermbg=NONE guibg=NONE
+" hi Normal ctermbg=NONE guibg=NONE
 
 "
 " PLUGIN CTRLP
