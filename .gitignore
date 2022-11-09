@@ -23,3 +23,4 @@ emerging-Block-IPs.txt
 /vim/.vim/autoload
 /vim/.vim/bundle
 /vim/.vim/plugged
+/vim/.vim/doc
