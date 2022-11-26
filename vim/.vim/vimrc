@@ -5,11 +5,11 @@
 "
 " PLUGINS
 "
-let data_dir = '~/.vim'
-if empty(glob(data_dir . '/autoload/plug.vim'))
-  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
+"let data_dir = '~/.vim'
+"if empty(glob(data_dir . '/autoload/plug.vim'))
+"  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+"  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+"endif
 
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-commentary'
@@ -51,6 +51,7 @@ set path=.,,**
 set listchars=tab:>-
 set list
 set termguicolors
+set belloff=all
 
 "
 " FILES
@@ -93,10 +94,10 @@ let g:netrw_keepdir=1
 " 
 " LOOKS
 " 
-colorscheme codedark
-let g:airline_theme = 'codedark'
+colorscheme dracula
+let g:airline_theme = 'dracula'
 call matchadd('ColorColumn', '\%81v')
-" hi Normal ctermbg=NONE guibg=NONE
+hi Normal ctermbg=NONE guibg=NONE
 
 "
 " PLUGIN CTRLP
