@@ -6,7 +6,7 @@
 " PLUGINS
 "
 
-# Works only on *nix
+" Works only on *nix
 if (!has('win32')) 
   let data_dir = '~/.vim'
   if empty(glob(data_dir . '/autoload/plug.vim'))
