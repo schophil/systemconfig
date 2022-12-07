@@ -1,0 +1,23 @@
+#!/usr/bin/java --source 11
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println(args[0]);
+        try {
+            var digest = java.security.MessageDigest.getInstance("SHA-256");
+            digest.update(args[0].getBytes(java.nio.charset.StandardCharsets.UTF_8));
+            var bytes = digest.digest();
+            var builder = new StringBuilder();
+            for (int b : bytes) {
+                String hex = Integer.toHexString(0xff & b);
+                if (hex.length() == 1) {
+                    builder.append('0');
+                }
+                builder.append(hex);
+            }
+            System.out.println(builder.toString());
+        } catch (Throwable t) {
+            t.printStackTrace();
+        }
+    }
+}
