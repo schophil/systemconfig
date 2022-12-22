@@ -29,6 +29,7 @@ Plug 'freitass/todo.txt-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'chrisbra/csv.vim'
 Plug 'fourjay/vim-hurl'
+Plug 'khaveesh/vim-fish-syntax'
 " snipMate
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
@@ -100,8 +101,8 @@ let g:netrw_keepdir=1
 " 
 " LOOKS
 " 
-colorscheme codedark
-let g:airline_theme = 'codedark'
+colorscheme everforest
+let g:airline_theme = 'everforest'
 call matchadd('ColorColumn', '\%81v')
 " hi Normal ctermbg=NONE guibg=NONE
 

@@ -19,10 +19,14 @@ function compose_path
   end
 end
 
-set -x hydro_color_git "#D19A66"
-set -x hydro_color_pwd "#56B6C2"
+alias develop "git checkout develop"
+alias master "git checkout master"
+alias todo "vim ~/todo.txt"
+
+#set -x hydro_color_git "#D19A66"
+#set -x hydro_color_pwd "#56B6C2"
 
 fish_vi_key_bindings
-#compose_path
+compose_path
 
 set -e PATH_ORG
