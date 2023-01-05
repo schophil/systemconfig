@@ -1,5 +1,5 @@
-set -x LANG "en_US.UTF-8"
-set -x LC_ALL "en_US.UTF-8"
+# set -x LANG "en_US.UTF-8"
+# set -x LC_ALL "en_US.UTF-8"
 set -x EDITOR vim
 
 set -x EXTTRA_PATHS ~/.npm-global/bin "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" ~/bin ~/.local/bin ~/tools/jmeter/bin
@@ -22,11 +22,14 @@ end
 alias develop "git checkout develop"
 alias master "git checkout master"
 alias todo "vim ~/todo.txt"
-
-#set -x hydro_color_git "#D19A66"
-#set -x hydro_color_pwd "#56B6C2"
+alias g "git"
+alias ftags "git fetch --tags -f"
 
 fish_vi_key_bindings
 compose_path
 
 set -e PATH_ORG
+
+if test -f /Users/schophil/.docker/init-fish.sh
+  source /Users/schophil/.docker/init-fish.sh || true
+end
