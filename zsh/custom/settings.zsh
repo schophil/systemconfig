@@ -8,6 +8,8 @@
 # brainstormr=~/Projects/development/planetargon/brainstormr
 # cd $brainstormr
 #
+EDITOR=vim
+
 bindkey "^B" backward-word
 bindkey "^F" forward-word
 
@@ -22,4 +24,4 @@ fi
 
 export M2_HOME=/home/schophil/.sdkman/candidates/maven/current
 
-ZSH_THEME="intheloop"
+ZSH_THEME="sunrise"
