@@ -40,6 +40,7 @@ Plug 'joshdick/onedark.vim'
 Plug 'morhetz/gruvbox'
 Plug 'sainnhe/everforest'
 Plug 'tomasiser/vim-code-dark'
+Plug 'huyvohcmc/atlas.vim'
 call plug#end()
 
 " 
@@ -102,8 +103,8 @@ let g:netrw_keepdir=1
 " LOOKS
 " 
 set background=dark
-colorscheme everforest
-let g:airline_theme = 'everforest'
+colorscheme codedark
+let g:airline_theme = 'codedark'
 call matchadd('ColorColumn', '\%81v')
 " hi Normal ctermbg=NONE guibg=NONE
 
