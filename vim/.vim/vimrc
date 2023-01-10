@@ -40,7 +40,6 @@ Plug 'joshdick/onedark.vim'
 Plug 'morhetz/gruvbox'
 Plug 'sainnhe/everforest'
 Plug 'tomasiser/vim-code-dark'
-Plug 'huyvohcmc/atlas.vim'
 call plug#end()
 
 " 
