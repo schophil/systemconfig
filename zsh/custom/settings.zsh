@@ -8,7 +8,7 @@
 # brainstormr=~/Projects/development/planetargon/brainstormr
 # cd $brainstormr
 #
-EDITOR=vim
+export EDITOR=vim
 
 bindkey "^B" backward-word
 bindkey "^F" forward-word
