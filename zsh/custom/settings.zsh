@@ -25,4 +25,4 @@ fi
 
 export M2_HOME=/home/schophil/.sdkman/candidates/maven/current
 
-ZSH_THEME="michelebologna"
+ZSH_THEME="sunrise"
