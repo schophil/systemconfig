@@ -40,7 +40,7 @@ Plug 'joshdick/onedark.vim'
 Plug 'morhetz/gruvbox'
 Plug 'sainnhe/everforest'
 Plug 'tomasiser/vim-code-dark'
-Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 call plug#end()
 
 " 
@@ -103,8 +103,8 @@ let g:netrw_keepdir=1
 " LOOKS
 " 
 set background=dark
-colorscheme catppuccin
-let g:airline_theme = 'catppuccin'
+colorscheme catppuccin_mocha
+let g:airline_theme = 'catppuccin_mocha'
 call matchadd('ColorColumn', '\%81v')
 " hi Normal ctermbg=NONE guibg=NONE
 
