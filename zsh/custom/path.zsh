@@ -4,6 +4,10 @@ if [[ -d "/opt/local/bin" ]]; then
   PATH="/opt/local/bin:$PATH"
 fi
 
+if [[ -d "/home/schophil/.local/bin" ]]; then
+  PATH="/home/schophil/.local/bin:$PATH"
+fi
+
 if [[ -d "$HOME/.npm-global/bin" ]]; then
   PATH="$HOME/.npm-global/bin:$PATH"
 fi
@@ -18,10 +22,10 @@ fi
 
 export PATH
 
-if [[ -f "$HOME/.sdkman/bin/sdkman-init.sh" ]]; then
-  source "$HOME/.sdkman/bin/sdkman-init.sh"
-fi
+# if [[ -f "$HOME/.sdkman/bin/sdkman-init.sh" ]]; then
+#   source "$HOME/.sdkman/bin/sdkman-init.sh"
+# fi
 
-if [[ -f "/opt/local/share/nvm/init-nvm.sh" ]]; then
-  source "/opt/local/share/nvm/init-nvm.sh"
-fi
+# if [[ -f "/opt/local/share/nvm/init-nvm.sh" ]]; then
+#   source "/opt/local/share/nvm/init-nvm.sh"
+# fi
