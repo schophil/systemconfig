@@ -9,6 +9,7 @@
 # cd $brainstormr
 #
 export EDITOR=vim
+export NOTES_HOME=~/notes/doc
 
 bindkey "^B" backward-word
 bindkey "^F" forward-word
