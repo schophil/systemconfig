@@ -3,7 +3,7 @@ alias todo='vim ~/todo.txt'
 alias aiv='cd ~/w_aiv'
 alias updateports='sudo port selfupdate && sudo port upgrade outdated'
 alias mvntree='mvn dependency:tree'
-alias afterwincopy='find . -type f | xargs -I f chmod a-x,g+rw,o-w f'
+alias afterwincopy='find . -type f -print0 | xargs -0 -I f chmod a-x,g+rw,o-w f'
 
 # git aliases
 alias develop='git checkout develop'
