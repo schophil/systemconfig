@@ -29,6 +29,7 @@ Plug 'freitass/todo.txt-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'chrisbra/csv.vim'
 Plug 'fourjay/vim-hurl'
+Plug 'dhruvasagar/vim-table-mode'
 " snipMate
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
