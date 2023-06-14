@@ -104,8 +104,8 @@ let g:netrw_maxfilenamelen=66
 " LOOKS
 " 
 set background=dark
-colorscheme catppuccin_mocha
-let g:airline_theme = 'catppuccin_mocha'
+colorscheme everforest
+let g:airline_theme = 'everforest'
 call matchadd('ColorColumn', '\%81v')
 " hi Normal ctermbg=NONE guibg=NONE
 
