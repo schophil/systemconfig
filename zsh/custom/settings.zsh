@@ -10,6 +10,7 @@
 #
 export EDITOR=vim
 export NOTES_HOME=~/Documents/notes
+export NNN_OPTS="d"
 
 bindkey "^B" backward-word
 bindkey "^F" forward-word
