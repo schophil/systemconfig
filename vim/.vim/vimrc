@@ -90,8 +90,9 @@ nnoremap <Leader>ww :vertical resize +4<CR>
 nnoremap ; A;<Esc>
 " To uppercase
 inoremap <c-u> <esc>gUiwea
+" Allow tab to autocomplete first suggestion
+inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
 
-"   
 " NETRW
 "
 let g:netrw_hide=1
