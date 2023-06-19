@@ -4,11 +4,38 @@ class GeneratedRRN {
     public $rrn;
     public $birthDate;
     public $gender;
-    public function __toString()
+
+    public function getAge(): int
     {
         $bd = DateTime::createFromFormat("Y-m-d", $this->birthDate);
         $age = $bd->diff(new DateTime);
-        return "{$this->rrn}: {$this->birthDate} - {$age->y} - {$this->gender}";
+        return $age->y;
+    }
+
+    public function isMinor(): bool
+    {
+        return $this->getAge() < 18;
+    }
+
+    public function isAdult(): bool
+    {
+        return $this->getAge() >= 18;
+    }
+
+    public function isMale(): bool
+    {
+        return 'male' === $this->gender;
+    }
+
+    public function isFemale(): bool
+    {
+        return 'female' === $this->gender;
+    }
+
+    public function __toString(): string
+    {
+        $age = $this->getAge();
+        return "{$this->rrn};{$this->birthDate};{$age};{$this->gender}";
     }
 }
 
@@ -37,12 +64,40 @@ function generateRRN(): GeneratedRRN
     return $rrn;
 }
 
-$total = $argv[1];
-while ($total > 0) 
+$total = 0;
+$filters = [];
+
+for ($i = 1; $i < sizeof($argv); $i++) {
+    $option = $argv[$i];
+    if ($option === '--total') {
+        $total = $argv[++$i];
+    } else if ($option === '--adults') {
+        $filters[] = fn($rrn) => $rrn->isAdult();
+    } else if ($option === '--minors') {
+        $filters[] = fn($rrn) => $rrn->isMinor();
+    } else if ($option === '--males') {
+        $filters[] = fn($rrn) => $rrn->isMale();
+    } else if ($option === '--females') {
+        $filters[] = fn($rrn) => $rrn->isFemale();
+    }
+}
+
+function filter(GeneratedRRN $rrn, array $filters): bool
 {
+    foreach ($filters as $filter) {
+        if (!$filter($rrn)) {
+            return false;
+        }
+    }
+    return true;
+}
+
+while ($total > 0) {
     $rrn = generateRRN();
-    echo $rrn;
-    echo "\n";
-    $total--;    
+    if (filter($rrn, $filters)) {
+        echo $rrn;
+        echo "\n";
+        $total--;    
+    }
 }
 
