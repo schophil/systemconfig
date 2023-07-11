@@ -30,6 +30,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'chrisbra/csv.vim'
 Plug 'fourjay/vim-hurl'
 Plug 'dhruvasagar/vim-table-mode'
+Plug 'arcticicestudio/nord-vim'
 " snipMate
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
@@ -105,10 +106,9 @@ let g:netrw_maxfilenamelen=66
 " LOOKS
 " 
 set background=dark
-colorscheme dracula
-let g:airline_theme = 'dracula'
+colorscheme nord
+let g:airline_theme = 'nord'
 call matchadd('ColorColumn', '\%81v')
-" hi Normal ctermbg=NONE guibg=NONE
 
 "
 " PLUGIN CTRLP
