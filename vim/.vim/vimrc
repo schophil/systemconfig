@@ -22,8 +22,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'kien/ctrlp.vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'freitass/todo.txt-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -42,6 +41,8 @@ Plug 'morhetz/gruvbox'
 Plug 'sainnhe/everforest'
 Plug 'tomasiser/vim-code-dark'
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'rose-pine/vim'
 call plug#end()
 
 " 
@@ -105,10 +106,12 @@ let g:netrw_maxfilenamelen=66
 " 
 " LOOKS
 " 
-set background=dark
-colorscheme nord
-let g:airline_theme = 'nord'
+set background=light
+colorscheme rosepine_dawn
+let g:lightline = {'colorscheme': 'rosepine'}
 call matchadd('ColorColumn', '\%81v')
+let &t_ut=''
+set laststatus=2
 
 "
 " PLUGIN CTRLP
