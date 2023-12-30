@@ -22,7 +22,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'kien/ctrlp.vim'
-Plug 'itchyny/lightline.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'freitass/todo.txt-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -43,6 +44,10 @@ Plug 'tomasiser/vim-code-dark'
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'rose-pine/vim'
+Plug 'wojciechkepka/vim-github-dark'
+Plug 'hzchirs/vim-material'
+Plug 'fcpg/vim-fahrenheit'
+Plug 'cormacrelf/vim-colors-github'
 call plug#end()
 
 " 
@@ -77,6 +82,7 @@ nnoremap <Leader>e :Explore<CR>
 nnoremap <Backspace> :nohl<CR>
 nnoremap <c-b> :CtrlPBuffer<CR>
 nnoremap <F3> [<c-I><CR>
+nnoremap <a-F12> <c-]>
 " Deactivate the arrows
 map <Down> <Nop>
 map <Up> <Nop>
@@ -106,10 +112,10 @@ let g:netrw_maxfilenamelen=66
 " 
 " LOOKS
 " 
-set background=light
-colorscheme rosepine_dawn
-let g:lightline = {'colorscheme': 'rosepine'}
+set background=dark
+colorscheme everforest
 call matchadd('ColorColumn', '\%81v')
+" let g:airline_theme='material'
 let &t_ut=''
 set laststatus=2
 
