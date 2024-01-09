@@ -113,7 +113,7 @@ let g:netrw_maxfilenamelen=66
 " LOOKS
 " 
 set background=dark
-colorscheme everforest
+colorscheme onedark
 call matchadd('ColorColumn', '\%81v')
 " let g:airline_theme='material'
 let &t_ut=''
