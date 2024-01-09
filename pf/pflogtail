@@ -1,5 +1,0 @@
-#!/bin/sh
-
-# TODO: user options to perform many thinks
-
-sudo tcpdump -n -e -ttt -i pflog0
