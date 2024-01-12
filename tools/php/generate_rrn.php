@@ -39,13 +39,17 @@ class GeneratedRRN {
     }
 }
 
-function generateRRN(): GeneratedRRN
+function generateRRN(bool $bis): GeneratedRRN
 {
     $year = random_int(1960, 2023);
     $month = str_pad(random_int(1, 12), 2, '0', STR_PAD_LEFT);
     $day = str_pad(random_int(1, 30), 2, '0', STR_PAD_LEFT);
     $seqNbr = random_int(1, 999);
     $seq = str_pad($seqNbr, 3, '0', STR_PAD_LEFT);
+
+    if ($bis) {
+        $month += $year % 2 == 0 ? 40 : 30;
+    }
     
     $yearSuffix = "" . floor((($year / 100) - floor($year / 100)) * 100);
     $yearSuffix = str_pad($yearSuffix, 2, "0", STR_PAD_LEFT);
@@ -66,6 +70,7 @@ function generateRRN(): GeneratedRRN
 
 $total = 0;
 $filters = [];
+$bis = false;
 
 for ($i = 1; $i < sizeof($argv); $i++) {
     $option = $argv[$i];
@@ -79,6 +84,8 @@ for ($i = 1; $i < sizeof($argv); $i++) {
         $filters[] = fn($rrn) => $rrn->isMale();
     } else if ($option === '--females') {
         $filters[] = fn($rrn) => $rrn->isFemale();
+    } else if ($option === '--bis') {
+        $bis = true;
     }
 }
 
@@ -93,7 +100,7 @@ function filter(GeneratedRRN $rrn, array $filters): bool
 }
 
 while ($total > 0) {
-    $rrn = generateRRN();
+    $rrn = generateRRN($bis);
     if (filter($rrn, $filters)) {
         echo $rrn;
         echo "\n";
