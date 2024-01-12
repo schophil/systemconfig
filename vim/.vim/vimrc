@@ -71,9 +71,8 @@ syntax enable
 let mapleader=","
 nnoremap <Leader>e :Explore<CR>
 nnoremap <Backspace> :nohl<CR>
-nnoremap <c-b> :CtrlPBuffer<CR>
 nnoremap <F3> [<c-I><CR>
-nnoremap <a-F12> <c-]>
+nnoremap <c-b> <c-]>
 " Deactivate the arrows
 map <Down> <Nop>
 map <Up> <Nop>
