@@ -37,17 +37,8 @@ Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate' 
 " themes
 Plug 'dracula/vim',{'as':'dracula'}
-Plug 'joshdick/onedark.vim'
-Plug 'morhetz/gruvbox'
-Plug 'sainnhe/everforest'
+Plug 'doums/darcula'
 Plug 'tomasiser/vim-code-dark'
-Plug 'catppuccin/vim', { 'as': 'catppuccin' }
-Plug 'NLKNguyen/papercolor-theme'
-Plug 'rose-pine/vim'
-Plug 'wojciechkepka/vim-github-dark'
-Plug 'hzchirs/vim-material'
-Plug 'fcpg/vim-fahrenheit'
-Plug 'cormacrelf/vim-colors-github'
 call plug#end()
 
 " 
@@ -113,7 +104,7 @@ let g:netrw_maxfilenamelen=66
 " LOOKS
 " 
 set background=dark
-colorscheme onedark
+colorscheme darcula
 call matchadd('ColorColumn', '\%81v')
 " let g:airline_theme='material'
 let &t_ut=''
