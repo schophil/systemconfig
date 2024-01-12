@@ -87,6 +87,7 @@ imap <Right> <Nop>
 nnoremap <Leader>ss :vertical resize -4<CR>
 nnoremap <Leader>ww :vertical resize +4<CR>
 nnoremap ; A;<Esc>
+vmap <Leader>c :w ! xsel -i -b<CR><CR>
 " To uppercase
 inoremap <c-u> <esc>gUiwea
 " Allow tab to autocomplete first suggestion
