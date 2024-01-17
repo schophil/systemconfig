@@ -104,7 +104,7 @@ let g:netrw_maxfilenamelen=66
 " LOOKS
 " 
 set background=dark
-colorscheme darcula
+colorscheme lunaperche
 call matchadd('ColorColumn', '\%81v')
 " let g:airline_theme='material'
 let &t_ut=''
