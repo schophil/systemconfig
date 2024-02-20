@@ -11,6 +11,7 @@ alias master='git checkout master'
 alias branch='git checkout -b'
 alias gitaivconfig='git config --local user.email "philippe.schottey@vlaanderen.be" && git config --local user.name "Philippe Schottey"'
 alias gitdefconfig='git config --local user.email "schophil@icloud.com" && git config --local user.name "Philippe Schottey"'
+alias main='git checkout main'
 
 # maven aliases
 alias mtree='./mvnw dependency:tree'
