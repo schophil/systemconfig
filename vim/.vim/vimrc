@@ -104,11 +104,13 @@ let g:netrw_maxfilenamelen=66
 " LOOKS
 " 
 set background=dark
-colorscheme lunaperche
+colorscheme dracula
 call matchadd('ColorColumn', '\%81v')
-" let g:airline_theme='material'
 let &t_ut=''
 set laststatus=2
+if has("gui_running")
+  set guifont=Hack\ 14
+endif
 
 "
 " PLUGIN CTRLP
