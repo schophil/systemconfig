@@ -37,8 +37,7 @@ Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate' 
 " themes
 Plug 'dracula/vim',{'as':'dracula'}
-Plug 'doums/darcula'
-Plug 'tomasiser/vim-code-dark'
+Plug 'whatyouhide/vim-gotham'
 call plug#end()
 
 " 
@@ -104,12 +103,13 @@ let g:netrw_maxfilenamelen=66
 " LOOKS
 " 
 set background=dark
-colorscheme dracula
+colorscheme gotham
 call matchadd('ColorColumn', '\%81v')
 let &t_ut=''
 set laststatus=2
 if has("gui_running")
-  set guifont=Hack\ 14
+  set guifont=Hack\ 12
+  set guioptions-=T
 endif
 
 "
@@ -127,3 +127,4 @@ let g:ctrlp_working_path_mode = ''
 " PLUGIN SNIPMATE
 "
 let g:snipMate = { 'snippet_version' : 1 }
+
