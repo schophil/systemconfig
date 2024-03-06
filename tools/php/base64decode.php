@@ -17,7 +17,7 @@ if ($token) {
     $decoded = base64_decode($value);
     exec("/usr/bin/firefox https://jwt.io/#debugger-io?token=${decoded}");
 } else {
-    $decoded = base64_decode($value);
-    echo $decoded;
+    $decoded = base64_decode(urldecode($value));
+    echo "$decoded\n";
 }
 ?>
