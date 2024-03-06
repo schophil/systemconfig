@@ -38,6 +38,8 @@ Plug 'garbas/vim-snipmate'
 " themes
 Plug 'dracula/vim',{'as':'dracula'}
 Plug 'whatyouhide/vim-gotham'
+Plug 'sainnhe/everforest'
+Plug 'sainnhe/edge'
 call plug#end()
 
 " 
@@ -102,8 +104,8 @@ let g:netrw_maxfilenamelen=66
 " 
 " LOOKS
 " 
-set background=dark
-colorscheme gotham
+set background=light
+colorscheme edge
 call matchadd('ColorColumn', '\%81v')
 let &t_ut=''
 set laststatus=2
