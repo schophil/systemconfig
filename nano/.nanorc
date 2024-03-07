@@ -1,0 +1,11 @@
+# looks
+set linenumbers
+set autoindent
+set minicolor black,sky
+set functioncolor sky,normal
+set titlecolor black,sky
+set numbercolor sky,normal
+set selectedcolor black,sky
+
+# feels
+bind M-c copy all
