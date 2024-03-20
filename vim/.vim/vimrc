@@ -73,7 +73,8 @@ let mapleader=","
 nnoremap <Leader>e :Explore<CR>
 nnoremap <Backspace> :nohl<CR>
 nnoremap <F3> [<c-I><CR>
-nnoremap <c-b> <c-]>
+nnoremap <c-b> :CtrlPBuffer<CR>
+" nnoremap <c-b> <c-]>
 " Deactivate the arrows
 map <Down> <Nop>
 map <Up> <Nop>
@@ -104,8 +105,8 @@ let g:netrw_maxfilenamelen=66
 " 
 " LOOKS
 " 
-set background=light
-colorscheme edge
+set background=dark
+colorscheme dracula
 call matchadd('ColorColumn', '\%81v')
 let &t_ut=''
 set laststatus=2
