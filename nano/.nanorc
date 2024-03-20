@@ -3,9 +3,10 @@ set linenumbers
 set autoindent
 set minicolor black,sky
 set functioncolor sky,normal
-set titlecolor black,sky
+set titlecolor normal,mauve
 set numbercolor sky,normal
-set selectedcolor black,sky
+set selectedcolor normal,sky
+set constantshow
 
 # feels
 bind M-c copy all
