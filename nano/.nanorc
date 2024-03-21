@@ -9,4 +9,7 @@ set selectedcolor normal,sky
 set constantshow
 
 # feels
-bind M-c copy all
+bind ^c copy all
+bind ^v paste all
+bind ^Q exit all
+bind M-c cancel all
