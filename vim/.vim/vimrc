@@ -30,16 +30,13 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'chrisbra/csv.vim'
 Plug 'fourjay/vim-hurl'
 Plug 'dhruvasagar/vim-table-mode'
-Plug 'arcticicestudio/nord-vim'
+Plug 'machakann/vim-highlightedyank'
 " snipMate
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate' 
 " themes
 Plug 'dracula/vim',{'as':'dracula'}
-Plug 'whatyouhide/vim-gotham'
-Plug 'sainnhe/everforest'
-Plug 'sainnhe/edge'
 call plug#end()
 
 " 
@@ -88,8 +85,8 @@ imap <Right> <Nop>
 nnoremap <Leader>ss :vertical resize -4<CR>
 nnoremap <Leader>ww :vertical resize +4<CR>
 nnoremap ; A;<Esc>
-vmap <Leader>c :w ! xsel -i -b<CR><CR>
-" To uppercase
+vmap <Leader>c ::w ! wl-copy<CR><CR>
+"To uppercase
 inoremap <c-u> <esc>gUiwea
 " Allow tab to autocomplete first suggestion
 inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
