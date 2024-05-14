@@ -15,8 +15,8 @@ alias main='git checkout main'
 
 # maven aliases
 alias mtree='./mvnw dependency:tree'
-alias minstall='./mvnw clean install'
-alias mtest='./mvnw clean install'
+alias minstall='./mvnw -U clean install'
+alias mtest='./mvnw clean test'
 
 # my php tools
 alias rrngen='php $HOME/systemconfig/tools/php/generate_rrn.php'
