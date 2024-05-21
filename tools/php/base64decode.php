@@ -15,7 +15,7 @@ for ($i = 1; $i < sizeof($argv); $i++) {
 if ($token) {
     $value = str_replace('m__', '', $value);
     $decoded = base64_decode($value);
-    exec("/usr/bin/firefox https://jwt.io/#debugger-io?token=${decoded}");
+    exec("sensible-browser https://jwt.io/#debugger-io?token=${decoded}");
 } else {
     $decoded = base64_decode(urldecode($value));
     echo "$decoded\n";
