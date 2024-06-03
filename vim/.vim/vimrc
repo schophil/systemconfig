@@ -108,9 +108,9 @@ call matchadd('ColorColumn', '\%81v')
 let &t_ut=''
 set laststatus=2
 if has("gui_running")
-  set guifont=Hack\ 12
+  set guifont=JetbrainsMono\ Nerd\ \Font\ Mono\ 12
   set guioptions-=T
-endif
+end
 
 "
 " PLUGIN CTRLP
