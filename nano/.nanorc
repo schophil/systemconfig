@@ -1,0 +1,10 @@
+set linenumbers
+set minibar
+set constantshow
+set minicolor normal,mauve
+set nohelp
+set stripecolor normal,mauve
+
+bind ^C copy all
+bind M-C cancel all
+
