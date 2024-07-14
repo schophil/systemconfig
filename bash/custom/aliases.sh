@@ -22,3 +22,6 @@ alias mtest='./mvnw clean test'
 alias rrngen='php $HOME/systemconfig/tools/php/generate_rrn.php'
 alias tokendecode='php $HOME/systemconfig/tools/php/base64decode.php --token'
 alias base64decode='php $HOME/systemconfig/tools/php/base64decode.php'
+
+# AIV specific stuff
+alias awstools='docker run --rm -ti -v ~/.aws:/root/.aws mbp/aws'

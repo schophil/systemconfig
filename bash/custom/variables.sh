@@ -1,6 +1,6 @@
-NOTES_EDITOR='nano'
+NOTES_EDITOR='vim'
 NOTES_HOME='/home/schophil/Documents/notes'
-EDITOR='nano'
+EDITOR='vim'
 export NOTES_EDITOR NOTES_HOME EDITOR
 
 PATH=~/.local/bin:$PATH
