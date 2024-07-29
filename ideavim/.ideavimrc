@@ -5,6 +5,7 @@
 
 set scrolloff=5
 set incsearch
+set hlsearch
 set relativenumber
 set number
 set visualbell
@@ -15,6 +16,8 @@ nmap <leader>i <Action>(Generate)
 nmap <leader>o <Action>(OptimizeImports)
 vmap <leader>c "+y
 
+nnoremap <Backspace> :nohl<CR>
+
 " Don't use Ex mode, use Q for formatting.
 map Q gq
 
@@ -22,3 +25,4 @@ map Q gq
 Plug 'machakann/vim-highlightedyank'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
+Plug 'preservim/nerdtree'
