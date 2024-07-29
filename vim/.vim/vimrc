@@ -69,7 +69,7 @@ syntax enable
 " FEEL
 "
 let mapleader=","
-" nnoremap <Leader>e :Explore<CR>
+nnoremap <Leader>e :Explore<CR>
 nnoremap <Backspace> :nohl<CR>
 nnoremap <F3> [<c-I><CR>
 nnoremap <c-b> :CtrlPBuffer<CR>
@@ -101,7 +101,14 @@ let g:netrw_liststyle=1
 let g:netrw_keepdir=1
 let g:netrw_maxfilenamelen=66
 
-" 
+" NERDTree
+"
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+let NERDTreeShowHidden=1
+
 " LOOKS
 " 
 let g:airline_powerline_fonts=1
