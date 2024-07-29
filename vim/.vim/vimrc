@@ -31,13 +31,14 @@ Plug 'chrisbra/csv.vim'
 Plug 'fourjay/vim-hurl'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'machakann/vim-highlightedyank'
+Plug 'preservim/nerdtree'
 " snipMate
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate' 
-Plug 'nanotech/jellybeans.vim'
 " themes
 Plug 'dracula/vim',{'as':'dracula'}
+Plug 'nanotech/jellybeans.vim'
 call plug#end()
 
 " 
@@ -68,7 +69,7 @@ syntax enable
 " FEEL
 "
 let mapleader=","
-nnoremap <Leader>e :Explore<CR>
+" nnoremap <Leader>e :Explore<CR>
 nnoremap <Backspace> :nohl<CR>
 nnoremap <F3> [<c-I><CR>
 nnoremap <c-b> :CtrlPBuffer<CR>
@@ -103,6 +104,7 @@ let g:netrw_maxfilenamelen=66
 " 
 " LOOKS
 " 
+let g:airline_powerline_fonts=1
 set background=dark
 colorscheme jellybeans
 call matchadd('ColorColumn', '\%81v')
