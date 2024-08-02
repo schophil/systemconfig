@@ -113,7 +113,7 @@ class BelgianRRNGenerator
                 $maxYear -= $this->adultMinAge;
                 break;
             case BelgianRRNGenerator::$minorOnly:
-                $minYear = $maxYear -= $this->adultMinAge;
+                $minYear = $maxYear -= ($this->adultMinAge - 1);
                 break;
         }
         return random_int($minYear, $maxYear);
@@ -154,13 +154,13 @@ for ($i = 1; $i < sizeof($argv); $i++) {
     if ($option === '--total') {
         $total = $argv[++$i];
     } else if ($option === '--adults') {
-        $ageSwitch = BelgianRRNGenerator::adultOnly;
+        $ageSwitch = BelgianRRNGenerator::$adultOnly;
     } else if ($option === '--minors') {
-        $ageSwitch = BelgianRRNGenerator::minorOnly;
+        $ageSwitch = BelgianRRNGenerator::$minorOnly;
     } else if ($option === '--males') {
-        $genderSwitch = BelgianRRNGenerator::maleOnly;
+        $genderSwitch = BelgianRRNGenerator::$maleOnly;
     } else if ($option === '--females') {
-        $genderSwitch = BelgianRRNGenerator::femaleOnly;
+        $genderSwitch = BelgianRRNGenerator::$femaleOnly;
     } else if ($option === '--bis') {
         $bis = true;
     }
