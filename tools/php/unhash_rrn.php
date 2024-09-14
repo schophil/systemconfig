@@ -49,4 +49,5 @@ function decode($needle, $bisValues)
 }
 
 echo "Decoding {$argv[1]}\n";
-decode($argv[1], [0, 30, 40]);
+//decode($argv[1], [0, 30, 40]);
+decode($argv[1], [0]);

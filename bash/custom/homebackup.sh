@@ -1,10 +1,10 @@
 homebackup() {
-    if [[ -d /media/schophil/CCC1 ]]; then
+    if [[ -d /run/media/schophil/CCC1 ]]; then
         echo "Detected backup device CCC1..."
-        backupTarget=/media/schophil/CCC1
-    elif [[ -d /media/schophil/CCC2 ]]; then
+        backupTarget=/run/media/schophil/CCC1
+    elif [[ -d /run/media/schophil/CCC2 ]]; then
         echo "Detected backup device CCC2..."
-        backupTarget=/media/schophil/CCC2
+        backupTarget=/run/media/schophil/CCC2
     else
         echo "No backup device detected!"
         exit;

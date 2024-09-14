@@ -26,3 +26,5 @@ emerging-Block-IPs.txt
 /vim/.vim/doc
 
 /zsh/custom/plugins
+
+/utils/vender
