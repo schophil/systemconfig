@@ -1,7 +1,7 @@
 <?php
 
 define('MAX_SEQUENCE', '700');
-define('START_DATE', '1900-01-01');
+define('START_DATE', '1930-01-01');
 define('DEBUG', '0');
 
 function generateRRN($date, $bis, $sequence) 
@@ -15,6 +15,7 @@ function generateRRN($date, $bis, $sequence)
     $year = $date->format('y');
     $month = $date->format('m');
     $month = intval($month) + $bis;
+    $month = str_pad($month, 2, '0', STR_PAD_LEFT);
     $day = $date->format('d');
     $seq = str_pad($sequence, 3, '0', STR_PAD_LEFT);
     $base = "{$prefix}{$year}{$month}{$day}{$seq}";
