@@ -113,7 +113,7 @@ class BelgianRRNGenerator
                 $maxYear -= $this->adultMinAge;
                 break;
             case BelgianRRNGenerator::$minorOnly:
-                $minYear = $maxYear -= ($this->adultMinAge - 1);
+                $minYear = $maxYear -= ($this->adultMinAge - random_int(1, $this->adultMinAge));
                 break;
         }
         return random_int($minYear, $maxYear);
