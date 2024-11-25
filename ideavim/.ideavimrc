@@ -17,6 +17,7 @@ nmap <leader>o <Action>(OptimizeImports)
 vmap <leader>c "+y
 
 nnoremap <Backspace> :nohl<CR>
+nnoremap ; A;<ESC>
 
 " Don't use Ex mode, use Q for formatting.
 map Q gq
