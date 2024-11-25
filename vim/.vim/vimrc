@@ -26,12 +26,10 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'freitass/todo.txt-vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'chrisbra/csv.vim'
 Plug 'fourjay/vim-hurl'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'machakann/vim-highlightedyank'
-Plug 'preservim/nerdtree'
 " snipMate
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
@@ -90,8 +88,6 @@ nnoremap ; A;<Esc>
 vmap <Leader>c ::w ! wl-copy<CR><CR>
 "To uppercase
 inoremap <c-u> <esc>gUiwea
-" Allow tab to autocomplete first suggestion
-inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
 
 " NETRW
 "
@@ -100,14 +96,6 @@ let g:netrw_browsex_viewer="open"
 let g:netrw_liststyle=1
 let g:netrw_keepdir=1
 let g:netrw_maxfilenamelen=66
-
-" NERDTree
-"
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
-let NERDTreeShowHidden=1
 
 " LOOKS
 " 
