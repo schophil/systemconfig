@@ -6,6 +6,11 @@ end_of_line = LF
 [*.fish]
 charset = utf-8
 indent_style = space
+indent_size = 4
+
+[*.sh]
+charset = utf-8
+indent_style = space
 indent_size = 2
 
 [vimrc]
