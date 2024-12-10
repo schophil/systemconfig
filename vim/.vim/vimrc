@@ -101,7 +101,7 @@ let g:netrw_maxfilenamelen=66
 " 
 let g:airline_powerline_fonts=1
 set background=dark
-colorscheme jellybeans
+colorscheme dracula
 call matchadd('ColorColumn', '\%81v')
 let &t_ut=''
 set laststatus=2
