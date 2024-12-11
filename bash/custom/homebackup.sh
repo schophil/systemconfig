@@ -16,7 +16,7 @@ homebackup() {
     echo -n "Proceed? [Y/n]: "
     read -r answer
 
-    if [[ "$answer" == "" || "$answer" == "y" ]]; then
+    if [[ "$answer" == "" || "$answer" == "y" || "$answer" == "Y" ]]; then
       rsync -a --stats --info=progress2 /home/schophil $backupTarget/Backups
     else
       echo "Doing nothing"
