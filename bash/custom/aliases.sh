@@ -15,13 +15,14 @@ alias main='git checkout main'
 
 # maven aliases
 alias mtree='./mvnw dependency:tree'
-alias minstall='./mvnw -U clean install'
-alias mtest='./mvnw clean test'
+alias minstall='./mvnw install'
+alias mclean='./mvnw -U clean install'
+alias mtest='./mvnw test'
 
 # my php tools
-alias rrngen='php $HOME/systemconfig/tools/php/generate_rrn.php'
-alias tokendecode='php $HOME/systemconfig/tools/php/base64decode.php --token'
-alias base64decode='php $HOME/systemconfig/tools/php/base64decode.php'
+alias rrngen='php $HOME/systemconfig/tools/public/generate_rrn.php'
+alias tokendecode='php $HOME/systemconfig/tools/src/base64decode.php --token'
+alias base64decode='php $HOME/systemconfig/tools/src/base64decode.php'
 
 # AIV specific stuff
 alias awstools='docker run --rm -ti -v ~/.aws:/root/.aws mbp/aws'

@@ -1,46 +1,8 @@
 <?php
 
-class GeneratedRRN {
-    public $rrn;
-    public $birthDate;
-    public $gender;
+namespace Schophil\Tools\Belgium;
 
-    public function getAge(): int
-    {
-        $bd = DateTime::createFromFormat("Y-m-d", $this->birthDate);
-        $age = $bd->diff(new DateTime);
-        return $age->y;
-    }
-
-    public function isMinor(): bool
-    {
-        return $this->getAge() < 18;
-    }
-
-    public function isAdult(): bool
-    {
-        return $this->getAge() >= 18;
-    }
-
-    public function isMale(): bool
-    {
-        return 'male' === $this->gender;
-    }
-
-    public function isFemale(): bool
-    {
-        return 'female' === $this->gender;
-    }
-
-    public function __toString(): string
-    {
-        $age = $this->getAge();
-        return "{$this->rrn};{$this->birthDate};{$age};{$this->gender}";
-    }
-}
-
-
-class BelgianRRNGenerator
+class RRNGenerator
 {
     // age switch
     public static int $anyAge = 0;
@@ -58,21 +20,44 @@ class BelgianRRNGenerator
     private int $maxYear;
     private int $adultMinAge;
 
-    public function __construct(int $minYear, int $maxYear, int $adultMinAge)
+    public function __construct(int $minYear = 1900, int $maxYear = 2030, int $adultMinAge = 18)
     {
         $this->minYear = $minYear;
         $this->maxYear = $maxYear;
         $this->adultMinAge = $adultMinAge;
     }
 
-    public function generate(int $ageSwitch = 0, int $genderSwitch = 0, bool $bis = false): GeneratedRRN
+    function generateOne(\DateTime $date, int $bis, int $sequence): GeneratedRRN
+    {
+        $year = intval($date->format('y'));
+        $month = intval($date->format('m'));
+        $day = $date->format('d');
+
+        $baseNumber = $this->getBaseNumber($year, $month, $day, $sequence, $bis);
+        $controlNumber = $this->getControlNumber($baseNumber, $year);
+
+        $rrn = $baseNumber . $controlNumber;
+
+        $generated = new GeneratedRRN;
+        $generated->rrn = $rrn;
+        $generated->birthDate = $this->prettyPrintDate($year, $month, $day);
+        $generated->gender = $sequence % 2 == 0 ? 'female' : 'male';
+        return $generated;
+    }
+
+    public function generateRandom(int $ageSwitch = 0, int $genderSwitch = 0, bool $bis = false): GeneratedRRN
     {
         $year = $this->getYear($ageSwitch);
         $month = random_int(1, 12);
         $day = random_int(1, cal_days_in_month(CAL_GREGORIAN, $month, $year));
         $seq = $this->getSequence($genderSwitch);
 
-        $baseNumber = $this->getBaseNumber($year, $month, $day, $seq, $bis);
+        $bisValue = 0;
+        if ($bis) {
+            $bisValue += $year % 2 == 0 ? 40 : 30;
+        }
+
+        $baseNumber = $this->getBaseNumber($year, $month, $day, $seq, $bisValue);
         $controlNumber = $this->getControlNumber($baseNumber, $year);
 
         $rrn = $baseNumber . $controlNumber;
@@ -91,12 +76,10 @@ class BelgianRRNGenerator
         return "${year}-${monthPart}-${dayPart}";
     }
 
-    private function getBaseNumber(int $year, int $month, int $day, int $seq, bool $bis): string
+    private function getBaseNumber(int $year, int $month, int $day, int $seq, int $bis): string
     {
+        $month += $bis;
         $monthPart = str_pad($month, 2, '0', STR_PAD_LEFT);
-        if ($bis) {
-            $monthPart += $year % 2 == 0 ? 40 : 30;
-        }
         $dayPart = str_pad($day, 2, '0', STR_PAD_LEFT);
         $seqPart = str_pad($seq, 3, '0', STR_PAD_LEFT);
         $yearPart = "" . floor((($year / 100) - floor($year / 100)) * 100);
@@ -109,10 +92,10 @@ class BelgianRRNGenerator
         $maxYear = $this->maxYear;
         $minYear = $this->minYear;
         switch ($ageSwitch) {
-            case BelgianRRNGenerator::$adultOnly:
+            case RRNGenerator::$adultOnly:
                 $maxYear -= $this->adultMinAge;
                 break;
-            case BelgianRRNGenerator::$minorOnly:
+            case RRNGenerator::$minorOnly:
                 $minYear = $maxYear -= ($this->adultMinAge - random_int(1, $this->adultMinAge));
                 break;
         }
@@ -121,12 +104,12 @@ class BelgianRRNGenerator
 
     private function getSequence(int $genderSwitch): int
     {
-        $seq = random_int(1, BelgianRRNGenerator::$maxSequence);
+        $seq = random_int(1, RRNGenerator::$maxSequence);
         switch ($genderSwitch) {
-            case BelgianRRNGenerator::$maleOnly:
+            case RRNGenerator::$maleOnly:
                 $seq = $seq % 2 != 0 ? $seq : $seq - 1;
                 break;
-            case BelgianRRNGenerator::$femaleOnly:
+            case RRNGenerator::$femaleOnly:
                 $seq = $seq % 2 == 0 ? $seq : $seq + 1;
                 break;
         }
@@ -143,36 +126,3 @@ class BelgianRRNGenerator
         return str_pad($controlNumber, 2, '0', STR_PAD_LEFT);
     }
 }
-
-$total = 0;
-$bis = false;
-$ageSwitch = BelgianRRNGenerator::$anyAge;
-$genderSwitch = BelgianRRNGenerator::$anyGender;
-
-for ($i = 1; $i < sizeof($argv); $i++) {
-    $option = $argv[$i];
-    if ($option === '--total') {
-        $total = $argv[++$i];
-    } else if ($option === '--adults') {
-        $ageSwitch = BelgianRRNGenerator::$adultOnly;
-    } else if ($option === '--minors') {
-        $ageSwitch = BelgianRRNGenerator::$minorOnly;
-    } else if ($option === '--males') {
-        $genderSwitch = BelgianRRNGenerator::$maleOnly;
-    } else if ($option === '--females') {
-        $genderSwitch = BelgianRRNGenerator::$femaleOnly;
-    } else if ($option === '--bis') {
-        $bis = true;
-    }
-}
-
-$currentYear = date("Y");
-$generator = new BelgianRRNGenerator($currentYear - 100, $currentYear, 18);
-
-while ($total > 0) {
-    $rrn = $generator->generate($ageSwitch, $genderSwitch, $bis);
-    echo $rrn;
-    echo "\n";
-    $total--;    
-}
-

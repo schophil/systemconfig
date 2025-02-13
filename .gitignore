@@ -28,3 +28,6 @@ emerging-Block-IPs.txt
 /zsh/custom/plugins
 
 /utils/vender
+
+.idea
+vendor

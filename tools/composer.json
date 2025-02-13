@@ -1,0 +1,25 @@
+{
+    "name": "schophil/tools",
+    "description": "Some tools",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Schophil\\": "src/classes"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Philippe Schottey",
+            "email": "schophil@icloud.com"
+        }
+    ],
+    "require": {
+        "ext-calendar": "*",
+        "ulrichsg/getopt-php": "^4.0"
+    }
+}
