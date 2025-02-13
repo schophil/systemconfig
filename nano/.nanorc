@@ -1,10 +1,25 @@
+include "/usr/share/nano/*.nanorc"
+
 set linenumbers
 set minibar
 set constantshow
 set minicolor normal,mauve
 set nohelp
 set stripecolor normal,mauve
+set backup
+set multibuffer
+set mouse
 
-bind ^C copy all
+bind ^C copy main
 bind M-C cancel all
-
+bind ^S savefile main
+bind ^H help all
+bind ^Q exit main
+bind ^X cut main
+bind ^R replace main
+bind ^V paste all
+bind M-M comment main
+bind ^Z undo main
+bind ^G gotoline main
+bind ^O insert main
+bind ^E execute main
