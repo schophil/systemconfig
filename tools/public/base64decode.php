@@ -1,16 +1,25 @@
 <?php
 
-$value = null;
-$token = false;
+require __DIR__ . '/../vendor/autoload.php';
 
-for ($i = 1; $i < sizeof($argv); $i++) {
-    $option = $argv[$i];
-    if ($option === '--token') {
-        $token = true;
-    } else if ($i == sizeof($argv) - 1) {
-        $value = $option;
-    }
+use GetOpt\GetOpt;
+use GetOpt\Operand;
+
+$getOpt = new GetOpt();
+$getOpt->addOptions([
+    [null, 'token', GetOpt::NO_ARGUMENT, 'Value is a token'],
+]);
+$getOpt->addOperand(Operand::create('value', Operand::REQUIRED));
+
+try {
+    $getOpt->process();
+} catch (Exception $e) {
+    echo $getOpt->getHelpText();
+    exit(1);
 }
+
+$value = $getOpt->getOperand('value');
+$token = $getOpt->getOption('token') ?? false;
 
 if ($token) {
     $value = str_replace('m__', '', $value);
@@ -20,4 +29,3 @@ if ($token) {
     $decoded = base64_decode(urldecode($value));
     echo "$decoded\n";
 }
-?>
