@@ -8,10 +8,16 @@ class RRNDecoder
     private string $startDate = '1930-01-01';
     private int $maxSequence = 700;
     private bool $debug = false;
+    private string $hashAlgorithm = 'sha256';
 
     public function __construct(RRNGenerator $rrnGenerator)
     {
         $this->rrnGenerator = $rrnGenerator;
+    }
+
+    public function setHashAlgorithm(string $hashAlgorithm): void
+    {
+        $this->hashAlgorithm = $hashAlgorithm;
     }
 
     public function setStartDate(string $startDate): void
@@ -47,7 +53,7 @@ class RRNDecoder
                     if ($this->debug) {
                         echo "Trying {$rrn->rrn}\n";
                     }
-                    $hash = hash('sha256', $rrn->rrn);
+                    $hash = hash($this->hashAlgorithm, $rrn->rrn);
                     if ($hash === $needle) {
                         $birthDate = $date->format('Y-m-d');
                         echo "Result: {$rrn}\n";
