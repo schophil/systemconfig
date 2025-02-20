@@ -25,6 +25,7 @@ alias rrnunhash='php $HOME/systemconfig/tools/public/unhash_rrn.php'
 alias tokendecode='php $HOME/systemconfig/tools/public/base64decode.php --token'
 alias base64decode='php $HOME/systemconfig/tools/public/base64decode.php'
 alias base64encode='php $HOME/systemconfig/tools/public/base64encode.php'
+alias hash='php $HOME/systemconfig/tools/public/hash.php'
 
 # AIV specific stuff
 alias awstools='docker run --rm -ti -v ~/.aws:/root/.aws mbp/aws'
