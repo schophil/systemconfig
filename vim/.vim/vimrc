@@ -37,6 +37,8 @@ Plug 'garbas/vim-snipmate'
 " themes
 Plug 'dracula/vim',{'as':'dracula'}
 Plug 'nanotech/jellybeans.vim'
+Plug 'joshdick/onedark.vim'
+Plug 'sainnhe/everforest'
 call plug#end()
 
 " 
@@ -101,7 +103,7 @@ let g:netrw_maxfilenamelen=66
 " 
 let g:airline_powerline_fonts=1
 set background=dark
-colorscheme dracula
+colorscheme everforest
 call matchadd('ColorColumn', '\%81v')
 let &t_ut=''
 set laststatus=2
