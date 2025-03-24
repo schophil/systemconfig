@@ -1,5 +1,10 @@
 homebackup() {
-  devices=(/run/media/schophil/CCC1 /run/media/schophil/CCC2 /media/schophil/CCC1 /media/schophil/CCC2 /run/media/schophil/b95f2b1d-c646-4538-9050-5246ed334424 /run/media/schophil/f816f3c8-cac3-4355-9da0-4a7c0ce55598)
+  devices=(
+    /media/schophil/CCC1
+    /media/schophil/CCC2
+    /media/schophil/b1f88bd7-172d-4e0f-a3a9-dea1bd4a17b8
+    /media/schophil/880c1ccb-744f-4065-b3e1-7633983856b6
+  )
 
   for i in ${devices[@]}; do
     echo "Trying $i"
