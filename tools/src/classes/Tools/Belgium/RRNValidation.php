@@ -5,7 +5,7 @@ namespace Schophil\Tools\Belgium;
 class RRNValidation
 {
     private string $rrn;
-    private boolean $valid;
+    private bool $valid;
     private array $analysis = [];
 
     public function __construct(string $rrn)
@@ -23,12 +23,12 @@ class RRNValidation
         return $this->valid;
     }
 
-    public function setValid()
+    public function setValid(): void
     {
         $this->valid = true;
     }
 
-    public function setInvalid()
+    public function setInvalid(): void
     {
         $this->valid = false;
     }
