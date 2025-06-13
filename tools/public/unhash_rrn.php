@@ -25,7 +25,7 @@ $decoder = new RRNDecoder(new RRNGenerator());
 $decoder->setDebug($getOpt->getOption('debug') ?? false);
 
 $bis = [0];
-if ($getOpt->getOption('bis')) {
+if ($getOpt->getOption('bis') ?? false) {
     $bis = [30, 40];
 }
 

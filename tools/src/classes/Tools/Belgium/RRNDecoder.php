@@ -55,7 +55,7 @@ class RRNDecoder
                         $sequence++
                     );
                     if ($this->debug) {
-                        echo "Trying {$rrn->rrn}\n";
+                        echo "Trying {$rrn->rrn} with bis {$bis}\n";
                     }
                     $hash = hash($this->hashAlgorithm, $rrn->rrn);
                     if ($hash === $needle) {

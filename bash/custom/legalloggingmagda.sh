@@ -1,0 +1,3 @@
+legalloggingmagda() {
+    cat $1 | jq '.items' | jq '[.[] | select(.what.source == "MAGDA" and .mode == "Response")]' | jq 'map({reference, action: .what.action, when, capacity: .details|map(select(.type == "magda"))|(.[0].capacity + "," + .[0].uri),  insz: .who.subject.insz, total: .what.about|length, about: .what.about|map(.reference,.insz)|map(select(.)), error: .details|map(select(.type == "error"))|map(.items)|flatten|map(.title)|add})' | jq 'map({reference, action, when, capacity, insz, error, total, about: (if .total == 0 then ["-"] else .about end)[]})' | jq 'map(.reference + "," + .action + "," + .when + "," + .capacity + "," + .insz + "," + .about + "," + .error)' | jq '.[]' | sed 's/"//g'
+}

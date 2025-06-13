@@ -29,9 +29,9 @@ class RRNGenerator
 
     function generateOne(\DateTime $date, int $bis, int $sequence): GeneratedRRN
     {
-        $year = intval($date->format('y'));
+        $year = intval($date->format('Y'));
         $month = intval($date->format('m'));
-        $day = $date->format('d');
+        $day = intval($date->format('d'));
 
         $baseNumber = $this->getBaseNumber($year, $month, $day, $sequence, $bis);
         $controlNumber = $this->getControlNumber($baseNumber, $year);
@@ -82,8 +82,7 @@ class RRNGenerator
         $monthPart = str_pad($month, 2, '0', STR_PAD_LEFT);
         $dayPart = str_pad($day, 2, '0', STR_PAD_LEFT);
         $seqPart = str_pad($seq, 3, '0', STR_PAD_LEFT);
-        $yearPart = "" . floor((($year / 100) - floor($year / 100)) * 100);
-        $yearPart = str_pad($yearPart, 2, "0", STR_PAD_LEFT);
+        $yearPart = substr("{$year}", 2, 2);
         return "{$yearPart}{$monthPart}{$dayPart}{$seqPart}";
     }
 
@@ -122,7 +121,7 @@ class RRNGenerator
         if ($year >= 2000) {
             $controlBase = "2" . $baseNumber;
         }
-        $controlNumber = 97 - intval($controlBase) % 97;
+        $controlNumber = 97 - (intval($controlBase) % 97);
         return str_pad($controlNumber, 2, '0', STR_PAD_LEFT);
     }
 }

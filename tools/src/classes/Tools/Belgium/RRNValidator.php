@@ -11,7 +11,7 @@ class RRNValidator
         }
         $validationReport = new RRNValidation($rrn);
 
-        $base = intval(substr($rrn, 0, 8));
+        $base = intval(substr($rrn, 0, 9));
         $check = intval(substr($rrn, 9, 2));
 
         $this->validateCase($base, $check, $validationReport);

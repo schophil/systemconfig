@@ -33,6 +33,11 @@ class RRNValidation
         $this->valid = false;
     }
 
+    public function getAnalysis(): array
+    {
+        return $this->analysis;
+    }
+
     public function addAnalysis(string $key, string $value): void
     {
         $this->analysis[$key] = $value;

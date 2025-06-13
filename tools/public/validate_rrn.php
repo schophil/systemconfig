@@ -1,25 +1,26 @@
 <?php
 
-function validate(string $insz): bool
-{
-	if (strlen($insz) != 11) {
-		return false;
-	}
-	$base = intval(substr($insz, 0, 8));
-	$check = intval(substr($insz, 9, 2));
-	$expected = (97 - ($base % 97));
-	$valid = ($check === $expected);
+require __DIR__ . '/../vendor/autoload.php';
 
-	echo "base: {$base}\n";
-	echo "check: {$check}\n";
-	echo "expected check: {$expected}\n";
-	if ($valid) {
-		echo "OK\n";
-	} else {
-		echo "NOK\n";
-	}
-	return $valid;
+use GetOpt\GetOpt;
+use GetOpt\Operand;
+use Schophil\Tools\Belgium\RRNValidator;
+
+$getOpt = new GetOpt();
+$getOpt->addOperand(new Operand('rrn', Operand::REQUIRED));
+
+try {
+    $getOpt->process();
+} catch (Exception $e) {
+    echo $getOpt->getHelpText();
+    exit(1);
 }
 
-echo "Validating {$argv[1]}\n";
-validate($argv[1], [0]);
+$validator = new RRNValidator();
+
+echo "Validating {$getOpt->getOperand(0)}\n";
+$result = $validator->validate($getOpt->getOperand(0));
+echo "is valid: {$result->isValid()}\n";
+foreach ($result->getAnalysis() as $key => $value) {
+	echo "{$key}: {$value}\n";
+}
