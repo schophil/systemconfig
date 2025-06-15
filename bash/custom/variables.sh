@@ -7,8 +7,16 @@ export PATH
 
 if uname -r | grep -q 'microsoft'; then
 	if [ -z "$SSH_AGENT_PID" ]; then
-		echo 'Starting ssh agent'
-		start-ssh-agent
+		if [[ -e "/tmp/schophil-ssh-agent" ]]; then
+			echo "Restoring env from backup file"
+			source /tmp/schophil-ssh-agent
+		else 
+			echo 'Starting ssh agent'
+			start-ssh-agent
+			echo 'Creating backup file'
+			echo "export SSH_AGENT_PID=$SSH_AGENT_PID" > /tmp/schophil-ssh-agent
+			echo "export SSH_AUTH_SOCK=$SSH_AUTH_SOCK" >> /tmp/schophil-ssh-agent
+		fi
 	else
 		echo 'SSH agent already running on ' $SSH_AGENT_PID
 	fi
