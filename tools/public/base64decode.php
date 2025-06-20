@@ -24,7 +24,7 @@ $token = $getOpt->getOption('token') ?? false;
 if ($token) {
     $value = str_replace('m__', '', $value);
     $decoded = base64_decode($value);
-    exec("xdg-open https://jwt.io/#debugger-io?token=${decoded}");
+    exec("sensible-browser https://jwt.io/#debugger-io?token=${decoded}");
 } else {
     $decoded = base64_decode(urldecode($value));
     echo "$decoded\n";
