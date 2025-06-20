@@ -20,5 +20,5 @@ if uname -r | grep -q 'microsoft'; then
 	else
 		echo 'SSH agent already running on ' $SSH_AGENT_PID
 	fi
-	#export BROWSER=/mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe
+	export BROWSER="/mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe"
 fi
