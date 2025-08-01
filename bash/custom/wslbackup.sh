@@ -1,6 +1,8 @@
 wslbackup() {
   folders=(
     /home/schophil/aiv
+    /home/schophil/musikalo
+    /home/schophil/sandbox
     /home/schophil/.bashrc
     /home/schophil/.config/jet
     /home/schophil/.ssh
@@ -12,6 +14,9 @@ wslbackup() {
   # Create tar archive of folders
   tar -czvf "/home/schophil/tmp/wslbackup.tar.gz" \
     --exclude='/home/schophil/aiv/*/target' \
+    --exclude='/home/schophil/sandbox/*/target' \
+    --exclude='/home/schophil/musikalo/*/vendor' \
+    --exclude='/home/schophil/musikalo/*/node_modules' \
     --transform='s/^home\/schophil\///' \
     "${folders[@]}"
   cp -f "/home/schophil/tmp/wslbackup.tar.gz" "$target"
