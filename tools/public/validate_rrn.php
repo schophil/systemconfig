@@ -20,6 +20,10 @@ $validator = new RRNValidator();
 
 echo "Validating {$getOpt->getOperand(0)}\n";
 $result = $validator->validate($getOpt->getOperand(0));
+if ($result === null) {
+    echo "RRN does not have required length to be validated\n";
+    exit(1);
+}
 echo "is valid: {$result->isValid()}\n";
 foreach ($result->getAnalysis() as $key => $value) {
 	echo "{$key}: {$value}\n";
