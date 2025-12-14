@@ -25,7 +25,6 @@ Plug 'kien/ctrlp.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
-Plug 'freitass/todo.txt-vim'
 Plug 'chrisbra/csv.vim'
 Plug 'fourjay/vim-hurl'
 Plug 'dhruvasagar/vim-table-mode'
@@ -87,7 +86,8 @@ imap <Right> <Nop>
 nnoremap <Leader>ss :vertical resize -4<CR>
 nnoremap <Leader>ww :vertical resize +4<CR>
 nnoremap ; A;<Esc>
-vmap <Leader>c ::w ! wl-copy<CR><CR>
+" vmap <Leader>c ::w ! wl-copy<CR><CR>
+vmap <Leader>c ::w ! clip.exe<CR><CR>
 "To uppercase
 inoremap <c-u> <esc>gUiwea
 
@@ -103,7 +103,7 @@ let g:netrw_maxfilenamelen=66
 " 
 let g:airline_powerline_fonts=1
 set background=dark
-colorscheme everforest
+colorscheme onedark
 call matchadd('ColorColumn', '\%81v')
 let &t_ut=''
 set laststatus=2
