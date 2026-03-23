@@ -18,7 +18,8 @@ class RRNValidator
 
         if (!$validationReport->isValid()) {
             // try the year 2000 case
-            $this->validateCase('2' . $base, $check, $validationReport);
+            $base = intval('2' . substr($rrn, 0, 9));
+            $this->validateCase($base, $check, $validationReport);
         }
 
         return $validationReport;

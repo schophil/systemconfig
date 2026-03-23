@@ -13,6 +13,12 @@ class RRNValidation
         $this->rrn = $rrn;
     }
 
+    public function clear():void
+    {
+        $this->valid = false;
+        $this->analysis = [];
+    }
+
     public function getRRN(): string
     {
         return $this->rrn;
