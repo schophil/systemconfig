@@ -13,6 +13,11 @@ charset = utf-8
 indent_style = space
 indent_size = 2
 
+[*.zsh]
+charset = utf-8
+indent_style = space
+indent_size = 4
+
 [vimrc]
 charset = utf-8
 indent_style = space
