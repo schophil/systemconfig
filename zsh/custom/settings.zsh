@@ -47,4 +47,4 @@ check-ssh-agent;
 export M2_HOME=/home/schophil/.sdkman/candidates/maven/current
 
 # ZSH_THEME="sunrise"
-ZSH_THEME="lukerandall"
+ZSH_THEME="re5et"
