@@ -1,5 +1,7 @@
 alias start-ssh-agent='eval $(ssh-agent -s)'
 alias mvntree='mvn dependency:tree'
+alias cc='better-commits'
+alias bb='better-branch'
 
 # git aliases
 alias develop='git checkout develop'
