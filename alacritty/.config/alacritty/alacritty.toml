@@ -1,0 +1,5 @@
+general.import = ["/home/schophil/.config/alacritty/dracula.toml"]
+
+[font]
+normal = { family = "JetBrainsMono Nerd Font Mono", style = "Regular" }
+size = 15
