@@ -6,6 +6,7 @@ alias bb='better-branch'
 # git aliases
 alias develop='git checkout develop'
 alias master='git checkout master'
+alias main='git checkout main'
 alias branch='git checkout -b'
 alias unstage='git restore --staged .'
 
